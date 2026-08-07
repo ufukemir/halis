@@ -1,0 +1,252 @@
+import 'package:flutter/material.dart';
+
+import '../models/models.dart';
+
+/// Hafif yerelleştirme: TR/EN/DE/FR/AR/ID. Eksik anahtar EN'e düşer.
+/// Arapça RTL yönü MaterialApp'in localization delegate'leriyle otomatiktir.
+class S {
+  final String lang;
+
+  const S(this.lang);
+
+  static const supported = ['tr', 'en', 'de', 'fr', 'ar', 'id'];
+
+  static S of(BuildContext context) {
+    final locale = Localizations.maybeLocaleOf(context) ??
+        WidgetsBinding.instance.platformDispatcher.locale;
+    final code = locale.languageCode;
+    return S(supported.contains(code) ? code : 'en');
+  }
+
+  /// Türkçe gerekçe/özet metinleri yalnız TR arayüzde; diğer diller EN metni görür.
+  bool get useTurkishReasons => lang == 'tr';
+
+  String _t(Map<String, String> m) => m[lang] ?? m['en']!;
+
+  String get appName => 'Halis';
+
+  String get tagline => _t(const {
+        'tr': 'Barkodu tara,\niçindekini bil.',
+        'en': "Scan the barcode,\nknow what's inside.",
+        'de': 'Barcode scannen,\nInhalt kennen.',
+        'fr': 'Scannez le code-barres,\nsachez ce qu\'il contient.',
+        'ar': 'امسح الباركود\nواعرف المكونات.',
+        'id': 'Pindai barcode,\nketahui isinya.',
+      });
+
+  String get scanBarcode => _t(const {
+        'tr': 'Barkod Tara', 'en': 'Scan Barcode', 'de': 'Barcode scannen',
+        'fr': 'Scanner le code-barres', 'ar': 'مسح الباركود', 'id': 'Pindai Barcode',
+      });
+
+  String get analyzeLabel => _t(const {
+        'tr': 'Etiket Fotoğrafı Analiz Et', 'en': 'Analyze Label Photo',
+        'de': 'Etikett-Foto analysieren', 'fr': 'Analyser la photo de l\'étiquette',
+        'ar': 'تحليل صورة الملصق', 'id': 'Analisis Foto Label',
+      });
+
+  String get sensitivityProfile => _t(const {
+        'tr': 'Hassasiyet profili', 'en': 'Sensitivity profile', 'de': 'Empfindlichkeitsprofil',
+        'fr': 'Profil de sensibilité', 'ar': 'ملف الحساسية', 'id': 'Profil sensitivitas',
+      });
+
+  String profileName(Profile p) => switch (p) {
+        Profile.temkinli => _t(const {
+            'tr': 'Temkinli', 'en': 'Cautious', 'de': 'Vorsichtig',
+            'fr': 'Prudent', 'ar': 'احتياطي', 'id': 'Hati-hati',
+          }),
+        Profile.genislik => _t(const {
+            'tr': 'Genişlik', 'en': 'Lenient', 'de': 'Weit',
+            'fr': 'Souple', 'ar': 'موسَّع', 'id': 'Longgar',
+          }),
+        Profile.diyanet => 'Diyanet',
+      };
+
+  String get manualBarcode => _t(const {
+        'tr': 'Barkodu elle gir (test)', 'en': 'Enter barcode manually (test)',
+        'de': 'Barcode manuell eingeben (Test)', 'fr': 'Saisir le code-barres (test)',
+        'ar': 'أدخل الباركود يدويًا (اختبار)', 'id': 'Masukkan barcode manual (uji)',
+      });
+
+  String get recentScans => _t(const {
+        'tr': 'Son taramalar', 'en': 'Recent scans', 'de': 'Letzte Scans',
+        'fr': 'Analyses récentes', 'ar': 'عمليات المسح الأخيرة', 'id': 'Pemindaian terakhir',
+      });
+
+  String get result => _t(const {
+        'tr': 'Sonuç', 'en': 'Result', 'de': 'Ergebnis',
+        'fr': 'Résultat', 'ar': 'النتيجة', 'id': 'Hasil',
+      });
+
+  String get alignBarcode => _t(const {
+        'tr': 'Barkodu çerçeveye hizala', 'en': 'Align the barcode within the frame',
+        'de': 'Barcode im Rahmen ausrichten', 'fr': 'Alignez le code-barres dans le cadre',
+        'ar': 'ضع الباركود داخل الإطار', 'id': 'Sejajarkan barcode dalam bingkai',
+      });
+
+  String get profileLabel => _t(const {
+        'tr': 'Profil', 'en': 'Profile', 'de': 'Profil',
+        'fr': 'Profil', 'ar': 'الملف', 'id': 'Profil',
+      });
+
+  String get confidence => _t(const {
+        'tr': 'Güven', 'en': 'Confidence', 'de': 'Konfidenz',
+        'fr': 'Confiance', 'ar': 'الثقة', 'id': 'Keyakinan',
+      });
+
+  String get findings => _t(const {
+        'tr': 'Tespitler', 'en': 'Findings', 'de': 'Befunde',
+        'fr': 'Constats', 'ar': 'النتائج', 'id': 'Temuan',
+      });
+
+  String get ingredientsLabel => _t(const {
+        'tr': 'İçindekiler (etiket)', 'en': 'Ingredients (label)', 'de': 'Zutaten (Etikett)',
+        'fr': 'Ingrédients (étiquette)', 'ar': 'المكونات (الملصق)', 'id': 'Komposisi (label)',
+      });
+
+  String get unnamedProduct => _t(const {
+        'tr': 'İsimsiz ürün', 'en': 'Unnamed product', 'de': 'Unbenanntes Produkt',
+        'fr': 'Produit sans nom', 'ar': 'منتج بلا اسم', 'id': 'Produk tanpa nama',
+      });
+
+  String verdictTitle(Verdict v) => switch (v) {
+        Verdict.halal => _t(const {
+            'tr': 'Sorun görünmüyor', 'en': 'Looks fine', 'de': 'Unbedenklich',
+            'fr': 'Rien à signaler', 'ar': 'لا مشكلة ظاهرة', 'id': 'Tampak aman',
+          }),
+        Verdict.mushbooh => _t(const {
+            'tr': 'Şüpheli', 'en': 'Doubtful', 'de': 'Zweifelhaft',
+            'fr': 'Douteux', 'ar': 'مشبوه', 'id': 'Syubhat',
+          }),
+        Verdict.haram => _t(const {
+            'tr': 'Uygun değil', 'en': 'Not permissible', 'de': 'Nicht zulässig',
+            'fr': 'Non permis', 'ar': 'غير جائز', 'id': 'Tidak halal',
+          }),
+        Verdict.unknown => _t(const {
+            'tr': 'Veri yetersiz', 'en': 'Not enough data', 'de': 'Zu wenig Daten',
+            'fr': 'Données insuffisantes', 'ar': 'بيانات غير كافية', 'id': 'Data kurang',
+          }),
+      };
+
+  String get notFound => _t(const {
+        'tr': 'Bu barkod veritabanında bulunamadı.\n\nEtiketin fotoğrafını çekerek analiz edebilirsiniz.',
+        'en': 'This barcode was not found in the database.\n\nYou can analyze the label by taking a photo of it.',
+        'de': 'Dieser Barcode wurde nicht gefunden.\n\nSie können das Etikett fotografieren und analysieren.',
+        'fr': 'Code-barres introuvable dans la base.\n\nVous pouvez analyser l\'étiquette en la photographiant.',
+        'ar': 'لم يُعثر على هذا الباركود في قاعدة البيانات.\n\nيمكنك تحليل الملصق بالتقاط صورة له.',
+        'id': 'Barcode tidak ditemukan di basis data.\n\nAnda dapat menganalisis label dengan memotretnya.',
+      });
+
+  String get networkError => _t(const {
+        'tr': 'Ürün sorgulanamadı. İnternet bağlantınızı kontrol edip tekrar deneyin.',
+        'en': 'Could not look up the product. Check your internet connection and try again.',
+        'de': 'Produkt konnte nicht abgefragt werden. Prüfen Sie Ihre Internetverbindung.',
+        'fr': 'Impossible de consulter le produit. Vérifiez votre connexion Internet.',
+        'ar': 'تعذّر الاستعلام عن المنتج. تحقق من اتصالك بالإنترنت وحاول مجددًا.',
+        'id': 'Tidak dapat mencari produk. Periksa koneksi internet Anda dan coba lagi.',
+      });
+
+  String get disclaimer => _t(const {
+        'tr': 'Bu sonuç dini hüküm değil, içerik verisine dayalı bilgilendirmedir. Veriler güncel olmayabilir; şüphede üreticiye veya sertifika kuruluşuna danışın. Ürün verisi: Open Food Facts (ODbL).',
+        'en': 'This result is informational, based on ingredient data — not a religious ruling. Data may be outdated; when in doubt, consult the producer or a certification body. Product data: Open Food Facts (ODbL).',
+        'de': 'Dieses Ergebnis ist eine Information auf Basis von Zutatendaten — kein religiöses Urteil. Daten können veraltet sein; im Zweifel Hersteller oder Zertifizierungsstelle fragen. Produktdaten: Open Food Facts (ODbL).',
+        'fr': 'Ce résultat est informatif, basé sur les données d\'ingrédients — pas un avis religieux. Les données peuvent être obsolètes ; en cas de doute, consultez le producteur ou un organisme de certification. Données produit : Open Food Facts (ODbL).',
+        'ar': 'هذه النتيجة معلوماتية تستند إلى بيانات المكونات — وليست حكمًا شرعيًا. قد تكون البيانات غير محدثة؛ عند الشك استشر المنتِج أو جهة اعتماد حلال. بيانات المنتج: Open Food Facts (ODbL).',
+        'id': 'Hasil ini bersifat informatif berdasarkan data komposisi — bukan fatwa. Data mungkin tidak mutakhir; jika ragu, hubungi produsen atau lembaga sertifikasi halal. Data produk: Open Food Facts (ODbL).',
+      });
+
+  // Etiket analiz ekranı
+  String get labelTitle => _t(const {
+        'tr': 'Etiket Analizi', 'en': 'Label Analysis', 'de': 'Etikett-Analyse',
+        'fr': 'Analyse de l\'étiquette', 'ar': 'تحليل الملصق', 'id': 'Analisis Label',
+      });
+
+  String get takePhoto => _t(const {
+        'tr': 'Fotoğraf Çek', 'en': 'Take Photo', 'de': 'Foto aufnehmen',
+        'fr': 'Prendre une photo', 'ar': 'التقاط صورة', 'id': 'Ambil Foto',
+      });
+
+  String get fromGallery => _t(const {
+        'tr': 'Galeriden Seç', 'en': 'From Gallery', 'de': 'Aus Galerie',
+        'fr': 'Depuis la galerie', 'ar': 'من المعرض', 'id': 'Dari Galeri',
+      });
+
+  String get ocrHint => _t(const {
+        'tr': 'İçindekiler listesinin fotoğrafını çekin; metni okuyup analiz edelim. Metni aşağıda düzeltebilirsiniz.',
+        'en': 'Take a photo of the ingredients list; we will read and analyze the text. You can correct it below.',
+        'de': 'Fotografieren Sie die Zutatenliste; wir lesen und analysieren den Text. Unten können Sie ihn korrigieren.',
+        'fr': 'Photographiez la liste des ingrédients ; nous lirons et analyserons le texte. Vous pouvez le corriger ci-dessous.',
+        'ar': 'التقط صورة لقائمة المكونات؛ سنقرأ النص ونحلله. يمكنك تصحيحه أدناه.',
+        'id': 'Foto daftar komposisi; kami akan membaca dan menganalisis teksnya. Anda dapat mengoreksinya di bawah.',
+      });
+
+  String get labelTextField => _t(const {
+        'tr': 'İçindekiler metni', 'en': 'Ingredients text', 'de': 'Zutatentext',
+        'fr': 'Texte des ingrédients', 'ar': 'نص المكونات', 'id': 'Teks komposisi',
+      });
+
+  String get analyze => _t(const {
+        'tr': 'Analiz Et', 'en': 'Analyze', 'de': 'Analysieren',
+        'fr': 'Analyser', 'ar': 'تحليل', 'id': 'Analisis',
+      });
+
+  String get ocrFailed => _t(const {
+        'tr': 'Metin okunamadı. Daha net bir fotoğraf deneyin veya metni elle yazın.',
+        'en': 'Could not read the text. Try a clearer photo or type the text manually.',
+        'de': 'Text konnte nicht gelesen werden. Versuchen Sie ein schärferes Foto oder tippen Sie den Text.',
+        'fr': 'Texte illisible. Essayez une photo plus nette ou saisissez le texte.',
+        'ar': 'تعذّرت قراءة النص. جرّب صورة أوضح أو اكتب النص يدويًا.',
+        'id': 'Teks tidak terbaca. Coba foto yang lebih jelas atau ketik teksnya.',
+      });
+
+  // Onboarding
+  String get onboardingTitle => _t(const {
+        'tr': 'Halis\'e hoş geldiniz', 'en': 'Welcome to Halis', 'de': 'Willkommen bei Halis',
+        'fr': 'Bienvenue sur Halis', 'ar': 'مرحبًا بكم في Halis', 'id': 'Selamat datang di Halis',
+      });
+
+  String get onboardingBody => _t(const {
+        'tr': 'Halis, ürün içeriklerini helal hassasiyetiyle analiz eden bir bilgilendirme aracıdır.\n\n'
+            '• Sonuçlar dini hüküm (fetva) değildir; içerik verilerine dayalı değerlendirmedir.\n'
+            '• Veriler (Open Food Facts ve katkı maddesi tablomuz) güncel veya eksiksiz olmayabilir.\n'
+            '• Şüpheli durumlarda üreticiye veya bir helal sertifika kuruluşuna danışın.\n'
+            '• Beslenme tercihlerinizin sorumluluğu size aittir.\n\n'
+            'Hassasiyet profilinizi (Temkinli / Genişlik / Diyanet) ana ekrandan seçebilirsiniz.',
+        'en': 'Halis is an informational tool that analyzes product ingredients with halal sensitivity.\n\n'
+            '• Results are not religious rulings (fatwa); they are assessments based on ingredient data.\n'
+            '• Data (Open Food Facts and our additive table) may be incomplete or outdated.\n'
+            '• When in doubt, consult the producer or a halal certification body.\n'
+            '• You are responsible for your own dietary choices.\n\n'
+            'You can choose your sensitivity profile (Cautious / Lenient / Diyanet) on the home screen.',
+        'de': 'Halis ist ein Informationswerkzeug, das Produktzutaten mit Halal-Sensibilität analysiert.\n\n'
+            '• Ergebnisse sind keine religiösen Urteile (Fatwa), sondern datenbasierte Einschätzungen.\n'
+            '• Daten (Open Food Facts und unsere Zusatzstofftabelle) können unvollständig oder veraltet sein.\n'
+            '• Im Zweifel Hersteller oder Halal-Zertifizierungsstelle fragen.\n'
+            '• Für Ihre Ernährungsentscheidungen sind Sie selbst verantwortlich.\n\n'
+            'Ihr Empfindlichkeitsprofil wählen Sie auf dem Startbildschirm.',
+        'fr': 'Halis est un outil d\'information qui analyse les ingrédients avec une sensibilité halal.\n\n'
+            '• Les résultats ne sont pas des avis religieux (fatwa) ; ce sont des évaluations basées sur les données.\n'
+            '• Les données (Open Food Facts et notre table d\'additifs) peuvent être incomplètes ou obsolètes.\n'
+            '• En cas de doute, consultez le producteur ou un organisme de certification halal.\n'
+            '• Vous êtes responsable de vos choix alimentaires.\n\n'
+            'Choisissez votre profil de sensibilité sur l\'écran d\'accueil.',
+        'ar': 'Halis أداة معلوماتية تحلل مكونات المنتجات بحساسية الحلال.\n\n'
+            '• النتائج ليست فتاوى شرعية؛ بل تقييمات تستند إلى بيانات المكونات.\n'
+            '• قد تكون البيانات (Open Food Facts وجدول المضافات لدينا) ناقصة أو غير محدثة.\n'
+            '• عند الشك استشر المنتِج أو جهة اعتماد حلال.\n'
+            '• أنت المسؤول عن خياراتك الغذائية.\n\n'
+            'يمكنك اختيار ملف الحساسية من الشاشة الرئيسية.',
+        'id': 'Halis adalah alat informasi yang menganalisis komposisi produk dengan kepekaan halal.\n\n'
+            '• Hasil bukan fatwa; melainkan penilaian berdasarkan data komposisi.\n'
+            '• Data (Open Food Facts dan tabel aditif kami) mungkin tidak lengkap atau tidak mutakhir.\n'
+            '• Jika ragu, hubungi produsen atau lembaga sertifikasi halal.\n'
+            '• Anda bertanggung jawab atas pilihan makanan Anda.\n\n'
+            'Pilih profil sensitivitas Anda di layar utama.',
+      });
+
+  String get onboardingAccept => _t(const {
+        'tr': 'Anladım, kabul ediyorum', 'en': 'I understand and accept',
+        'de': 'Verstanden, ich akzeptiere', 'fr': 'J\'ai compris et j\'accepte',
+        'ar': 'فهمت وأوافق', 'id': 'Saya mengerti dan menerima',
+      });
+}

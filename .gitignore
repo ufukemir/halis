@@ -1,0 +1,26 @@
+# Genel
+.DS_Store
+*.log
+.env
+.env.*
+*.key
+*.pem
+
+# Flutter/Dart (app/)
+app/.dart_tool/
+app/.flutter-plugins-dependencies
+app/build/
+app/.idea/
+app/*.iml
+app/android/app/debug
+app/android/app/profile
+app/android/app/release
+app/ios/Pods/
+app/ios/Flutter/.last_build_id
+
+# Python (backend/)
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/.venv/
+backend/venv/
