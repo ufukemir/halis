@@ -66,10 +66,41 @@ ANTHROPIC_API_KEY=sk-... uvicorn app.main:app --reload
 - [x] OFF katkı akışı (MVP md.7): ürün bulunamadığında etiket fotoğrafı, kullanıcı
       onayıyla (ODbL uyarılı diyalog) Open Food Facts'e yüklenir. OFF hesabı
       `--dart-define=OFF_USER_ID/OFF_PASSWORD` ile; tanımsızsa akış gizli.
-- [x] Birim testleri: kural motoru + kota + normalizasyon + katkı (41/41 ✅),
-      `flutter analyze` temiz; backend 10 pytest ✅
-- [ ] halis.app alan adı (Ufuk alıyor) + Türk Patent/EUIPO taraması
-- [ ] RevenueCat panelinde ürün/teklif tanımı + mağaza hesapları (Ufuk) +
-      webhook URL'si ve HALIS_WEBHOOK_TOKEN panel tanımı
-- [ ] OFF'ta uygulama hesabı açılması (katkı akışının kimliği, Ufuk) ve yayın öncesi
-      User-Agent'taki "dev build" ibaresinin güncellenmesi (off_api.dart + off_contribution.dart)
+- [x] Yanlış yeşil koruması: istisna maskeleme düzeltmesi (ikinci kaynaksız
+      madde artık maskelenmez), Almanca bileşik kelimeler (Schweineschmalz),
+      304 kodluk tablo denetimi, düşmanca test paketi (haram etiketler
+      6 dil × 3 profilde asla yeşil yanmaz)
+- [x] Paylaş (halis.app bağlantılı) + "Yanlış mı? Bildir" (mailto, hüküm
+      bağlamlı) + ana ekranda veri sürümü göstergesi
+- [x] Temiz alternatif önerisi (premium; her aday kural motorundan geçer),
+      isimle arama (ücretsiz), süpermarket modu (art arda tarama + sepet özeti)
+- [x] Mağaza paketi: metinler + ASO + gizlilik beyanları (docs/04),
+      6 ekran görüntüsü 6,9" (docs/store-assets/), OFF User-Agent yayın değeri
+- [x] Play: imzalı AAB doğrulandı (74 MB); split-ABI APK'lar. AppGallery:
+      GMS bağımlılığı yok (gömülü ML Kit), v1 ücretsiz çıkar — docs/04
+- [x] Backend deploy reçetesi (backend/Dockerfile + DEPLOY.md; deploy kararı bekliyor)
+- [x] Birim testleri: 58 app + 10 backend ✅, `flutter analyze` temiz
+- [x] CONTRIBUTING.md (kurulum, ilkeler, veri kuralları, iş bölüşümü)
+
+### Kalan işler
+
+Hesap/karar (kod dışı — Ufuk):
+- [ ] halis.app alan adı + Türk Patent/EUIPO taraması (destek@halis.app ve
+      gizlilik sayfası buna bağlı)
+- [ ] Apple Developer (99 $/yıl) + Google Play Console (25 $) + AppGallery
+      Connect (ücretsiz) hesapları
+- [ ] RevenueCat paneli: ürün/teklif + webhook URL'si + HALIS_WEBHOOK_TOKEN
+- [ ] OFF'ta uygulama hesabı (katkı akışının kimliği)
+- [ ] 20/B vergi kaydı
+
+Cihaz gerektiren:
+- [ ] Gerçek cihazda uçtan uca test (kamera/barkod/OCR hiç gerçek cihaz görmedi)
+- [ ] "Tarama anı" mağaza görseli (simülatörde kamera yok)
+- [ ] Huawei cihazda GMS'siz çalışma doğrulaması (AppGallery yayını öncesi şart)
+
+Kod (küçük / sonraya):
+- [ ] Backend deploy (istenirse; reçete hazır)
+- [ ] Mağaza açıklamalarının DE/FR/AR/ID çevirileri (lansman sonrası ilk hafta)
+- [ ] Ekran görüntülerine pazarlama bandı (6 dil)
+- [ ] v2+: sertifika sorgusu (GİMDES/TSE), restoran modu, geçmiş senkronu,
+      Huawei IAP (talep görürse), kozmetik (v3)
