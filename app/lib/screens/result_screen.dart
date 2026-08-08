@@ -48,7 +48,15 @@ class _ResultScreenState extends State<ResultScreen> {
 
   void _openLabelFlow() {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => LabelScreen(profile: widget.profile, kb: widget.kb)),
+      MaterialPageRoute(
+        builder: (_) => LabelScreen(
+          profile: widget.profile,
+          kb: widget.kb,
+          // Barkod bilinerek gelindi → katkı akışı (fotoğrafı OFF'a yükleme)
+          // önerilebilir; OFF Türkiye kapsam açığını kullanıcı katkısı kapatır.
+          barcode: widget.barcode,
+        ),
+      ),
     );
   }
 

@@ -7,6 +7,7 @@ import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
 import '../services/normalize_api.dart';
 import '../services/ocr_service.dart';
+import '../services/off_contribution.dart';
 import '../services/premium_service.dart';
 import '../services/rule_engine.dart';
 import '../widgets/verdict_view.dart';
@@ -18,7 +19,11 @@ class LabelScreen extends StatefulWidget {
   final Profile profile;
   final KnowledgeBase kb;
 
-  const LabelScreen({super.key, required this.profile, required this.kb});
+  /// Ürün OFF'ta bulunamayıp bu akışa düşüldüyse taranan barkod; katkı
+  /// akışı (fotoğrafı OFF'a yükleme) yalnız barkod bilinince önerilir.
+  final String? barcode;
+
+  const LabelScreen({super.key, required this.profile, required this.kb, this.barcode});
 
   @override
   State<LabelScreen> createState() => _LabelScreenState();
@@ -32,6 +37,9 @@ class _LabelScreenState extends State<LabelScreen> {
   bool _aiNormalized = false;
   String? _error;
   int? _remaining; // null → premium veya henüz yüklenmedi (gösterilmez)
+  String? _photoPath; // son çekilen/seçilen etiket fotoğrafı (OFF katkısı için)
+  bool _contributed = false;
+  bool _uploading = false;
 
   @override
   void initState() {
@@ -60,6 +68,7 @@ class _LabelScreenState extends State<LabelScreen> {
       final lang = S.of(context).lang;
       final image = await _picker.pickImage(source: source, maxWidth: 2048);
       if (image == null) return;
+      _photoPath = image.path;
       final text = await OcrService().extractText(image.path);
       if (!mounted) return;
       if (text.trim().isEmpty) {
@@ -111,6 +120,44 @@ class _LabelScreenState extends State<LabelScreen> {
     await _loadQuota();
     final title = text.length > 40 ? '${text.substring(0, 40)}…' : text;
     await HistoryService().add(HistoryEntry(title: title, verdict: result.verdict, date: DateTime.now()));
+  }
+
+  /// OFF katkısı önerilebilir mi: barkod bilinir + fotoğraf çekilmiş +
+  /// OFF hesabı yapılandırılmış + henüz gönderilmemiş.
+  bool get _canOfferContribution =>
+      widget.barcode != null &&
+      _photoPath != null &&
+      OffContribution.isConfigured &&
+      !_contributed;
+
+  Future<void> _offerContribution() async {
+    final s = S.of(context);
+    final consented = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(s.offContribTitle),
+        content: Text(s.offContribConsent),
+        actions: [
+          TextButton(onPressed: () => Navigator.of(ctx).pop(false), child: Text(s.cancel)),
+          FilledButton(onPressed: () => Navigator.of(ctx).pop(true), child: Text(s.offContribSend)),
+        ],
+      ),
+    );
+    if (consented != true || !mounted) return;
+    setState(() => _uploading = true);
+    final ok = await OffContribution().uploadIngredientsPhoto(
+      barcode: widget.barcode!,
+      imagePath: _photoPath!,
+      lang: s.lang,
+    );
+    if (!mounted) return;
+    setState(() {
+      _uploading = false;
+      _contributed = ok;
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(ok ? s.offContribThanks : s.offContribFailed)),
+    );
   }
 
   void _showQuotaDialog() {
@@ -210,6 +257,34 @@ class _LabelScreenState extends State<LabelScreen> {
           if (_result != null) ...[
             const SizedBox(height: 16),
             VerdictView(result: _result!, profile: widget.profile),
+          ],
+          if (_canOfferContribution) ...[
+            const SizedBox(height: 16),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(s.offContribTitle, style: Theme.of(context).textTheme.titleSmall),
+                    const SizedBox(height: 8),
+                    Text(s.offContribHint, style: Theme.of(context).textTheme.bodySmall),
+                    const SizedBox(height: 12),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: OutlinedButton.icon(
+                        onPressed: _uploading ? null : _offerContribution,
+                        icon: _uploading
+                            ? const SizedBox(
+                                width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2))
+                            : const Icon(Icons.cloud_upload_outlined),
+                        label: Text(s.offContribSend),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ],
       ),

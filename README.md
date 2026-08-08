@@ -42,7 +42,7 @@ ANTHROPIC_API_KEY=sk-... uvicorn app.main:app --reload
 3. **ODbL ayrımı.** Open Food Facts verisi canlı API'dan sorgulanır, kendi hüküm veritabanımızla kalıcı olarak birleştirilmez (share-alike tetiklenmesin). Uygulamada OFF'a atıf gösterilir.
 4. **Dini hüküm değil, bilgilendirme.** Her sonuç kartında disclaimer + gerekçe + kaynak. `data/` dosyaları elle derlenmiştir; bağımsız dini danışman incelemesi yayın önkoşulu değildir (Ufuk, 2026-08-07), istenirse sonradan güven/pazarlama unsuru olarak yaptırılabilir.
 
-## Durum (2026-08-07)
+## Durum (2026-08-08)
 
 - [x] Pazar + rakip + teknik araştırma (docs/)
 - [x] Flutter iskeleti: barkod tarama (mobile_scanner) + OFF sorgusu + kural motoru + sonuç ekranı
@@ -56,8 +56,20 @@ ANTHROPIC_API_KEY=sk-... uvicorn app.main:app --reload
       ayda 10 (cihazda sayılır), premium sınırsız. Anahtarlar `--dart-define=REVENUECAT_API_KEY=...`
       ile; anahtar yoksa mağaza kapalı, uygulama ücretsiz katman kurallarıyla çalışır.
       Paywall ekranı fiyatı mağaza teklifinden okur. (Android minSdk 24'e sabitlendi.)
-- [x] Birim testleri: kural motoru + kota + normalizasyon (29/29 ✅), `flutter analyze` temiz
+- [x] E-kod isim eşleşmesi: 55 sorunlu koda çok dilli alias (TR/EN/DE/FR/AR/ID) —
+      etiket kodu yazmasa da ("polysorbate 80", "stéarate de magnésium") yakalanır;
+      istisna kalıpları ("bitkisel gliserin") eşleşmeyi iptal eder. Tablo 0.3.0.
+- [x] Backend kota doğrulaması: `X-Device-Id` başına aylık sınır (SQLite), aşımda 402 →
+      istemci yerel analize düşer. `/v1/revenuecat-webhook` (HALIS_WEBHOOK_TOKEN ile
+      korunur) premium tablosunu besler; `/v1/quota` durum ucu. Cihaz kimliği =
+      RevenueCat appUserID (mağazasız modda kalıcı yerel kimlik). 10 pytest ✅
+- [x] OFF katkı akışı (MVP md.7): ürün bulunamadığında etiket fotoğrafı, kullanıcı
+      onayıyla (ODbL uyarılı diyalog) Open Food Facts'e yüklenir. OFF hesabı
+      `--dart-define=OFF_USER_ID/OFF_PASSWORD` ile; tanımsızsa akış gizli.
+- [x] Birim testleri: kural motoru + kota + normalizasyon + katkı (41/41 ✅),
+      `flutter analyze` temiz; backend 10 pytest ✅
 - [ ] halis.app alan adı (Ufuk alıyor) + Türk Patent/EUIPO taraması
-- [ ] Backend kota doğrulaması (RevenueCat webhook + cihaz kimliği) — şimdilik kota istemci tarafında
-- [ ] RevenueCat panelinde ürün/teklif tanımı + mağaza hesapları (Ufuk)
-- [ ] Fransızca sözlük (OFF'ta Avrupa ürünleri ağırlıkla FR etiketli)
+- [ ] RevenueCat panelinde ürün/teklif tanımı + mağaza hesapları (Ufuk) +
+      webhook URL'si ve HALIS_WEBHOOK_TOKEN panel tanımı
+- [ ] OFF'ta uygulama hesabı açılması (katkı akışının kimliği, Ufuk) ve yayın öncesi
+      User-Agent'taki "dev build" ibaresinin güncellenmesi (off_api.dart + off_contribution.dart)

@@ -219,6 +219,61 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get cancel => _t(const {
+        'tr': 'Vazgeç', 'en': 'Cancel', 'de': 'Abbrechen', 'fr': 'Annuler',
+        'ar': 'إلغاء', 'id': 'Batal',
+      });
+
+  String get offContribTitle => _t(const {
+        'tr': 'Veritabanına katkıda bulun',
+        'en': 'Contribute to the database',
+        'de': 'Zur Datenbank beitragen',
+        'fr': 'Contribuer à la base de données',
+        'ar': 'ساهم في قاعدة البيانات',
+        'id': 'Berkontribusi ke basis data',
+      });
+
+  String get offContribHint => _t(const {
+        'tr': 'Bu ürün veritabanında yok. Etiket fotoğrafını paylaşırsanız bir sonraki kullanıcı ürünü tek taramayla bulur.',
+        'en': "This product isn't in the database yet. Share the label photo so the next user finds it with a single scan.",
+        'de': 'Dieses Produkt ist noch nicht in der Datenbank. Teilen Sie das Etikett-Foto, damit der nächste Nutzer es mit einem Scan findet.',
+        'fr': "Ce produit n'est pas encore dans la base. Partagez la photo de l'étiquette pour que le prochain utilisateur le trouve en un scan.",
+        'ar': 'هذا المنتج غير موجود في قاعدة البيانات بعد. شارك صورة الملصق ليجده المستخدم التالي بمسحة واحدة.',
+        'id': 'Produk ini belum ada di basis data. Bagikan foto label agar pengguna berikutnya menemukannya dengan sekali pindai.',
+      });
+
+  String get offContribConsent => _t(const {
+        'tr': 'Etiket fotoğrafı, açık gıda veritabanı Open Food Facts\'e herkese açık olarak (ODbL lisansıyla) yüklenecek. Fotoğrafta kişisel bilgi görünmediğinden emin olun.',
+        'en': 'The label photo will be uploaded publicly to Open Food Facts, the open food database (ODbL license). Make sure no personal information is visible in the photo.',
+        'de': 'Das Etikett-Foto wird öffentlich in die offene Lebensmitteldatenbank Open Food Facts hochgeladen (ODbL-Lizenz). Stellen Sie sicher, dass keine persönlichen Daten sichtbar sind.',
+        'fr': 'La photo de l\'étiquette sera publiée sur Open Food Facts, la base alimentaire ouverte (licence ODbL). Vérifiez qu\'aucune information personnelle n\'est visible.',
+        'ar': 'سيتم رفع صورة الملصق علنًا إلى قاعدة الأغذية المفتوحة Open Food Facts (رخصة ODbL). تأكد من عدم ظهور أي معلومات شخصية في الصورة.',
+        'id': 'Foto label akan diunggah secara publik ke Open Food Facts, basis data pangan terbuka (lisensi ODbL). Pastikan tidak ada informasi pribadi yang terlihat.',
+      });
+
+  String get offContribSend => _t(const {
+        'tr': 'Fotoğrafı Gönder', 'en': 'Upload Photo', 'de': 'Foto hochladen',
+        'fr': 'Envoyer la photo', 'ar': 'رفع الصورة', 'id': 'Unggah Foto',
+      });
+
+  String get offContribThanks => _t(const {
+        'tr': 'Teşekkürler! Fotoğraf Open Food Facts\'e yüklendi.',
+        'en': 'Thank you! The photo was uploaded to Open Food Facts.',
+        'de': 'Danke! Das Foto wurde zu Open Food Facts hochgeladen.',
+        'fr': 'Merci ! La photo a été envoyée à Open Food Facts.',
+        'ar': 'شكرًا لك! تم رفع الصورة إلى Open Food Facts.',
+        'id': 'Terima kasih! Foto telah diunggah ke Open Food Facts.',
+      });
+
+  String get offContribFailed => _t(const {
+        'tr': 'Yükleme başarısız oldu. Daha sonra tekrar deneyebilirsiniz.',
+        'en': 'Upload failed. You can try again later.',
+        'de': 'Hochladen fehlgeschlagen. Versuchen Sie es später erneut.',
+        'fr': 'Échec de l\'envoi. Vous pourrez réessayer plus tard.',
+        'ar': 'فشل الرفع. يمكنك المحاولة لاحقًا.',
+        'id': 'Unggahan gagal. Anda dapat mencoba lagi nanti.',
+      });
+
   String get quotaBodyUpgrade => _t(const {
         'tr': 'Barkod tarama her zaman sınırsız ve ücretsizdir. Halis Premium ile etiket analizi de sınırsız olur.',
         'en': 'Barcode scanning is always unlimited and free. With Halis Premium, label analysis becomes unlimited too.',
