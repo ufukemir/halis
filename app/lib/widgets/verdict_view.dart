@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../l10n/strings.dart';
 import '../models/models.dart';
+import '../services/share_service.dart';
 
 (Color, IconData) verdictStyle(Verdict v) => switch (v) {
       Verdict.halal => (const Color(0xFF1B7A43), Icons.check_circle),
@@ -16,7 +19,46 @@ class VerdictView extends StatelessWidget {
   final AnalysisResult result;
   final Profile profile;
 
-  const VerdictView({super.key, required this.result, required this.profile});
+  /// Paylaşım/bildirim bağlamı: ürün adı ya da etiket metni özeti.
+  /// null → düğme satırı gizlenir (ör. bağlamsız önizlemeler).
+  final String? contextTitle;
+
+  /// Bildirim e-postasına giden veri sürümü (E-kod tablosu).
+  final String dataVersion;
+
+  const VerdictView({
+    super.key,
+    required this.result,
+    required this.profile,
+    this.contextTitle,
+    this.dataVersion = '?',
+  });
+
+  String _verdictLine(S s) =>
+      '${s.verdictTitle(result.verdict)} · ${s.profileLabel}: ${s.profileName(profile)}';
+
+  void _share(S s) {
+    final text = ShareService.buildShareText(
+      title: contextTitle!,
+      verdictLine: _verdictLine(s),
+      findingLines: [
+        for (final f in result.findings.where((f) => !f.isNote))
+          '${f.label}: ${s.useTurkishReasons ? f.reasonTr : f.reasonEn}',
+      ],
+      footer: s.sharedWith,
+    );
+    SharePlus.instance.share(ShareParams(text: text));
+  }
+
+  void _report(S s) {
+    launchUrl(ShareService.feedbackMailUri(
+      subject: s.reportSubject,
+      title: contextTitle!,
+      verdictLine: _verdictLine(s),
+      dataVersion: dataVersion,
+      lang: s.lang,
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +111,25 @@ class VerdictView extends StatelessWidget {
                 subtitle: Text(s.useTurkishReasons ? f.reasonTr : f.reasonEn),
               ),
             ),
+        ],
+        if (contextTitle != null) ...[
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton.icon(
+                onPressed: () => _report(s),
+                icon: const Icon(Icons.flag_outlined, size: 18),
+                label: Text(s.reportWrong),
+              ),
+              const SizedBox(width: 4),
+              FilledButton.tonalIcon(
+                onPressed: () => _share(s),
+                icon: const Icon(Icons.share_outlined, size: 18),
+                label: Text(s.share),
+              ),
+            ],
+          ),
         ],
         const SizedBox(height: 16),
         Text(s.disclaimer, style: Theme.of(context).textTheme.bodySmall),

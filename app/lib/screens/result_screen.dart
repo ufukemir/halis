@@ -100,7 +100,15 @@ class _ResultScreenState extends State<ResultScreen> {
                   product.barcode,
                 ].join(' · ')),
               ),
-              VerdictView(result: result!, profile: widget.profile),
+              VerdictView(
+                result: result!,
+                profile: widget.profile,
+                contextTitle: [
+                  if (product.brands != null) product.brands!,
+                  product.name ?? product.barcode,
+                ].join(' '),
+                dataVersion: widget.kb.version,
+              ),
               if (product.ingredientsText != null)
                 ExpansionTile(
                   title: Text(s.ingredientsLabel),

@@ -219,6 +219,43 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get share => _t(const {
+        'tr': 'Paylaş', 'en': 'Share', 'de': 'Teilen', 'fr': 'Partager',
+        'ar': 'مشاركة', 'id': 'Bagikan',
+      });
+
+  String get reportWrong => _t(const {
+        'tr': 'Yanlış mı? Bildir',
+        'en': 'Wrong? Report it',
+        'de': 'Falsch? Melden',
+        'fr': 'Erreur ? Signaler',
+        'ar': 'خطأ؟ أبلغ عنه',
+        'id': 'Salah? Laporkan',
+      });
+
+  String get reportSubject => _t(const {
+        'tr': 'Halis geri bildirim: hüküm itirazı',
+        'en': 'Halis feedback: verdict dispute',
+        'de': 'Halis Feedback: Einspruch zum Ergebnis',
+        'fr': 'Halis retour : contestation du résultat',
+        'ar': 'ملاحظات Halis: اعتراض على النتيجة',
+        'id': 'Masukan Halis: sanggahan hasil',
+      });
+
+  String get sharedWith => _t(const {
+        'tr': 'Halis ile tarandı —',
+        'en': 'Scanned with Halis —',
+        'de': 'Gescannt mit Halis —',
+        'fr': 'Scanné avec Halis —',
+        'ar': 'تم المسح بواسطة Halis —',
+        'id': 'Dipindai dengan Halis —',
+      });
+
+  String get dataVersionLabel => _t(const {
+        'tr': 'Veri', 'en': 'Data', 'de': 'Daten', 'fr': 'Données',
+        'ar': 'البيانات', 'id': 'Data',
+      });
+
   String get cancel => _t(const {
         'tr': 'Vazgeç', 'en': 'Cancel', 'de': 'Abbrechen', 'fr': 'Annuler',
         'ar': 'إلغاء', 'id': 'Batal',

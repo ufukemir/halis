@@ -256,7 +256,14 @@ class _LabelScreenState extends State<LabelScreen> {
             ),
           if (_result != null) ...[
             const SizedBox(height: 16),
-            VerdictView(result: _result!, profile: widget.profile),
+            VerdictView(
+              result: _result!,
+              profile: widget.profile,
+              contextTitle: _controller.text.length > 60
+                  ? '${_controller.text.substring(0, 60)}…'
+                  : _controller.text,
+              dataVersion: widget.kb.version,
+            ),
           ],
           if (_canOfferContribution) ...[
             const SizedBox(height: 16),

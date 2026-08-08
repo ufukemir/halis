@@ -224,6 +224,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: Theme.of(context).textTheme.bodySmall,
                   textAlign: TextAlign.center,
                 ),
+                if (_kb != null) ...[
+                  const SizedBox(height: 8),
+                  // Şeffaflık: hangi veri sürümüyle hüküm verildiği görünür olsun.
+                  Text(
+                    '${s.dataVersionLabel}: v${_kb!.version} · ${_kb!.ecodes.length} E-kod',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ],
             ),
     );
