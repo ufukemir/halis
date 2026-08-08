@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../models/models.dart';
+import 'off_config.dart';
 
 /// Open Food Facts istemcisi.
 ///
@@ -22,7 +23,7 @@ class OffApi {
   Future<OffProduct?> fetchProduct(String barcode) async {
     final uri = Uri.https(_host, '/api/v2/product/$barcode.json', {'fields': _fields});
     final res = await _client.get(uri, headers: {
-      'User-Agent': 'Halis/0.1 (halal scanner; dev build)',
+      'User-Agent': OffConfig.userAgent,
     });
     if (res.statusCode == 404) return null;
     if (res.statusCode != 200) {

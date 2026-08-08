@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import 'off_config.dart';
+
 /// Open Food Facts katkı istemcisi (MVP md.7).
 ///
 /// "Ürün bulunamadı" akışında kullanıcının çektiği etiket fotoğrafını OFF'a
@@ -36,7 +38,7 @@ class OffContribution {
         'POST',
         Uri.https(_host, '/cgi/product_image_upload.pl'),
       )
-        ..headers['User-Agent'] = 'Halis/0.1 (halal scanner; dev build)'
+        ..headers['User-Agent'] = OffConfig.userAgent
         ..fields['code'] = barcode
         ..fields['imagefield'] = field
         ..fields['user_id'] = _userId

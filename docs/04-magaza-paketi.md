@@ -28,7 +28,7 @@
 > ✓ **Etiket fotoğrafı analizi** — ürün veritabanında yoksa etiketi çek, cihaz üzerinde okunsun
 > ✓ **Gerekçeli sonuç** — sadece renk değil: hangi madde, neden şüpheli, hangi kaynağa göre
 > ✓ **Hassasiyet profili** — Temkinli, Genişlik veya Diyanet yaklaşımına göre değerlendirme
-> ✓ **57+ katkı maddesi (E-kodu) veritabanı** — mezhep farkları ve gerekçelerle
+> ✓ **304 katkı maddesi (E-kodu) veritabanı** — mezhep farkları ve gerekçelerle; katkıyı kodla değil adıyla yazan etiketleri de tanır
 > ✓ **6 dil, 6 etiket dili** — Türkçe, İngilizce, Almanca, Fransızca, Arapça, Endonezyaca etiketleri tanır
 > ✓ **Reklamsız** — asla reklam göstermeyiz, asla marka parası almayız
 >
@@ -48,7 +48,7 @@
 > ✓ **Label photo analysis** — product not in the database? Snap the label; it's read on your device
 > ✓ **Explained results** — not just a color: which ingredient, why doubtful, per which source
 > ✓ **Sensitivity profiles** — Cautious, Lenient, or Diyanet methodology
-> ✓ **57+ additive (E-number) database** — with school-of-thought differences and reasoning
+> ✓ **304 additive (E-number) database** — with school-of-thought differences and reasoning; recognizes additives written by name, not just by code
 > ✓ **6 languages** — recognizes labels in Turkish, English, German, French, Arabic, Indonesian
 > ✓ **Ad-free** — we never show ads and never take money from brands
 >
@@ -80,14 +80,29 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 
 ## Gizlilik (Data Safety / App Privacy)
 
-- Hesap yok, kişisel veri toplanmıyor, tarama geçmişi yalnız cihazda.
-- Ağ istekleri: Open Food Facts (barkod sorgusu; barkod dışında veri gitmez), Halis backend (yalnız etiket METNİ — fotoğraf cihazdan çıkmaz; v1'de backend kullanılmıyorsa bu satır da kalkar).
-- Üçüncü taraf reklam/izleme SDK'sı YOK.
-- Gerekli beyanlar: iOS App Privacy "Data Not Collected"; Play Data Safety "No data collected/shared".
+- Hesap yok, tarama geçmişi yalnız cihazda.
+- Ağ istekleri:
+  - Open Food Facts: barkod sorgusu (barkod dışında veri gitmez).
+  - Halis backend (yapılandırıldıysa): etiket METNİ + kota için anonim cihaz
+    kimliği (`X-Device-Id`). Fotoğraf backend'imize hiçbir zaman gitmez.
+  - OFF katkı akışı (yalnız kullanıcı isterse): ürün bulunamadığında etiket
+    fotoğrafı, ODbL uyarılı açık onay diyaloğundan sonra Open Food Facts'e
+    herkese açık yüklenir. Onaysız yükleme yoktur.
+- Üçüncü taraf reklam/izleme SDK'sı YOK. Abonelik için RevenueCat SDK'sı
+  (satın alma doğrulaması; anonim uygulama kullanıcı kimliği).
+- Gerekli beyanlar (backend + RevenueCat aktifken "Data Not Collected" ARTIK
+  DOĞRU DEĞİL — yanlış beyan ret/kaldırma sebebi):
+  - iOS App Privacy: "Identifiers → Device ID" (App Functionality, not linked
+    to identity, no tracking) + "Purchases" (RevenueCat).
+  - Play Data Safety: "Device or other IDs" (App functionality) + "Purchase
+    history" (RevenueCat); paylaşım yok, tracking yok.
+  - v1 backend'siz ve mağazasız çıkarsa bu beyanlar sadeleşir → "No data
+    collected" yeniden geçerli olur (OFF katkısı kullanıcı eylemidir,
+    yine de fotoğraf yüklemesini politika metninde belirt).
 - Gizlilik politikası sayfası: halis.app/privacy (alan adı alınınca; taslak aşağıda).
 
 ### Gizlilik politikası taslağı (halis.app/privacy)
-> Halis kişisel veri toplamaz. Hesap açılmaz. Tarama geçmişiniz yalnızca cihazınızda saklanır ve bize gönderilmez. Barkod taramalarında yalnızca barkod numarası Open Food Facts servisine iletilir. Etiket fotoğrafları cihazınızda işlenir; fotoğraflarınız sunucularımıza yüklenmez. Sorular: destek@halis.app
+> Halis'te hesap açılmaz, kimliğinizle ilişkilendirilebilir kişisel veri toplanmaz. Tarama geçmişiniz yalnızca cihazınızda saklanır ve bize gönderilmez. Barkod taramalarında yalnızca barkod numarası Open Food Facts servisine iletilir. Etiket fotoğrafları cihazınızda işlenir ve sunucularımıza yüklenmez; yapay zekâ ile metin düzeltme açıksa yalnızca etiketin METNİ, aylık kota takibi için rastgele üretilmiş anonim bir cihaz kimliğiyle birlikte sunucumuza iletilir. Bulunamayan bir ürünün etiket fotoğrafını, dilerseniz ve ancak açık onayınızla, açık gıda veritabanı Open Food Facts'e (ODbL lisansı, herkese açık) katkı olarak gönderebilirsiniz. Abonelik satın alımları RevenueCat altyapısıyla, anonim bir kimlik üzerinden doğrulanır. Reklam ve izleme SDK'sı kullanmayız, verilerinizi kimseyle paylaşmayız ve satmayız. Sorular: destek@halis.app
 
 ## Yükleme öncesi kontrol listesi
 
@@ -95,8 +110,12 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 - [ ] Google Play Console hesabı (25 $ tek sefer) — **Ufuk**
 - [ ] halis.app alan adı + privacy sayfası — **Ufuk**
 - [ ] Bundle ID kararı (`com.halis.app` önerilir; iOS projesinde güncelle)
-- [ ] `data/` dosyalarının dini danışman onayı (yayın engeli!)
 - [ ] Ekran görüntüleri (plan yukarıda; simülatörden alınabilir)
+- [ ] OFF User-Agent "dev build" ibaresini güncelle (`app/lib/services/off_config.dart` — tek satır)
+- [ ] RevenueCat panel: ürün/teklif + webhook URL'si (`/v1/revenuecat-webhook`) + `HALIS_WEBHOOK_TOKEN`
+- [ ] Backend deploy kararı: v1'de backend'li mi backend'siz mi? (backend/DEPLOY.md)
+- Not: `data/` dosyalarının dini danışman incelemesi yayın önkoşulu DEĞİLDİR
+  (Ufuk, 2026-08-07); istenirse sonradan güven/pazarlama unsuru olarak yaptırılır.
 - [ ] AAB: `flutter build appbundle --release` (imzalama ~/halis-keys ile otomatik)
 - [ ] iOS: `flutter build ipa` + Transporter/Xcode ile yükleme
 - [ ] ⚠️ `~/halis-keys/` YEDEKLE (kaybolursa Play'de güncelleme yapılamaz!)
