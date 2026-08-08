@@ -104,6 +104,23 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 ### Gizlilik politikası taslağı (halis.app/privacy)
 > Halis'te hesap açılmaz, kimliğinizle ilişkilendirilebilir kişisel veri toplanmaz. Tarama geçmişiniz yalnızca cihazınızda saklanır ve bize gönderilmez. Barkod taramalarında yalnızca barkod numarası Open Food Facts servisine iletilir. Etiket fotoğrafları cihazınızda işlenir ve sunucularımıza yüklenmez; yapay zekâ ile metin düzeltme açıksa yalnızca etiketin METNİ, aylık kota takibi için rastgele üretilmiş anonim bir cihaz kimliğiyle birlikte sunucumuza iletilir. Bulunamayan bir ürünün etiket fotoğrafını, dilerseniz ve ancak açık onayınızla, açık gıda veritabanı Open Food Facts'e (ODbL lisansı, herkese açık) katkı olarak gönderebilirsiniz. Abonelik satın alımları RevenueCat altyapısıyla, anonim bir kimlik üzerinden doğrulanır. Reklam ve izleme SDK'sı kullanmayız, verilerinizi kimseyle paylaşmayız ve satmayız. Sorular: destek@halis.app
 
+## Huawei AppGallery (3. mağaza)
+
+Durum (2026-08-08): teknik engel görünmüyor, hesap + cihaz doğrulaması bekliyor.
+
+- **GMS bağımlılığı YOK (teoride):** ML Kit OCR ve mobile_scanner barkod,
+  *gömülü model* sürümlerini kullanır (Play Services gerektirmez); Firebase,
+  harita, push yok. → APK, HMS'li (GMS'siz) Huawei cihazda çalışmalı.
+  ⚠️ Gerçek Huawei cihazında DOĞRULANMADI — yayın öncesi şart.
+- **Premium satılamaz:** RevenueCat yalnız Play Billing/App Store bilir.
+  Uygulama mağazasız modda zarifçe ücretsiz katmana düşer → AppGallery v1
+  **ücretsiz sürüm** olarak çıkar; Huawei IAP entegrasyonu talep görürse eklenir.
+- **Paket:** `flutter build apk --release --split-per-abi` → arm64-v8a APK
+  (39 MB) yüklenir (AppGallery AAB de kabul eder).
+- **Gerekenler (Ufuk):** AppGallery Connect geliştirici hesabı (bireysel
+  ücretsiz, kimlik doğrulamalı), mağaza görselleri (mevcutlar yeniden
+  kullanılır), gizlilik politikası URL'si (halis.app/privacy).
+
 ## Yükleme öncesi kontrol listesi
 
 - [ ] Apple Developer hesabı (99 $/yıl) — **Ufuk**
@@ -116,6 +133,8 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 - [ ] Backend deploy kararı: v1'de backend'li mi backend'siz mi? (backend/DEPLOY.md)
 - Not: `data/` dosyalarının dini danışman incelemesi yayın önkoşulu DEĞİLDİR
   (Ufuk, 2026-08-07); istenirse sonradan güven/pazarlama unsuru olarak yaptırılır.
-- [ ] AAB: `flutter build appbundle --release` (imzalama ~/halis-keys ile otomatik)
+- [x] AAB: `flutter build appbundle --release` — 2026-08-08'de doğrulandı,
+      74 MB imzalı paket üretildi (imzalama ~/halis-keys ile otomatik)
+- [ ] AppGallery Connect hesabı + Huawei cihaz testi (yukarıdaki bölüm) — **Ufuk**
 - [ ] iOS: `flutter build ipa` + Transporter/Xcode ile yükleme
 - [ ] ⚠️ `~/halis-keys/` YEDEKLE (kaybolursa Play'de güncelleme yapılamaz!)
