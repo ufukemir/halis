@@ -9,6 +9,7 @@ import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
 import '../services/off_api.dart';
 import '../services/premium_service.dart';
+import '../services/review_prompter.dart';
 import '../services/rule_engine.dart';
 import '../widgets/verdict_view.dart';
 import 'label_screen.dart';
@@ -70,6 +71,7 @@ class _ResultScreenState extends State<ResultScreen> {
       ingredientsText: product.ingredientsText,
       additiveTags: product.additiveTags,
     ));
+    await ReviewPrompter.onSuccessfulScan();
     return (product, result);
   }
 

@@ -10,7 +10,9 @@ Görev bölüşümü (docs/03-mvp-plani.md):
 """
 
 import hmac
+import json
 import os
+from pathlib import Path
 from typing import List, Optional
 
 import anthropic
@@ -126,6 +128,23 @@ async def revenuecat_webhook(
     event = body.get("event") or {}
     applied = quota.apply_webhook_event(event)
     return {"applied": applied}
+
+
+# OTA veri dağıtımı: E-kod tablosu + içindekiler sözlüğü. Kaynak dosyalar
+# repo kökündeki data/ ile İKİZDİR (bkz. CONTRIBUTING veri kuralları);
+# deploy paketi backend/data/ kopyasını taşır.
+_DATA_DIR = Path(os.environ.get("HALIS_DATA_DIR", Path(__file__).parent.parent / "data"))
+
+
+@app.get("/v1/data")
+def data_bundle() -> dict:
+    """Uygulamanın açılışta çektiği güncel veri çifti (OTA güncelleme)."""
+    try:
+        e_codes = json.loads((_DATA_DIR / "e_codes_v0.json").read_text(encoding="utf-8"))
+        ingredients = json.loads((_DATA_DIR / "ingredients_v0.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        raise HTTPException(status_code=503, detail="Veri dosyaları okunamadı.")
+    return {"e_codes": e_codes, "ingredients": ingredients}
 
 
 @app.get("/v1/quota")

@@ -172,7 +172,8 @@ class _MarketModeScreenState extends State<MarketModeScreen> {
                   ListTile(
                     dense: true,
                     leading: Icon(verdictStyle(item.verdict).$2,
-                        color: verdictStyle(item.verdict).$1),
+                        color: verdictStyle(item.verdict).$1,
+                        semanticLabel: s.verdictTitle(item.verdict)),
                     title: Text(item.title, maxLines: 1, overflow: TextOverflow.ellipsis),
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => ResultScreen(

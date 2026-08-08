@@ -44,7 +44,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       children: [
         for (final p in items)
           ListTile(
-            leading: Icon(verdictStyle(p.verdict).$2, color: verdictStyle(p.verdict).$1),
+            leading: Icon(verdictStyle(p.verdict).$2,
+                color: verdictStyle(p.verdict).$1,
+                semanticLabel: s.verdictTitle(p.verdict)),
             title: Text(p.title, maxLines: 1, overflow: TextOverflow.ellipsis),
             subtitle: Text(p.barcode),
             onTap: () async {

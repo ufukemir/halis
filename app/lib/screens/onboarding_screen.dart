@@ -34,7 +34,8 @@ class OnboardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 24),
-              const Icon(Icons.verified_outlined, size: 72, color: Color(0xFF1B7A43)),
+              Icon(Icons.verified_outlined,
+                  size: 72, color: Theme.of(context).colorScheme.primary),
               const SizedBox(height: 16),
               Text(s.onboardingTitle,
                   textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineSmall),

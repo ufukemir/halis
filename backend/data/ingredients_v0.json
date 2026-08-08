@@ -1,0 +1,621 @@
+{
+  "version": "0.3.1",
+  "updated": "2026-08-08",
+  "status": "Elle derlenmiş veri; bağımsız dini danışman incelemesinden geçmedi. Uygulama her sonuçta 'dini hüküm değildir' uyarısı gösterir.",
+  "note": "Eşleşme küçük harfe çevrilerek ve kelime sınırlarında yapılır. 'exceptions' listesi eşleşmeyi iptal eden kalıplardır (ör. 'bitkisel jelatin'). Diller: TR/EN/DE/FR/AR/ID.",
+  "entries": [
+    {
+      "id": "pork",
+      "status": "haram",
+      "terms_tr": [
+        "domuz",
+        "domuz eti",
+        "domuz yağı"
+      ],
+      "terms_en": [
+        "pork",
+        "pig",
+        "swine",
+        "bacon",
+        "ham",
+        "lard",
+        "pork fat"
+      ],
+      "terms_de": [
+        "schwein",
+        "schweinefleisch",
+        "schweinefett",
+        "speck",
+        "schinken",
+        "schmalz",
+        "schweineschmalz",
+        "schweinespeck",
+        "schweinegelatine"
+      ],
+      "exceptions": [],
+      "reason_tr": "Domuz ve türevleri tüm görüşlerde haramdır.",
+      "reason_en": "Pork and its derivatives are haram in all views.",
+      "terms_fr": [
+        "porc",
+        "viande de porc",
+        "graisse de porc",
+        "lardons",
+        "jambon",
+        "lard",
+        "saindoux"
+      ],
+      "terms_ar": [
+        "خنزير",
+        "لحم خنزير",
+        "دهن الخنزير",
+        "شحم الخنزير",
+        "الخنزير",
+        "لحم الخنزير"
+      ],
+      "terms_id": [
+        "babi",
+        "daging babi",
+        "lemak babi",
+        "minyak babi"
+      ]
+    },
+    {
+      "id": "gelatin",
+      "status": "haram_unless_certified",
+      "terms_tr": [
+        "jelatin"
+      ],
+      "terms_en": [
+        "gelatin",
+        "gelatine"
+      ],
+      "terms_de": [
+        "gelatine",
+        "speisegelatine"
+      ],
+      "exceptions": [
+        "bitkisel jelatin",
+        "vegetable gelatin",
+        "fish gelatin",
+        "balık jelatini",
+        "beef gelatin",
+        "halal gelatin",
+        "helal jelatin",
+        "sığır jelatini",
+        "rinder-gelatine",
+        "rindergelatine",
+        "gélatine végétale",
+        "gélatine de poisson",
+        "gélatine bovine",
+        "gélatine de bœuf",
+        "gélatine halal",
+        "جيلاتين بقري",
+        "جيلاتين سمك",
+        "جيلاتين نباتي",
+        "جيلاتين حلال",
+        "gelatin sapi",
+        "gelatin ikan",
+        "gelatin halal",
+        "gelatin nabati"
+      ],
+      "reason_tr": "Kaynağı belirtilmemiş jelatin domuz kaynaklı olabilir; helal kesim sığır/balık jelatini helaldir.",
+      "reason_en": "Unspecified gelatin may be pork-derived; halal-slaughtered bovine/fish gelatin is halal.",
+      "terms_fr": [
+        "gélatine",
+        "gelatine"
+      ],
+      "terms_ar": [
+        "جيلاتين",
+        "الجيلاتين"
+      ],
+      "terms_id": []
+    },
+    {
+      "id": "alcohol",
+      "status": "haram",
+      "terms_tr": [
+        "alkol",
+        "şarap",
+        "bira",
+        "rakı",
+        "likör",
+        "rom",
+        "viski",
+        "votka"
+      ],
+      "terms_en": [
+        "alcohol",
+        "wine",
+        "beer",
+        "rum",
+        "whisky",
+        "whiskey",
+        "vodka",
+        "liqueur",
+        "brandy",
+        "bourbon"
+      ],
+      "terms_de": [
+        "alkohol",
+        "wein",
+        "bier",
+        "rum",
+        "weinbrand",
+        "likör"
+      ],
+      "exceptions": [
+        "alkolsüz",
+        "alcohol-free",
+        "alcohol free",
+        "alkoholfrei",
+        "cetyl alcohol",
+        "cetearyl alcohol",
+        "benzyl alcohol",
+        "setil alkol",
+        "sans alcool",
+        "alcool cétylique",
+        "alcool cétéarylique",
+        "alcool benzylique",
+        "بدون كحول",
+        "خالي من الكحول",
+        "tanpa alkohol",
+        "bebas alkohol"
+      ],
+      "reason_tr": "İçki ve içki kökenli bileşenler haramdır. (Yağ alkolleri gibi kimyasal 'alkol' isimleri istisnadır.)",
+      "reason_en": "Intoxicants and intoxicant-derived ingredients are haram. (Chemical 'alcohols' like fatty alcohols are exceptions.)",
+      "terms_fr": [
+        "alcool",
+        "vin",
+        "bière",
+        "biere",
+        "rhum",
+        "whisky",
+        "liqueur",
+        "cognac"
+      ],
+      "terms_ar": [
+        "كحول",
+        "خمر",
+        "نبيذ",
+        "بيرة",
+        "ويسكي",
+        "الكحول",
+        "الخمر",
+        "النبيذ"
+      ],
+      "terms_id": [
+        "alkohol",
+        "arak",
+        "wiski",
+        "minuman keras"
+      ]
+    },
+    {
+      "id": "ethanol_carrier",
+      "status": "mushbooh",
+      "terms_tr": [
+        "etanol",
+        "etil alkol"
+      ],
+      "terms_en": [
+        "ethanol",
+        "ethyl alcohol"
+      ],
+      "terms_de": [
+        "ethanol",
+        "ethylalkohol",
+        "äthanol"
+      ],
+      "exceptions": [],
+      "reason_tr": "Taşıyıcı/çözücü etanolün menşei ve miktarı hakkında görüş ayrılığı vardır.",
+      "reason_en": "Views differ on the origin and quantity of carrier/solvent ethanol.",
+      "terms_fr": [
+        "éthanol",
+        "alcool éthylique"
+      ],
+      "terms_ar": [
+        "إيثانول"
+      ],
+      "terms_id": [
+        "etanol"
+      ]
+    },
+    {
+      "id": "blood",
+      "status": "haram",
+      "terms_tr": [
+        "kan",
+        "kan plazması"
+      ],
+      "terms_en": [
+        "blood",
+        "blood plasma",
+        "black pudding"
+      ],
+      "terms_de": [
+        "blut",
+        "blutplasma",
+        "blutwurst"
+      ],
+      "exceptions": [],
+      "reason_tr": "Kan ve kan ürünleri haramdır.",
+      "reason_en": "Blood and blood products are haram.",
+      "terms_fr": [
+        "sang",
+        "boudin noir"
+      ],
+      "terms_ar": [
+        "دم",
+        "بلازما الدم",
+        "الدم"
+      ],
+      "terms_id": [
+        "darah"
+      ]
+    },
+    {
+      "id": "carmine",
+      "status": "haram",
+      "terms_tr": [
+        "karmin",
+        "koşnil",
+        "kırmız böceği"
+      ],
+      "terms_en": [
+        "carmine",
+        "cochineal",
+        "carminic acid",
+        "natural red 4",
+        "crimson lake"
+      ],
+      "terms_de": [
+        "karmin",
+        "cochenille",
+        "echtes karmin"
+      ],
+      "exceptions": [],
+      "reason_tr": "Koşnil böceğinden elde edilen boya; Diyanet ve çoğunluk haram sayar.",
+      "reason_en": "Insect-derived dye; Diyanet and the majority rule it haram.",
+      "terms_fr": [
+        "carmin",
+        "cochenille",
+        "acide carminique"
+      ],
+      "terms_ar": [
+        "كارمين",
+        "قرمز",
+        "حمض الكارمينيك",
+        "الكارمين"
+      ],
+      "terms_id": [
+        "karmin"
+      ]
+    },
+    {
+      "id": "meat_unspecified",
+      "status": "mushbooh",
+      "terms_tr": [
+        "et suyu",
+        "et özü",
+        "tavuk suyu",
+        "sığır eti",
+        "dana eti",
+        "tavuk eti",
+        "hayvansal yağ"
+      ],
+      "terms_en": [
+        "meat extract",
+        "beef",
+        "chicken",
+        "meat broth",
+        "animal fat",
+        "beef fat",
+        "chicken fat",
+        "tallow"
+      ],
+      "terms_de": [
+        "fleischextrakt",
+        "rindfleisch",
+        "hühnerfleisch",
+        "tierisches fett",
+        "rindertalg",
+        "geflügelfett"
+      ],
+      "exceptions": [
+        "helal",
+        "halal",
+        "حلال"
+      ],
+      "reason_tr": "Et ve hayvansal yağın helalliği kesim usulüne bağlıdır; sertifikasız üründe doğrulanamaz.",
+      "reason_en": "Meat and animal fat rulings depend on slaughter method; unverifiable without certification.",
+      "terms_fr": [
+        "extrait de viande",
+        "bœuf",
+        "boeuf",
+        "poulet",
+        "graisse animale",
+        "bouillon de viande",
+        "suif",
+        "gélatine de volaille"
+      ],
+      "terms_ar": [
+        "لحم بقر",
+        "دجاج",
+        "دهن حيواني",
+        "مرق اللحم",
+        "شحم بقري"
+      ],
+      "terms_id": [
+        "daging sapi",
+        "ayam",
+        "lemak hewani",
+        "kaldu daging"
+      ]
+    },
+    {
+      "id": "rennet",
+      "status": "mushbooh",
+      "terms_tr": [
+        "peynir mayası",
+        "rennet",
+        "şirden mayası"
+      ],
+      "terms_en": [
+        "rennet",
+        "animal rennet"
+      ],
+      "terms_de": [
+        "lab",
+        "tierisches lab",
+        "kälberlab"
+      ],
+      "exceptions": [
+        "mikrobiyal maya",
+        "microbial rennet",
+        "mikrobielles lab",
+        "vegetarian rennet",
+        "présure microbienne",
+        "rennet mikroba",
+        "منفحة ميكروبية"
+      ],
+      "reason_tr": "Hayvansal peynir mayasının hükmü hayvanın kesimine bağlıdır; mikrobiyal maya helaldir.",
+      "reason_en": "Animal rennet depends on slaughter; microbial rennet is halal.",
+      "terms_fr": [
+        "présure",
+        "presure",
+        "présure animale"
+      ],
+      "terms_ar": [
+        "منفحة",
+        "منفحة حيوانية",
+        "المنفحة"
+      ],
+      "terms_id": [
+        "rennet hewani"
+      ]
+    },
+    {
+      "id": "pepsin",
+      "status": "mushbooh",
+      "terms_tr": [
+        "pepsin"
+      ],
+      "terms_en": [
+        "pepsin"
+      ],
+      "terms_de": [
+        "pepsin"
+      ],
+      "exceptions": [],
+      "reason_tr": "Genellikle domuz midesinden elde edilir — kaynak doğrulanmalı; domuz kaynaklıysa haramdır.",
+      "reason_en": "Often derived from pig stomach — verify source; haram if porcine.",
+      "terms_fr": [
+        "pepsine"
+      ],
+      "terms_ar": [
+        "ببسين"
+      ],
+      "terms_id": []
+    },
+    {
+      "id": "whey_lactose",
+      "status": "mushbooh_mild",
+      "terms_tr": [
+        "peynir altı suyu",
+        "laktoz"
+      ],
+      "terms_en": [
+        "whey",
+        "whey powder",
+        "lactose"
+      ],
+      "terms_de": [
+        "molke",
+        "molkenpulver",
+        "laktose"
+      ],
+      "exceptions": [],
+      "reason_tr": "Süt ürünüdür; üretimde kullanılan mayanın menşei temkinli profilde sorgulanır.",
+      "reason_en": "Dairy-derived; the cautious profile queries the rennet used in production.",
+      "terms_fr": [
+        "lactosérum",
+        "lactoserum",
+        "petit-lait"
+      ],
+      "terms_ar": [
+        "مصل اللبن",
+        "لاكتوز",
+        "اللاكتوز"
+      ],
+      "terms_id": [
+        "laktosa"
+      ]
+    },
+    {
+      "id": "mono_diglycerides_text",
+      "status": "mushbooh",
+      "terms_tr": [
+        "mono ve digliserit",
+        "mono- ve digliserit",
+        "yağ asitlerinin mono ve digliseritleri"
+      ],
+      "terms_en": [
+        "mono- and diglycerides",
+        "monoglycerides",
+        "diglycerides"
+      ],
+      "terms_de": [
+        "mono- und diglyceride",
+        "monoglyceride",
+        "diglyceride"
+      ],
+      "exceptions": [
+        "bitkisel",
+        "vegetable",
+        "pflanzlich",
+        "plant-based",
+        "végétal",
+        "végétale",
+        "nabati",
+        "نباتي"
+      ],
+      "reason_tr": "Kaynağı belirtilmemiş mono-digliseritler hayvansal olabilir (E471 ile aynı).",
+      "reason_en": "Unspecified mono-diglycerides may be animal-derived (same as E471).",
+      "terms_fr": [
+        "mono- et diglycérides",
+        "monoglycérides",
+        "diglycérides",
+        "monoglycerides",
+        "diglycerides"
+      ],
+      "terms_ar": [
+        "أحادي وثنائي الجليسريد",
+        "أحادي الجليسريد"
+      ],
+      "terms_id": [
+        "mono dan digliserida"
+      ]
+    },
+    {
+      "id": "vanilla_extract",
+      "status": "mushbooh_mild",
+      "terms_tr": [
+        "vanilya ekstresi",
+        "vanilya özütü"
+      ],
+      "terms_en": [
+        "vanilla extract"
+      ],
+      "terms_de": [
+        "vanilleextrakt"
+      ],
+      "exceptions": [
+        "vanilin",
+        "vanillin",
+        "vanilline"
+      ],
+      "reason_tr": "Geleneksel vanilya ekstresi alkolle çekilir; sentetik vanilin sorunsuzdur.",
+      "reason_en": "Traditional vanilla extract is alcohol-extracted; synthetic vanillin is unproblematic.",
+      "terms_fr": [
+        "extrait de vanille"
+      ],
+      "terms_ar": [
+        "مستخلص الفانيليا"
+      ],
+      "terms_id": [
+        "ekstrak vanila"
+      ]
+    },
+    {
+      "id": "wine_vinegar",
+      "status": "halal_note",
+      "terms_tr": [
+        "şarap sirkesi",
+        "üzüm sirkesi"
+      ],
+      "terms_en": [
+        "wine vinegar",
+        "red wine vinegar",
+        "white wine vinegar"
+      ],
+      "terms_de": [
+        "weinessig",
+        "rotweinessig",
+        "branntweinessig"
+      ],
+      "exceptions": [],
+      "reason_tr": "Sirkeleşme çoğunluk görüşünde temizleyici dönüşümdür; Diyanet sirkeyi helal kabul eder. Temkinli profil not düşer.",
+      "reason_en": "Vinegar conversion is purifying per the majority; Diyanet accepts vinegar as halal. Cautious profile adds a note.",
+      "terms_fr": [
+        "vinaigre de vin"
+      ],
+      "terms_ar": [
+        "خل النبيذ"
+      ],
+      "terms_id": [
+        "cuka anggur"
+      ]
+    },
+    {
+      "id": "shortening_unspecified",
+      "status": "mushbooh",
+      "terms_tr": [
+        "hayvansal margarin",
+        "içyağı",
+        "kuyruk yağı"
+      ],
+      "terms_en": [
+        "shortening",
+        "animal shortening",
+        "suet"
+      ],
+      "terms_de": [
+        "tierisches fett",
+        "talg"
+      ],
+      "exceptions": [
+        "bitkisel",
+        "vegetable",
+        "pflanzlich"
+      ],
+      "reason_tr": "Kaynağı belirtilmemiş katı yağ hayvansal olabilir.",
+      "reason_en": "Unspecified shortening may be animal-derived.",
+      "terms_fr": [
+        "graisse végétale hydrogénée animale"
+      ],
+      "terms_ar": [],
+      "terms_id": [
+        "mentega putih hewani"
+      ]
+    },
+    {
+      "id": "cysteine_text",
+      "status": "mushbooh",
+      "terms_tr": [
+        "sistein",
+        "l-sistein"
+      ],
+      "terms_en": [
+        "cysteine",
+        "l-cysteine"
+      ],
+      "terms_de": [
+        "cystein",
+        "l-cystein"
+      ],
+      "exceptions": [],
+      "reason_tr": "İnsan saçı kaynaklıysa haramdır; kaynak doğrulanmalı (E920).",
+      "reason_en": "Haram if derived from human hair; verify source (E920).",
+      "terms_fr": [
+        "cystéine",
+        "l-cystéine"
+      ],
+      "terms_ar": [
+        "سيستين"
+      ],
+      "terms_id": [
+        "sistein"
+      ]
+    }
+  ]
+}

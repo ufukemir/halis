@@ -15,6 +15,7 @@ import 'screens/paywall_screen.dart';
 import 'screens/result_screen.dart';
 import 'screens/scan_screen.dart';
 import 'screens/search_screen.dart';
+import 'services/data_update_service.dart';
 import 'services/history_service.dart';
 import 'services/knowledge_base.dart';
 import 'services/premium_service.dart';
@@ -48,6 +49,16 @@ class HalisApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1B7A43)),
         useMaterial3: true,
       ),
+      // Karanlık mod: sistem tercihine uyar. Hüküm renkleri (yeşil/turuncu/
+      // kırmızı kartlar) marka sabitidir ve beyaz metinle iki temada da okunur.
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1B7A43),
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.system,
       home: const _Gate(),
     );
   }
@@ -96,7 +107,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    KnowledgeBase.loadFromAssets().then((kb) => setState(() => _kb = kb));
+    // Önce en iyi yerel veri (OTA önbelleği ya da gömülü), ardından arka
+    // planda güncelleme denenir; gelirse bilgi tabanı sıcak değiştirilir.
+    DataUpdateService.loadKnowledgeBase().then((kb) async {
+      if (!mounted) return;
+      setState(() => _kb = kb);
+      final updated = await DataUpdateService.checkForUpdate(kb);
+      if (updated != null && mounted) setState(() => _kb = updated);
+    });
     _reloadHistory();
     _setupQuickActions();
   }
@@ -377,7 +395,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ListTile(
                       dense: true,
                       contentPadding: EdgeInsets.zero,
-                      leading: Icon(verdictStyle(e.verdict).$2, color: verdictStyle(e.verdict).$1),
+                      leading: Icon(verdictStyle(e.verdict).$2,
+                          color: verdictStyle(e.verdict).$1,
+                          semanticLabel: s.verdictTitle(e.verdict)),
                       title: Text(e.title, maxLines: 1, overflow: TextOverflow.ellipsis),
                       subtitle: Text(
                         '${e.date.day.toString().padLeft(2, '0')}.${e.date.month.toString().padLeft(2, '0')}.${e.date.year}',
