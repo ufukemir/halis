@@ -43,18 +43,46 @@ class OffApi {
   }
 
   /// Barkodsuz isim araması — hafif sonuç listesi döndürür.
-  Future<List<OffSearchHit>> searchByName(String query, {int pageSize = 12}) async {
-    final uri = Uri.https(_host, '/cgi/search.pl', {
+  ///
+  /// [countryCode] verilirse önce o ülkenin OFF alt alanı sorgulanır
+  /// (kullanıcının rafındaki ürünler öne gelir), dünya sonuçları arkasına
+  /// eklenir (barkoda göre tekilleştirilir). [page] 1'den başlar (sayfalama).
+  Future<List<OffSearchHit>> searchByName(
+    String query, {
+    int pageSize = 12,
+    int page = 1,
+    String? countryCode,
+  }) async {
+    final world = _searchHost(_host, query, pageSize, page);
+    if (countryCode == null || countryCode.isEmpty) return world;
+    List<OffSearchHit> local;
+    try {
+      local = await _searchHost('$countryCode.openfoodfacts.org', query, pageSize, page);
+    } catch (_) {
+      local = const []; // ülke alt alanı hatası dünya aramasını engellemesin
+    }
+    final seen = {for (final h in local) h.barcode};
+    return [
+      ...local,
+      for (final h in await world)
+        if (!seen.contains(h.barcode)) h,
+    ];
+  }
+
+  Future<List<OffSearchHit>> _searchHost(
+      String host, String query, int pageSize, int page) async {
+    final uri = Uri.https(host, '/cgi/search.pl', {
       'search_terms': query,
       'search_simple': '1',
       'action': 'process',
       'json': '1',
       'page_size': '$pageSize',
+      'page': '$page',
       'fields': 'code,product_name,brands,image_front_small_url',
     });
     final res = await _client.get(uri, headers: {'User-Agent': OffConfig.userAgent});
     if (res.statusCode != 200) throw OffApiException('OFF ${res.statusCode}');
-    final body = jsonDecode(res.body) as Map<String, dynamic>;
+    final body = jsonDecode(utf8.decode(res.bodyBytes)) as Map<String, dynamic>;
     return [
       for (final p in (body['products'] as List? ?? []))
         if ((p as Map<String, dynamic>)['code'] is String && (p['code'] as String).isNotEmpty)

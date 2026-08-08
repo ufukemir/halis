@@ -329,6 +329,26 @@ class S {
         'ar': 'اسم المنتج أو العلامة…', 'id': 'Nama produk atau merek…',
       });
 
+  String get loadMore => _t(const {
+        'tr': 'Daha fazla sonuç', 'en': 'More results', 'de': 'Mehr Ergebnisse',
+        'fr': 'Plus de résultats', 'ar': 'المزيد من النتائج', 'id': 'Hasil lainnya',
+      });
+
+  String get searchContributeHint => _t(const {
+        'tr': 'Aradığınız ürün yok mu? Barkodunu taratın — veritabanında yoksa fotoğrafla siz ekleyin. Veritabanı her aramayla büyür.',
+        'en': "Can't find your product? Scan its barcode — if it's missing, add it with a photo. The database grows with every search.",
+        'de': 'Produkt nicht gefunden? Barcode scannen — fehlt es, per Foto hinzufügen. Die Datenbank wächst mit jeder Suche.',
+        'fr': 'Produit introuvable ? Scannez le code-barres — s\'il manque, ajoutez-le en photo. La base grandit à chaque recherche.',
+        'ar': 'لم تجد المنتج؟ امسح الباركود — وإن لم يكن موجودًا أضفه بصورة. تنمو القاعدة مع كل بحث.',
+        'id': 'Produk tidak ada? Pindai barcode-nya — jika belum ada, tambahkan lewat foto. Basis data tumbuh di setiap pencarian.',
+      });
+
+  String get scanAndAdd => _t(const {
+        'tr': 'Barkodu Tarat ve Ekle', 'en': 'Scan Barcode & Add',
+        'de': 'Barcode scannen & hinzufügen', 'fr': 'Scanner et ajouter',
+        'ar': 'امسح الباركود وأضِف', 'id': 'Pindai Barcode & Tambah',
+      });
+
   String get noResults => _t(const {
         'tr': 'Sonuç bulunamadı.', 'en': 'No results found.',
         'de': 'Keine Ergebnisse gefunden.', 'fr': 'Aucun résultat trouvé.',

@@ -47,6 +47,46 @@ void main() {
       final client = MockClient((req) async => http.Response('oops', 500));
       expect(() => OffApi(client).searchByName('x'), throwsA(isA<OffApiException>()));
     });
+
+    test('ülke önceliği: yerel sonuçlar önde, dünya tekilleştirilerek eklenir', () async {
+      final client = MockClient((req) async {
+        final isLocal = req.url.host == 'tr.openfoodfacts.org';
+        return _jsonResponse({
+          'products': isLocal
+              ? [
+                  {'code': '100', 'product_name': 'Yerli Gofret'},
+                  {'code': '200', 'product_name': 'Ortak Ürün'},
+                ]
+              : [
+                  {'code': '200', 'product_name': 'Ortak Ürün'},
+                  {'code': '300', 'product_name': 'Yabancı Ürün'},
+                ]
+        });
+      });
+      final hits = await OffApi(client).searchByName('gofret', countryCode: 'tr');
+      expect(hits.map((h) => h.barcode), ['100', '200', '300']);
+    });
+
+    test('ülke alt alanı çökse bile dünya sonuçları gelir', () async {
+      final client = MockClient((req) async {
+        if (req.url.host == 'tr.openfoodfacts.org') return http.Response('down', 503);
+        return _jsonResponse({
+          'products': [
+            {'code': '1', 'product_name': 'A'}
+          ]
+        });
+      });
+      final hits = await OffApi(client).searchByName('x', countryCode: 'tr');
+      expect(hits, hasLength(1));
+    });
+
+    test('sayfa parametresi isteğe geçer', () async {
+      final client = MockClient((req) async {
+        expect(req.url.queryParameters['page'], '3');
+        return _jsonResponse({'products': []});
+      });
+      await OffApi(client).searchByName('x', page: 3);
+    });
   });
 
   group('temiz alternatif süzgeci', () {
