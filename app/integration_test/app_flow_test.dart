@@ -53,21 +53,44 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     await binding.takeScreenshot('03-nutella-sonuc');
 
-    // Geri dön
-    await tester.pageBack();
+    // Geri dön (pageBack TR yerelde tooltip bulamıyor → BackButton widget'ı)
+    await tester.tap(find.byType(BackButton).hitTestable().first);
     await tester.pump(const Duration(seconds: 1));
 
+    // Not: push edilen ekranın altında ana ekran da widget ağacında kalır;
+    // bu yüzden 4-6. adımlarda yalnız GÖRÜNÜR widget'lar hedeflenir
+    // (hitTestable), aksi halde iki TextField/search ikonu eşleşir.
+    Finder visible(Finder f) => f.hitTestable();
+
     // 4) Etiket analizi: Fransızca domuz jelatini → kırmızı kart
-    await pumpUntil(tester, find.byIcon(Icons.photo_camera));
-    await tester.tap(find.byIcon(Icons.photo_camera).first);
+    await pumpUntil(tester, visible(find.byIcon(Icons.photo_camera)));
+    await tester.tap(visible(find.byIcon(Icons.photo_camera)).first);
     await tester.pump(const Duration(seconds: 1));
-    await pumpUntil(tester, find.byType(TextField));
-    await tester.enterText(
-        find.byType(TextField).first, 'sucre, sirop de glucose, gélatine de porc, arômes');
+    await pumpUntil(tester, visible(find.byType(TextField)));
+    await tester.enterText(visible(find.byType(TextField)).first,
+        'sucre, sirop de glucose, gélatine de porc, arômes');
     await tester.pump(const Duration(milliseconds: 300));
-    await tester.tap(find.byIcon(Icons.search));
+    await tester.tap(visible(find.byIcon(Icons.search)).first);
     await tester.pump(const Duration(seconds: 1));
     await pumpUntil(tester, find.byIcon(Icons.cancel));
     await binding.takeScreenshot('04-etiket-haram');
+
+    // 5) Turuncu şüpheli kart — E471 tespiti (docs/04: farklılaştırıcı ekran)
+    await tester.enterText(visible(find.byType(TextField)).first,
+        'kakao yağı, şeker, emülgatör (E471), lesitin (E322), vanilin');
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.tap(visible(find.byIcon(Icons.search)).first);
+    await tester.pump(const Duration(seconds: 1));
+    await pumpUntil(tester, find.byIcon(Icons.help));
+    await binding.takeScreenshot('05-etiket-supheli-e471');
+
+    // 6) Yeşil temiz kart
+    await tester.enterText(visible(find.byType(TextField)).first,
+        'buğday unu, su, tuz, maya, susam');
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.tap(visible(find.byIcon(Icons.search)).first);
+    await tester.pump(const Duration(seconds: 1));
+    await pumpUntil(tester, find.byIcon(Icons.check_circle));
+    await binding.takeScreenshot('06-etiket-temiz');
   });
 }
