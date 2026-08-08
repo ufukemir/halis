@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "updated": "2026-08-07",
+  "version": "0.3.0",
+  "updated": "2026-08-08",
   "status": "Elle derlenmiş veri; bağımsız dini danışman incelemesinden geçmedi. Uygulama her sonuçta 'dini hüküm değildir' uyarısı gösterir.",
   "profiles": {
     "temkinli": "İhtiyat esaslı (Şafiî/Hanbelî çizgisine yakın): şüphede kaçınma, istihale dar yorumlanır.",
@@ -323,7 +323,15 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Bitkisel kaynaklıysa helal; nadiren hayvan kemiği kömüründen üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Halal if plant-derived; rarely made from animal bone char — source must be verified."
+      "reason_en": "Halal if plant-derived; rarely made from animal bone char — source must be verified.",
+      "aliases": [
+        "charbon végétal",
+        "vegetable carbon",
+        "bitkisel karbon",
+        "pflanzenkohle",
+        "karbon nabati",
+        "فحم نباتي"
+      ]
     },
     {
       "code": "E155",
@@ -349,7 +357,18 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkiseldir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based; gelatin is occasionally used as a carrier — cautious profile queries the source."
+      "reason_en": "The pigment is plant-based; gelatin is occasionally used as a carrier — cautious profile queries the source.",
+      "aliases": [
+        "carotène",
+        "carotènes",
+        "carotene",
+        "carotenes",
+        "karoten",
+        "carotin",
+        "beta-carotin",
+        "karotenoid",
+        "كاروتين"
+      ]
     },
     {
       "code": "E160b",
@@ -375,7 +394,17 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source."
+      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source.",
+      "aliases": [
+        "extrait de paprika",
+        "capsanthine",
+        "paprika extract",
+        "capsanthin",
+        "kapsantin",
+        "paprika ekstresi",
+        "paprikaextrakt",
+        "ekstrak paprika"
+      ]
     },
     {
       "code": "E160d",
@@ -388,7 +417,13 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source."
+      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source.",
+      "aliases": [
+        "lycopène",
+        "lycopene",
+        "likopen",
+        "lycopin"
+      ]
     },
     {
       "code": "E160e",
@@ -401,7 +436,12 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source."
+      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source.",
+      "aliases": [
+        "apocaroténal",
+        "apocarotenal",
+        "apokarotenal"
+      ]
     },
     {
       "code": "E161b",
@@ -414,7 +454,11 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source."
+      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source.",
+      "aliases": [
+        "lutéine",
+        "lutein"
+      ]
     },
     {
       "code": "E161g",
@@ -427,7 +471,12 @@
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
-      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source."
+      "reason_en": "The pigment is plant-based/synthetic; gelatin is occasionally used as a carrier — the cautious profile queries the source.",
+      "aliases": [
+        "canthaxanthine",
+        "canthaxanthin",
+        "kantaksantin"
+      ]
     },
     {
       "code": "E162",
@@ -1168,7 +1217,13 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Palmitik asit bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The palmitic acid component may be plant or animal derived — verify the source."
+      "reason_en": "The palmitic acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "palmitate d'ascorbyle",
+        "ascorbyl palmitate",
+        "askorbil palmitat",
+        "ascorbylpalmitat"
+      ]
     },
     {
       "code": "E306",
@@ -1441,7 +1496,15 @@
         "diyanet": "halal"
       },
       "reason_tr": "Şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm geçirdiği için çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "acide tartrique",
+        "tartaric acid",
+        "tartarik asit",
+        "weinsäure",
+        "asam tartrat",
+        "حمض الطرطريك"
+      ]
     },
     {
       "code": "E335",
@@ -1454,7 +1517,13 @@
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "tartrate de sodium",
+        "sodium tartrate",
+        "sodyum tartarat",
+        "natriumtartrat"
+      ]
     },
     {
       "code": "E336",
@@ -1467,7 +1536,16 @@
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "tartrate de potassium",
+        "crème de tartre",
+        "potassium tartrate",
+        "cream of tartar",
+        "potasyum tartarat",
+        "kaliumtartrat",
+        "krem tartar"
+      ]
     },
     {
       "code": "E337",
@@ -1480,7 +1558,13 @@
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "tartrate double de sodium et de potassium",
+        "sodium potassium tartrate",
+        "sel de seignette",
+        "rochelle salt"
+      ]
     },
     {
       "code": "E338",
@@ -1584,7 +1668,12 @@
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "acide métatartrique",
+        "metatartaric acid",
+        "metatartarik asit"
+      ]
     },
     {
       "code": "E354",
@@ -1597,7 +1686,13 @@
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
-      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it."
+      "reason_en": "Tartaric acid family: can derive from wine industry sediment; the majority deem it halal due to chemical transformation, the cautious profile flags it.",
+      "aliases": [
+        "tartrate de calcium",
+        "calcium tartrate",
+        "kalsiyum tartarat",
+        "calciumtartrat"
+      ]
     },
     {
       "code": "E355",
@@ -1896,7 +1991,28 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Bitkisel yağdan veya sentetik ise helal; hayvansal yağdan (domuz dahil) üretilebilir — kaynak doğrulanmadan hüküm verilemez.",
-      "reason_en": "Halal if from vegetable oil or synthetic; can be produced from animal fat (incl. pork) — source must be verified."
+      "reason_en": "Halal if from vegetable oil or synthetic; can be produced from animal fat (incl. pork) — source must be verified.",
+      "aliases": [
+        "glycérol",
+        "glycérine",
+        "glycerol",
+        "glycerin",
+        "glycerine",
+        "gliserin",
+        "gliserol",
+        "جلسرين",
+        "غليسيرين"
+      ],
+      "alias_exceptions": [
+        "glycérine végétale",
+        "vegetable glycerin",
+        "vegetable glycerine",
+        "plant-based glycerin",
+        "bitkisel gliserin",
+        "pflanzliches glycerin",
+        "gliserin nabati",
+        "جلسرين نباتي"
+      ]
     },
     {
       "code": "E425",
@@ -1948,7 +2064,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit hayvansal yağdan gelebilir.",
-      "reason_en": "Stearic acid may derive from animal fat."
+      "reason_en": "Stearic acid may derive from animal fat.",
+      "aliases": [
+        "stéarate de polyoxyéthylène",
+        "polyoxyethylene stearate"
+      ]
     },
     {
       "code": "E432",
@@ -1961,7 +2081,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "polysorbate 20",
+        "tween 20",
+        "polisorbat 20"
+      ]
     },
     {
       "code": "E433",
@@ -1974,7 +2099,13 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asitleri bitkisel veya hayvansal kaynaklı olabilir.",
-      "reason_en": "Fatty acids may be plant or animal derived."
+      "reason_en": "Fatty acids may be plant or animal derived.",
+      "aliases": [
+        "polysorbate 80",
+        "tween 80",
+        "polisorbat 80",
+        "بوليسوربات 80"
+      ]
     },
     {
       "code": "E434",
@@ -1987,7 +2118,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "polysorbate 40",
+        "tween 40",
+        "polisorbat 40"
+      ]
     },
     {
       "code": "E435",
@@ -2000,7 +2136,13 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "polysorbate 60",
+        "tween 60",
+        "polisorbat 60",
+        "بوليسوربات 60"
+      ]
     },
     {
       "code": "E436",
@@ -2013,7 +2155,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "polysorbate 65",
+        "tween 65",
+        "polisorbat 65"
+      ]
     },
     {
       "code": "E440",
@@ -2078,7 +2225,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Reçine bitkiseldir ama gliserol bileşeni hayvansal olabilir.",
-      "reason_en": "Rosin is plant-based but the glycerol component may be animal-derived."
+      "reason_en": "Rosin is plant-based but the glycerol component may be animal-derived.",
+      "aliases": [
+        "esters glycériques de résine de bois",
+        "glycerol esters of wood rosin"
+      ]
     },
     {
       "code": "E450",
@@ -2234,7 +2385,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi kaynağı bitkisel veya hayvansal olabilir.",
-      "reason_en": "Fatty acid source may be plant or animal."
+      "reason_en": "Fatty acid source may be plant or animal.",
+      "aliases": [
+        "sels d'acides gras",
+        "salts of fatty acids",
+        "yağ asitlerinin tuzları"
+      ]
     },
     {
       "code": "E470b",
@@ -2247,7 +2403,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "sels de magnésium d'acides gras",
+        "magnesium salts of fatty acids"
+      ]
     },
     {
       "code": "E471",
@@ -2325,7 +2485,10 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit türevi; kaynak sorunu E471 ile aynıdır. Endüstriyel ekmeklerde çok yaygındır.",
-      "reason_en": "Mono-diglyceride derivative; same source issue as E471. Very common in industrial bread."
+      "reason_en": "Mono-diglyceride derivative; same source issue as E471. Very common in industrial bread.",
+      "aliases": [
+        "datem"
+      ]
     },
     {
       "code": "E472f",
@@ -2351,7 +2514,15 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "sucroesters",
+        "esters de saccharose d'acides gras",
+        "sucrose esters",
+        "sukroz esterleri",
+        "zuckerester",
+        "ester sukrosa"
+      ]
     },
     {
       "code": "E474",
@@ -2364,7 +2535,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "sucroglycérides",
+        "sucroglycerides",
+        "sukrogliserit"
+      ]
     },
     {
       "code": "E475",
@@ -2377,7 +2553,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "esters polyglycériques d'acides gras",
+        "polyglycerol esters",
+        "poligliserol esterleri"
+      ]
     },
     {
       "code": "E476",
@@ -2390,7 +2571,13 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Günümüzde ağırlıkla hint yağı ve bitkisel gliserolden; gliserol bileşeni hayvansal olabileceği için temkinli profil şüpheli sayar. Çikolatalarda yaygın.",
-      "reason_en": "Nowadays mostly castor oil and plant glycerol; cautious profile flags it since glycerol may be animal-derived. Common in chocolate."
+      "reason_en": "Nowadays mostly castor oil and plant glycerol; cautious profile flags it since glycerol may be animal-derived. Common in chocolate.",
+      "aliases": [
+        "polyricinoléate de polyglycérol",
+        "pgpr",
+        "polyglycerol polyricinoleate",
+        "poligliserol polirisinoleat"
+      ]
     },
     {
       "code": "E477",
@@ -2403,7 +2590,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "esters de propylène glycol d'acides gras",
+        "propylene glycol esters"
+      ]
     },
     {
       "code": "E479b",
@@ -2429,7 +2620,14 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı bitkisel veya hayvansal olabilir.",
-      "reason_en": "Stearic acid source may be plant or animal."
+      "reason_en": "Stearic acid source may be plant or animal.",
+      "aliases": [
+        "stéaroyl-2-lactylate de sodium",
+        "stéaroyl lactylate de sodium",
+        "sodium stearoyl lactylate",
+        "sodyum stearoil laktilat",
+        "natriumstearoyllactylat"
+      ]
     },
     {
       "code": "E482",
@@ -2442,7 +2640,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit bileşeni hayvansal yağdan gelebilir — kaynak doğrulanmalı.",
-      "reason_en": "The stearic acid component may derive from animal fat — verify the source."
+      "reason_en": "The stearic acid component may derive from animal fat — verify the source.",
+      "aliases": [
+        "stéaroyl-2-lactylate de calcium",
+        "calcium stearoyl lactylate",
+        "kalsiyum stearoil laktilat"
+      ]
     },
     {
       "code": "E483",
@@ -2455,7 +2658,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit bileşeni hayvansal yağdan gelebilir — kaynak doğrulanmalı.",
-      "reason_en": "The stearic acid component may derive from animal fat — verify the source."
+      "reason_en": "The stearic acid component may derive from animal fat — verify the source.",
+      "aliases": [
+        "tartrate de stéaryle",
+        "stearyl tartrate"
+      ]
     },
     {
       "code": "E491",
@@ -2468,7 +2675,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı doğrulanmalı.",
-      "reason_en": "Stearic acid source must be verified."
+      "reason_en": "Stearic acid source must be verified.",
+      "aliases": [
+        "monostéarate de sorbitane",
+        "sorbitan monostearate",
+        "sorbitan monostearat"
+      ]
     },
     {
       "code": "E492",
@@ -2481,7 +2693,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "tristéarate de sorbitane",
+        "sorbitan tristearate",
+        "sorbitan tristearat"
+      ]
     },
     {
       "code": "E493",
@@ -2494,7 +2711,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "monolaurate de sorbitane",
+        "sorbitan monolaurate"
+      ]
     },
     {
       "code": "E494",
@@ -2507,7 +2728,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "monooléate de sorbitane",
+        "sorbitan monooleate"
+      ]
     },
     {
       "code": "E495",
@@ -2520,7 +2745,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
-      "reason_en": "The fatty acid component may be plant or animal derived — verify the source."
+      "reason_en": "The fatty acid component may be plant or animal derived — verify the source.",
+      "aliases": [
+        "monopalmitate de sorbitane",
+        "sorbitan monopalmitate"
+      ]
     },
     {
       "code": "E500",
@@ -2832,7 +3061,14 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Hayvan kemiklerinden elde edilir; hayvanın türü ve kesim şekli bilinmeden hüküm verilemez. Domuz kemiği kullanılmışsa haramdır.",
-      "reason_en": "Derived from animal bones; species and slaughter method unknown. Haram if pork bones were used."
+      "reason_en": "Derived from animal bones; species and slaughter method unknown. Haram if pork bones were used.",
+      "aliases": [
+        "phosphate d'os",
+        "bone phosphate",
+        "kemik fosfatı",
+        "knochenphosphat",
+        "فوسفات العظام"
+      ]
     },
     {
       "code": "E551",
@@ -2936,7 +3172,15 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı doğrulanmalı; ilaç ve takviyelerde yaygın.",
-      "reason_en": "Stearic acid source must be verified; common in pills and supplements."
+      "reason_en": "Stearic acid source must be verified; common in pills and supplements.",
+      "aliases": [
+        "stéarate de magnésium",
+        "magnesium stearate",
+        "magnezyum stearat",
+        "magnesiumstearat",
+        "magnesium stearat",
+        "ستيرات المغنيسيوم"
+      ]
     },
     {
       "code": "E574",
@@ -3131,7 +3375,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "acide guanylique",
+        "guanylic acid",
+        "guanilik asit"
+      ]
     },
     {
       "code": "E627",
@@ -3144,7 +3393,14 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "guanylate disodique",
+        "disodium guanylate",
+        "disodyum guanilat",
+        "dinatriumguanylat",
+        "dinatrium guanilat"
+      ]
     },
     {
       "code": "E628",
@@ -3157,7 +3413,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "guanylate dipotassique",
+        "dipotassium guanylate"
+      ]
     },
     {
       "code": "E629",
@@ -3170,7 +3430,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "guanylate de calcium",
+        "calcium guanylate"
+      ]
     },
     {
       "code": "E630",
@@ -3183,7 +3447,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
-      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source."
+      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source.",
+      "aliases": [
+        "acide inosinique",
+        "inosinic acid",
+        "inosinik asit"
+      ]
     },
     {
       "code": "E631",
@@ -3196,7 +3465,14 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Et/balık veya tapyoka nişastası fermantasyonundan üretilebilir; domuz kaynaklı üretim raporlanmıştır — kaynak doğrulanmadan hüküm verilemez. Cips ve hazır çorbalarda yaygın.",
-      "reason_en": "Can be produced from meat/fish or tapioca starch fermentation; pork-derived production has been reported — no verdict without source verification. Common in chips and instant soups."
+      "reason_en": "Can be produced from meat/fish or tapioca starch fermentation; pork-derived production has been reported — no verdict without source verification. Common in chips and instant soups.",
+      "aliases": [
+        "inosinate disodique",
+        "disodium inosinate",
+        "disodyum inosinat",
+        "dinatriuminosinat",
+        "dinatrium inosinat"
+      ]
     },
     {
       "code": "E632",
@@ -3209,7 +3485,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
-      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source."
+      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source.",
+      "aliases": [
+        "inosinate dipotassique",
+        "dipotassium inosinate"
+      ]
     },
     {
       "code": "E633",
@@ -3222,7 +3502,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
-      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source."
+      "reason_en": "Often meat or fish derived; microbial production is also possible — verify source.",
+      "aliases": [
+        "inosinate de calcium",
+        "calcium inosinate"
+      ]
     },
     {
       "code": "E634",
@@ -3235,7 +3519,11 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "ribonucléotides de calcium",
+        "calcium ribonucleotides"
+      ]
     },
     {
       "code": "E635",
@@ -3248,7 +3536,14 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source."
+      "reason_en": "Usually from yeast extract; can also be fish or meat derived — verify source.",
+      "aliases": [
+        "ribonucléotides disodiques",
+        "ribonucléotides",
+        "disodium ribonucleotides",
+        "disodyum ribonükleotit",
+        "ribonukleotida"
+      ]
     },
     {
       "code": "E640",
@@ -3261,7 +3556,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Sentetik veya jelatin hidrolizinden elde edilebilir.",
-      "reason_en": "May be synthetic or derived from gelatin hydrolysis."
+      "reason_en": "May be synthetic or derived from gelatin hydrolysis.",
+      "aliases": [
+        "glycine",
+        "glisin",
+        "glizin"
+      ]
     },
     {
       "code": "E650",
@@ -3339,7 +3639,16 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Lak böceğinin salgısından; balmumuna kıyasla âlimler arasında görüş ayrılığı vardır. Şekerleme parlatıcılarında yaygın.",
-      "reason_en": "Secretion of the lac insect; scholarly opinion is split compared to beeswax. Common in candy glazes."
+      "reason_en": "Secretion of the lac insect; scholarly opinion is split compared to beeswax. Common in candy glazes.",
+      "aliases": [
+        "gomme-laque",
+        "gomme laque",
+        "shellac",
+        "şellak",
+        "schellack",
+        "lak",
+        "شيلاك"
+      ]
     },
     {
       "code": "E905",
@@ -3651,7 +3960,11 @@
         "diyanet": "halal"
       },
       "reason_tr": "Laktozdan üretilir; peynir altı suyu kaynaklıysa kullanılan mayanın (rennet) menşei temkinli profilde sorgulanır.",
-      "reason_en": "Made from lactose; if whey-derived, the rennet origin is queried by the cautious profile."
+      "reason_en": "Made from lactose; if whey-derived, the rennet origin is queried by the cautious profile.",
+      "aliases": [
+        "lactitol",
+        "laktitol"
+      ]
     },
     {
       "code": "E967",
@@ -3703,7 +4016,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Enzim; günümüzde çoğunlukla mikrobiyal fermantasyonla üretilir, hayvansal kaynaklı da olabilir — kaynak doğrulanmalı.",
-      "reason_en": "Enzyme; today mostly produced by microbial fermentation, but can be animal-derived — verify the source."
+      "reason_en": "Enzyme; today mostly produced by microbial fermentation, but can be animal-derived — verify the source.",
+      "aliases": [
+        "amylase",
+        "amilaz",
+        "amilase"
+      ]
     },
     {
       "code": "E1103",
@@ -3950,7 +4268,12 @@
         "diyanet": "mushbooh"
       },
       "reason_tr": "Gliserol bileşeni hayvansal yağdan (domuz dahil) üretilebilir — kaynak doğrulanmalı.",
-      "reason_en": "The glycerol component can be produced from animal fat (incl. pork) — verify the source."
+      "reason_en": "The glycerol component can be produced from animal fat (incl. pork) — verify the source.",
+      "aliases": [
+        "triacétine",
+        "triacetin",
+        "triasetin"
+      ]
     },
     {
       "code": "E1520",

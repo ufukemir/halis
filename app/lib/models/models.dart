@@ -38,6 +38,13 @@ class EcodeEntry {
   final String reasonTr;
   final String reasonEn;
 
+  /// Etikette kod yerine yazılabilen isimler (tüm diller, küçük harf);
+  /// yalnız sorunlu kodlarda doludur.
+  final List<String> aliases;
+
+  /// Alias eşleşmesini iptal eden kalıplar (ör. "bitkisel gliserin").
+  final List<String> aliasExceptions;
+
   const EcodeEntry({
     required this.code,
     required this.nameTr,
@@ -46,6 +53,8 @@ class EcodeEntry {
     required this.verdictByProfile,
     required this.reasonTr,
     required this.reasonEn,
+    this.aliases = const [],
+    this.aliasExceptions = const [],
   });
 
   factory EcodeEntry.fromJson(Map<String, dynamic> j) => EcodeEntry(
@@ -56,6 +65,8 @@ class EcodeEntry {
         verdictByProfile: Map<String, String>.from(j['verdict'] as Map),
         reasonTr: j['reason_tr'] as String,
         reasonEn: j['reason_en'] as String,
+        aliases: List<String>.from(j['aliases'] as List? ?? []),
+        aliasExceptions: List<String>.from(j['alias_exceptions'] as List? ?? []),
       );
 
   Verdict verdictFor(Profile p) =>

@@ -175,6 +175,72 @@ void main() {
     });
   });
 
+  group('E-kod isim (alias) eşleşmeleri', () {
+    test('polysorbate 80 (kod yazılmadan) → şüpheli, E433 tespiti', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'eau, arôme, émulsifiant: polysorbate 80',
+      );
+      expect(r.verdict, Verdict.mushbooh);
+      expect(r.findings.any((f) => f.label.contains('E433')), isTrue);
+    });
+
+    test('stéarate de magnésium → şüpheli (E572)', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'édulcorant, arôme, stéarate de magnésium',
+      );
+      expect(r.verdict, Verdict.mushbooh);
+    });
+
+    test('glycérine → şüpheli; glycérine végétale → temiz', () {
+      final plain = engine.analyze(profile: Profile.diyanet, ingredientsText: 'eau, glycérine, arôme');
+      final veg = engine.analyze(profile: Profile.diyanet, ingredientsText: 'eau, glycérine végétale, arôme');
+      expect(plain.verdict, Verdict.mushbooh);
+      expect(veg.verdict, Verdict.halal);
+    });
+
+    test('Almanca: Magnesiumstearat → şüpheli', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'süßungsmittel, magnesiumstearat, aroma',
+      );
+      expect(r.verdict, Verdict.mushbooh);
+    });
+
+    test('gomme-laque: temkinli şüpheli, genişlik helal (E904 ile aynı)', () {
+      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
+      final genislik = engine.analyze(profile: Profile.genislik, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
+      expect(temkinli.verdict, Verdict.mushbooh);
+      expect(genislik.verdict, Verdict.halal);
+    });
+
+    test('disodium inosinate + guanylate (EN etiket) → şüpheli', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'salt, flavour enhancers: disodium inosinate, disodium guanylate',
+      );
+      expect(r.verdict, Verdict.mushbooh);
+      expect(r.findings.any((f) => f.label.contains('E631')), isTrue);
+      expect(r.findings.any((f) => f.label.contains('E627')), isTrue);
+    });
+
+    test('alias hem kod hem isim geçince tek tespit (E433 + polysorbate 80)', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'émulsifiant: polysorbate 80 (e433)',
+      );
+      expect(r.findings.where((f) => f.label.contains('E433')).length, 1);
+    });
+
+    test('karoten yalnız temkinli profilde şüpheli (alias üzerinden)', () {
+      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: 'su, beta-carotene, aroma');
+      final diyanet = engine.analyze(profile: Profile.diyanet, ingredientsText: 'su, beta-carotene, aroma');
+      expect(temkinli.verdict, Verdict.mushbooh);
+      expect(diyanet.verdict, Verdict.halal);
+    });
+  });
+
   group('temiz ürünler ve veri yetersizliği', () {
     test('basit temiz içerik → halal', () {
       final r = engine.analyze(

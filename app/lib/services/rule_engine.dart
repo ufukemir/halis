@@ -77,11 +77,16 @@ class RuleEngine {
       }
     }
 
-    // 2) E-kodları: metinden + OFF etiketlerinden birleşik küme.
+    // 2) E-kodları: metinden + OFF etiketlerinden + isim (alias) eşleşmelerinden
+    //    birleşik küme. Etiketler katkıyı her zaman koduyla yazmaz
+    //    ("polysorbate 80", "stéarate de magnésium"...).
     final codes = <String>{
       for (final m in _ecodePattern.allMatches(text))
         'E${m.group(1)}${m.group(2) ?? ''}'.toUpperCase(),
       for (final tag in additiveTags) _codeFromTag(tag),
+      if (hasText)
+        for (final entry in kb.ecodes.values)
+          if (_matchesAlias(text, entry)) entry.code,
     }..removeWhere((c) => c.isEmpty);
 
     for (final code in codes) {
@@ -157,6 +162,21 @@ class RuleEngine {
       if (re.hasMatch(text)) return term;
     }
     return null;
+  }
+
+  /// E-kod isim eşleşmesi: aliases metinde kelime sınırında geçiyor mu?
+  /// İstisna kalıbı (ör. "bitkisel gliserin") geçiyorsa eşleşme iptal.
+  bool _matchesAlias(String text, EcodeEntry entry) {
+    if (entry.aliases.isEmpty) return false;
+    for (final exception in entry.aliasExceptions) {
+      if (text.contains(exception)) return false;
+    }
+    for (final alias in entry.aliases) {
+      final a = RegExp.escape(alias);
+      final re = RegExp('(?<![$_letters])$a(?![$_letters])');
+      if (re.hasMatch(text)) return true;
+    }
+    return false;
   }
 
   String _codeFromTag(String tag) {
