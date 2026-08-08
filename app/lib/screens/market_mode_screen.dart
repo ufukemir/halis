@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../l10n/strings.dart';
@@ -70,10 +71,15 @@ class _MarketModeScreenState extends State<MarketModeScreen> {
         );
         verdict = r.verdict;
         title = [if (product.brands != null) product.brands!, product.name ?? value].join(' ');
-        await HistoryService()
-            .add(HistoryEntry(title: title, verdict: verdict, date: DateTime.now()));
+        await HistoryService().add(HistoryEntry(
+            title: title,
+            verdict: verdict,
+            date: DateTime.now(),
+            ingredientsText: product.ingredientsText,
+            additiveTags: product.additiveTags));
       }
       if (!mounted) return;
+      _hapticFor(verdict); // telefona bakmadan raf arası kullanım
       setState(() => _items.insert(0, _MarketItem(barcode: value, title: title, verdict: verdict)));
       ScaffoldMessenger.of(context)
         ..clearSnackBars()
@@ -96,6 +102,23 @@ class _MarketModeScreenState extends State<MarketModeScreen> {
       _seen.remove(value); // ağ hatası: aynı barkod tekrar denenebilsin
     } finally {
       if (mounted) setState(() => _lookupBusy = false);
+    }
+  }
+
+  /// Hüküm başına ayrık titreşim deseni: yeşil tek hafif, turuncu çift orta,
+  /// kırmızı uzun — ekrana bakmadan ayırt edilir.
+  Future<void> _hapticFor(Verdict v) async {
+    switch (v) {
+      case Verdict.halal:
+        await HapticFeedback.lightImpact();
+      case Verdict.mushbooh:
+        await HapticFeedback.mediumImpact();
+        await Future<void>.delayed(const Duration(milliseconds: 150));
+        await HapticFeedback.mediumImpact();
+      case Verdict.haram:
+        await HapticFeedback.vibrate();
+      case Verdict.unknown:
+        await HapticFeedback.selectionClick();
     }
   }
 

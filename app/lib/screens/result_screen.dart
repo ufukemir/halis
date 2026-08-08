@@ -45,6 +45,8 @@ class _ResultScreenState extends State<ResultScreen> {
       title: product.name ?? widget.barcode,
       verdict: result.verdict,
       date: DateTime.now(),
+      ingredientsText: product.ingredientsText,
+      additiveTags: product.additiveTags,
     ));
     return (product, result);
   }

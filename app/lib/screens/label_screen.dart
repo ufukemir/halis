@@ -119,7 +119,8 @@ class _LabelScreenState extends State<LabelScreen> {
     await PremiumService.recordLabelAnalysis();
     await _loadQuota();
     final title = text.length > 40 ? '${text.substring(0, 40)}…' : text;
-    await HistoryService().add(HistoryEntry(title: title, verdict: result.verdict, date: DateTime.now()));
+    await HistoryService().add(HistoryEntry(
+        title: title, verdict: result.verdict, date: DateTime.now(), ingredientsText: text));
   }
 
   /// OFF katkısı önerilebilir mi: barkod bilinir + fotoğraf çekilmiş +

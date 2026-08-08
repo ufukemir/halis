@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'l10n/strings.dart';
 import 'models/models.dart';
+import 'screens/encyclopedia_screen.dart';
 import 'screens/label_screen.dart';
 import 'screens/market_mode_screen.dart';
 import 'screens/onboarding_screen.dart';
@@ -140,6 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         actions: [
           IconButton(
+            icon: const Icon(Icons.menu_book_outlined),
+            tooltip: s.encyclopediaTitle,
+            onPressed: () {
+              if (_kb == null) return;
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => EncyclopediaScreen(profile: _profile, kb: _kb!),
+              ));
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.workspace_premium),
             tooltip: s.premiumTitle,
             onPressed: () => Navigator.of(context).push(
@@ -217,7 +228,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ButtonSegment(value: p, label: Text(s.profileName(p))),
                   ],
                   selected: {_profile},
-                  onSelectionChanged: (sel) => setState(() => _profile = sel.first),
+                  onSelectionChanged: (sel) async {
+                    setState(() => _profile = sel.first);
+                    // Geçmişteki hükümler yeni profilin gözünden tazelenir.
+                    if (_kb != null) {
+                      final updated = await HistoryService().reanalyze(_kb!, _profile);
+                      if (mounted) setState(() => _history = updated);
+                    }
+                  },
                 ),
                 const SizedBox(height: 24),
                 // Geliştirme/simülatör için elle barkod girişi.
@@ -238,6 +256,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 if (_history.isNotEmpty) ...[
                   const SizedBox(height: 24),
+                  Builder(builder: (context) {
+                    final now = DateTime.now();
+                    final month = _history
+                        .where((e) => e.date.year == now.year && e.date.month == now.month);
+                    final flagged = month
+                        .where((e) =>
+                            e.verdict == Verdict.haram || e.verdict == Verdict.mushbooh)
+                        .length;
+                    return Card(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.insights, size: 20),
+                            const SizedBox(width: 8),
+                            Expanded(child: Text(s.statsLine(month.length, flagged))),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+                  const SizedBox(height: 12),
                   Text(s.recentScans, style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 4),
                   for (final e in _history.take(10))

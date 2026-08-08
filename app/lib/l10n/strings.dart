@@ -219,6 +219,30 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String statsLine(int total, int flagged) => _t({
+        'tr': 'Bu ay $total tarama · $flagged uyarı',
+        'en': 'This month: $total scans · $flagged warnings',
+        'de': 'Diesen Monat: $total Scans · $flagged Warnungen',
+        'fr': 'Ce mois-ci : $total scans · $flagged alertes',
+        'ar': 'هذا الشهر: $total مسحًا · $flagged تحذيرًا',
+        'id': 'Bulan ini: $total pindaian · $flagged peringatan',
+      });
+
+  String get encyclopediaTitle => _t(const {
+        'tr': 'E-Kod Ansiklopedisi', 'en': 'E-Number Encyclopedia',
+        'de': 'E-Nummern-Lexikon', 'fr': 'Encyclopédie des E-numéros',
+        'ar': 'موسوعة أرقام E', 'id': 'Ensiklopedia E-Number',
+      });
+
+  String get encyclopediaSearchHint => _t(const {
+        'tr': 'E-kod veya isim ara… (ör. E471, jelatin)',
+        'en': 'Search code or name… (e.g. E471, gelatin)',
+        'de': 'Code oder Name suchen… (z. B. E471)',
+        'fr': 'Chercher un code ou un nom… (ex. E471)',
+        'ar': 'ابحث عن رمز أو اسم… (مثل E471)',
+        'id': 'Cari kode atau nama… (mis. E471)',
+      });
+
   String get searchByName => _t(const {
         'tr': 'İsimle Ara', 'en': 'Search by Name', 'de': 'Nach Name suchen',
         'fr': 'Rechercher par nom', 'ar': 'البحث بالاسم', 'id': 'Cari dengan Nama',
