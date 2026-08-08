@@ -151,30 +151,53 @@ class RuleEngine {
     );
   }
 
-  /// Eşleşen ilk terimi döndürür; istisna kalıbı metinde geçiyorsa eşleşme iptal.
+  /// Eşleşen ilk terimi döndürür.
+  ///
+  /// İstisna işleme — yanlış yeşil koruması: terimi İÇEREN istisna kalıpları
+  /// ("bitkisel jelatin") girdiyi tümden iptal ETMEZ; yalnız kendi geçtiği
+  /// ifade metinden maskelenir ve kalan metin yeniden taranır. Böylece
+  /// "bitkisel jelatin, ..., jelatin" etiketindeki İKİNCİ (kaynaksız) jelatin
+  /// yakalanmaya devam eder. Terim içermeyen istisnalar ("helal") bağlam
+  /// işaretidir ve eski davranışla girdiyi tümden iptal eder.
   String? _firstTermMatch(String text, IngredientEntry entry) {
-    for (final exception in entry.exceptions) {
-      if (text.contains(exception.toLowerCase())) return null;
-    }
+    final masked = _maskExceptions(text, entry.terms, entry.exceptions);
+    if (masked == null) return null;
     for (final term in entry.terms) {
       final t = RegExp.escape(term.toLowerCase());
       final re = RegExp('(?<![$_letters])$t(?![$_letters])');
-      if (re.hasMatch(text)) return term;
+      if (re.hasMatch(masked)) return term;
     }
     return null;
   }
 
+  /// İstisna kalıplarını uygular: terim içerenler metinden maskelenir,
+  /// içermeyenler (bağlam işareti) metinde geçiyorsa null döner (girdi iptal).
+  String? _maskExceptions(String text, List<String> terms, List<String> exceptions) {
+    var masked = text;
+    for (final exception in exceptions) {
+      final ex = exception.toLowerCase();
+      final coversTerm = terms.any((t) => ex.contains(t.toLowerCase()));
+      if (coversTerm) {
+        masked = masked.replaceAll(ex, ' ');
+      } else if (text.contains(ex)) {
+        return null;
+      }
+    }
+    return masked;
+  }
+
   /// E-kod isim eşleşmesi: aliases metinde kelime sınırında geçiyor mu?
-  /// İstisna kalıbı (ör. "bitkisel gliserin") geçiyorsa eşleşme iptal.
+  /// İstisnalar _firstTermMatch ile aynı maskeleme kuralına tabidir
+  /// ("glycérine végétale" yalnız kendi ifadesini susturur, etiketteki
+  /// kaynaksız ikinci "glycérine" yakalanır).
   bool _matchesAlias(String text, EcodeEntry entry) {
     if (entry.aliases.isEmpty) return false;
-    for (final exception in entry.aliasExceptions) {
-      if (text.contains(exception)) return false;
-    }
+    final masked = _maskExceptions(text, entry.aliases, entry.aliasExceptions);
+    if (masked == null) return false;
     for (final alias in entry.aliases) {
       final a = RegExp.escape(alias);
       final re = RegExp('(?<![$_letters])$a(?![$_letters])');
-      if (re.hasMatch(text)) return true;
+      if (re.hasMatch(masked)) return true;
     }
     return false;
   }

@@ -1,6 +1,6 @@
 {
-  "version": "0.3.0",
-  "updated": "2026-07-31",
+  "version": "0.3.1",
+  "updated": "2026-08-08",
   "status": "Elle derlenmiş veri; bağımsız dini danışman incelemesinden geçmedi. Uygulama her sonuçta 'dini hüküm değildir' uyarısı gösterir.",
   "note": "Eşleşme küçük harfe çevrilerek ve kelime sınırlarında yapılır. 'exceptions' listesi eşleşmeyi iptal eden kalıplardır (ör. 'bitkisel jelatin'). Diller: TR/EN/DE/FR/AR/ID.",
   "entries": [
@@ -27,7 +27,10 @@
         "schweinefett",
         "speck",
         "schinken",
-        "schmalz"
+        "schmalz",
+        "schweineschmalz",
+        "schweinespeck",
+        "schweinegelatine"
       ],
       "exceptions": [],
       "reason_tr": "Domuz ve türevleri tüm görüşlerde haramdır.",

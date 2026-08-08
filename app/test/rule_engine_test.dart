@@ -241,6 +241,78 @@ void main() {
     });
   });
 
+  group('yanlış yeşil koruması (marka riski — asla haram ürüne yeşil yakma)', () {
+    test('istisna kalıbı İKİNCİ kaynaksız maddeyi maskelemez: bitkisel jelatin + jelatin → haram', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'şeker, bitkisel jelatin, jelatin, aroma',
+      );
+      expect(r.verdict, Verdict.haram);
+    });
+
+    test('glycérine végétale + kaynaksız glycérine → şüpheli', () {
+      final r = engine.analyze(
+        profile: Profile.diyanet,
+        ingredientsText: 'eau, glycérine végétale, arôme, glycérine',
+      );
+      expect(r.verdict, Verdict.mushbooh);
+    });
+
+    test('regresyon: yalnız bitkisel jelatin → haram değil', () {
+      final r = engine.analyze(profile: Profile.diyanet, ingredientsText: 'şeker, bitkisel jelatin, aroma');
+      expect(r.verdict, isNot(Verdict.haram));
+    });
+
+    test('regresyon: bağlam istisnası korunur — helal ibaresi eti aklar', () {
+      final r = engine.analyze(profile: Profile.diyanet, ingredientsText: 'helal sertifikalı dana eti, tuz');
+      expect(r.verdict, Verdict.halal);
+    });
+
+    test('Almanca bileşik kelime: Schweineschmalz → haram', () {
+      final r = engine.analyze(profile: Profile.diyanet, ingredientsText: 'weizenmehl, schweineschmalz, salz');
+      expect(r.verdict, Verdict.haram);
+    });
+
+    test('bilinen haram etiketler 6 dilde, 3 profilde de asla yeşil yanmaz', () {
+      const haramLabels = [
+        'buğday unu, domuz yağı',          // TR
+        'flour, lard, sugar',              // EN
+        'schweinefett, salz',              // DE
+        'farine, saindoux',                // FR
+        'دقيق، دهن الخنزير',                // AR
+        'tepung, minyak babi',             // ID
+        'şeker, jelatin',                  // kaynaksız jelatin
+        'sucre, gélatine',                 // FR jelatin
+        'سكر، جيلاتين',                     // AR jelatin
+        'su, şarap',                       // içki
+        'eau, vin rouge',                  // FR şarap
+        'şeker, renklendirici e120',       // karmin kodu
+        'sucre, colorant: carmin',         // karmin FR adı
+      ];
+      for (final label in haramLabels) {
+        for (final p in Profile.values) {
+          final r = engine.analyze(profile: p, ingredientsText: label);
+          expect(r.verdict, isNot(Verdict.halal),
+              reason: 'YANLIŞ YEŞİL: "$label" (profil: ${p.key})');
+        }
+      }
+    });
+
+    test('içerik verisi olmayan barkod asla yeşil yanmaz (unknown)', () {
+      for (final p in Profile.values) {
+        final r = engine.analyze(profile: p, ingredientsText: null, additiveTags: []);
+        expect(r.verdict, Verdict.unknown, reason: 'profil: ${p.key}');
+      }
+    });
+
+    test('tabloda olmayan E-kodu asla yeşil yanmaz', () {
+      for (final p in Profile.values) {
+        final r = engine.analyze(profile: p, ingredientsText: 'su, E999b');
+        expect(r.verdict, Verdict.mushbooh, reason: 'profil: ${p.key}');
+      }
+    });
+  });
+
   group('temiz ürünler ve veri yetersizliği', () {
     test('basit temiz içerik → halal', () {
       final r = engine.analyze(
