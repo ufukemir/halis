@@ -79,8 +79,26 @@ ANTHROPIC_API_KEY=sk-... uvicorn app.main:app --reload
 - [x] Play: imzalı AAB doğrulandı (74 MB); split-ABI APK'lar. AppGallery:
       GMS bağımlılığı yok (gömülü ML Kit), v1 ücretsiz çıkar — docs/04
 - [x] Backend deploy reçetesi (backend/Dockerfile + DEPLOY.md; deploy kararı bekliyor)
-- [x] Birim testleri: 58 app + 10 backend ✅, `flutter analyze` temiz
+- [x] E-Kod Ansiklopedisi: 304 kodun aranabilir başvurusu (kod/isim/alias),
+      profil bazlı hüküm + 3 profil karşılaştırma çipleri
+- [x] Alerjen/diyet katmanı: 8 alerjen + vegan/vejetaryen seçimi; ürün
+      kartında hükümden AYRI turuncu uyarı çipleri (hükmü asla etkilemez)
+- [x] Favoriler + kara liste ("Ürünlerim"), ürün karşılaştırma (2 slot),
+      süpermarket modunda hüküm başına titreşim, aylık istatistik kartı
+- [x] Geçmiş yeniden analizi (profil değişince hükümler tazelenir),
+      sertifika ibaresi tespiti (bilgi notu, "kurumdan doğrulayın")
+- [x] Arama büyüme döngüsü: ülke öncelikli sonuçlar (TR/DE/FR/ID), sayfalama,
+      "Barkodu Tarat ve Ekle" → OFF katkısı (veritabanı her aramayla büyür)
+- [x] Uygulama simgesi kısayolları (Tara/Etiket/Market), Ramazan sezon banner'ı
+- [x] Lansman cilası: karanlık mod (sistem), erişilebilirlik (hüküm ikonlarında
+      sesli etiket), OTA veri güncellemesi (backend /v1/data → kabul çitleriyle
+      sıcak değişim), mağaza değerlendirme isteği (5. taramada bir kez)
+- [x] Birim testleri: **72 app + 12 backend** ✅, `flutter analyze` temiz
 - [x] CONTRIBUTING.md (kurulum, ilkeler, veri kuralları, iş bölüşümü)
+
+**KOD DONDURULDU (2026-08-08):** v1 kapsamı tamam; yeni özellik kararları
+lansman sonrası kullanıcı geri bildirimiyle verilecek. Kalan işler GitHub
+Issues'da (hesap kapıları + cihaz testleri).
 
 ### Kalan işler
 
