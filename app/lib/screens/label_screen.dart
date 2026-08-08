@@ -5,6 +5,7 @@ import '../l10n/strings.dart';
 import '../models/models.dart';
 import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
+import '../services/cert_hints.dart';
 import '../services/normalize_api.dart';
 import '../services/ocr_service.dart';
 import '../services/off_contribution.dart';
@@ -253,6 +254,16 @@ class _LabelScreenState extends State<LabelScreen> {
                 s.remainingAnalyses(_remaining!),
                 style: Theme.of(context).textTheme.bodySmall,
                 textAlign: TextAlign.center,
+              ),
+            ),
+          if (_result != null && CertHints.detect(_controller.text) != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Card(
+                child: ListTile(
+                  leading: const Icon(Icons.verified_outlined),
+                  title: Text(s.certHintSeen, style: Theme.of(context).textTheme.bodySmall),
+                ),
               ),
             ),
           if (_result != null) ...[

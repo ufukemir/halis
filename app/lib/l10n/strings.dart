@@ -219,6 +219,29 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get ramadanBanner => _t(const {
+        'tr': 'Ramazan bereketi 🌙 İftar sofrası için ürünleri tarat; bulunamayanı fotoğrafla ekle, veritabanını hep birlikte büyütelim.',
+        'en': 'Ramadan blessings 🌙 Scan products for your iftar table; add missing ones with a photo and let\'s grow the database together.',
+        'de': 'Gesegneter Ramadan 🌙 Scannen Sie Produkte für Ihr Iftar; fehlende per Foto hinzufügen — gemeinsam wächst die Datenbank.',
+        'fr': 'Ramadan béni 🌙 Scannez les produits pour l\'iftar ; ajoutez les manquants en photo, faisons grandir la base ensemble.',
+        'ar': 'رمضان مبارك 🌙 امسح منتجات مائدة الإفطار؛ وأضف الناقص بصورة لننمّي قاعدة البيانات معًا.',
+        'id': 'Ramadan penuh berkah 🌙 Pindai produk untuk berbuka; tambahkan yang belum ada lewat foto, mari besarkan basis data bersama.',
+      });
+
+  String get compareTitle => _t(const {
+        'tr': 'Ürün Karşılaştır', 'en': 'Compare Products', 'de': 'Produkte vergleichen',
+        'fr': 'Comparer des produits', 'ar': 'مقارنة المنتجات', 'id': 'Bandingkan Produk',
+      });
+
+  String get certHintSeen => _t(const {
+        'tr': 'Etikette helal sertifika ibaresi görüldü. Geçerliliğini ilgili kurumdan doğrulamanızı öneririz.',
+        'en': 'A halal certification mention was seen on the label. We recommend verifying it with the issuing body.',
+        'de': 'Auf dem Etikett wurde ein Halal-Zertifikatshinweis erkannt. Bitte bei der ausstellenden Stelle prüfen.',
+        'fr': 'Une mention de certification halal a été détectée sur l\'étiquette. Vérifiez auprès de l\'organisme émetteur.',
+        'ar': 'ظهرت إشارة إلى شهادة حلال على الملصق. ننصح بالتحقق منها لدى الجهة المانحة.',
+        'id': 'Terlihat keterangan sertifikasi halal pada label. Sebaiknya verifikasi ke lembaga penerbit.',
+      });
+
   String get myProducts => _t(const {
         'tr': 'Ürünlerim', 'en': 'My Products', 'de': 'Meine Produkte',
         'fr': 'Mes produits', 'ar': 'منتجاتي', 'id': 'Produk Saya',

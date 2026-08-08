@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:quick_actions/quick_actions.dart';
 
 import 'l10n/strings.dart';
 import 'models/models.dart';
+import 'screens/compare_screen.dart';
 import 'screens/diet_screen.dart';
 import 'screens/encyclopedia_screen.dart';
 import 'screens/favorites_screen.dart';
@@ -96,6 +98,45 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     KnowledgeBase.loadFromAssets().then((kb) => setState(() => _kb = kb));
     _reloadHistory();
+    _setupQuickActions();
+  }
+
+  /// Uygulama simgesine uzun basış kısayolları (iOS Quick Actions /
+  /// Android App Shortcuts): Tara, Etiket, Süpermarket.
+  void _setupQuickActions() {
+    const actions = QuickActions();
+    actions.initialize((type) {
+      // KB henüz yüklenmemişse kısa bir gecikmeyle tekrar dene.
+      Future<void> run() async {
+        if (_kb == null) {
+          await Future<void>.delayed(const Duration(milliseconds: 400));
+          if (_kb == null || !mounted) return;
+        }
+        if (!mounted) return;
+        switch (type) {
+          case 'scan':
+            await _openScanner();
+          case 'label':
+            await _openLabelFlow();
+          case 'market':
+            await Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => MarketModeScreen(profile: _profile, kb: _kb!),
+            ));
+            await _reloadHistory();
+        }
+      }
+
+      run();
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final s = S.of(context);
+      actions.setShortcutItems([
+        ShortcutItem(type: 'scan', localizedTitle: s.scanBarcode),
+        ShortcutItem(type: 'label', localizedTitle: s.analyzeLabel),
+        ShortcutItem(type: 'market', localizedTitle: s.marketMode),
+      ]);
+    });
   }
 
   Future<void> _reloadHistory() async {
@@ -132,6 +173,17 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(builder: (_) => LabelScreen(profile: _profile, kb: _kb!)),
     );
     await _reloadHistory();
+  }
+
+  /// Ramazan sezon banner'ı. Tarihler takvime göre elle güncellenir
+  /// (hilal gözlemine bağlı ±1 gün oynayabilir; kampanya için yeterli).
+  /// 2027: ≈ 8 Şubat – 9 Mart. Sonraki yıllar yayın güncellemesiyle eklenir.
+  static bool _isRamadan(DateTime now) {
+    final ranges = [
+      (DateTime(2027, 2, 7), DateTime(2027, 3, 10)),
+      (DateTime(2028, 1, 27), DateTime(2028, 2, 27)),
+    ];
+    return ranges.any((r) => now.isAfter(r.$1) && now.isBefore(r.$2));
   }
 
   @override
@@ -189,6 +241,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
+                if (_isRamadan(DateTime.now())) ...[
+                  const SizedBox(height: 16),
+                  Card(
+                    color: Theme.of(context).colorScheme.primaryContainer,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      child: Text(s.ramadanBanner,
+                          style: Theme.of(context).textTheme.bodyMedium),
+                    ),
+                  ),
+                ],
                 const SizedBox(height: 24),
                 FilledButton.icon(
                   onPressed: _openScanner,
@@ -237,6 +300,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 12),
+                OutlinedButton.icon(
+                  onPressed: () {
+                    if (_kb == null) return;
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => CompareScreen(profile: _profile, kb: _kb!),
+                    ));
+                  },
+                  icon: const Icon(Icons.compare_arrows),
+                  label: Text(s.compareTitle),
                 ),
                 const SizedBox(height: 24),
                 Text(s.sensitivityProfile, style: Theme.of(context).textTheme.titleMedium),
