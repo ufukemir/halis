@@ -95,7 +95,8 @@ void main() {
     });
 
     test('bilinmeyen E-kodu → temkinen şüpheli', () {
-      final r = engine.analyze(profile: Profile.diyanet, ingredientsText: 'su, E999');
+      // E998 gerçek bir E-numarası değildir; tabloya asla girmeyecek sahte kod.
+      final r = engine.analyze(profile: Profile.diyanet, ingredientsText: 'su, E998');
       expect(r.verdict, Verdict.mushbooh);
     });
 

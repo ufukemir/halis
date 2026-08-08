@@ -1,7 +1,7 @@
 {
   "version": "0.3.0",
   "updated": "2026-07-31",
-  "status": "DRAFT — âlim/mütehassıs incelemesinden geçmedi.",
+  "status": "Elle derlenmiş veri; bağımsız dini danışman incelemesinden geçmedi. Uygulama her sonuçta 'dini hüküm değildir' uyarısı gösterir.",
   "note": "Eşleşme küçük harfe çevrilerek ve kelime sınırlarında yapılır. 'exceptions' listesi eşleşmeyi iptal eden kalıplardır (ör. 'bitkisel jelatin'). Diller: TR/EN/DE/FR/AR/ID.",
   "entries": [
     {

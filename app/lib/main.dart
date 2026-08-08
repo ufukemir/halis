@@ -5,14 +5,17 @@ import 'l10n/strings.dart';
 import 'models/models.dart';
 import 'screens/label_screen.dart';
 import 'screens/onboarding_screen.dart';
+import 'screens/paywall_screen.dart';
 import 'screens/result_screen.dart';
 import 'screens/scan_screen.dart';
 import 'services/history_service.dart';
 import 'services/knowledge_base.dart';
+import 'services/premium_service.dart';
 import 'widgets/verdict_view.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await PremiumService.init(); // Anahtar tanımlı değilse sessizce çevrimdışı kalır.
   runApp(const HalisApp());
 }
 
@@ -130,7 +133,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(s.appName), centerTitle: true),
+      appBar: AppBar(
+        title: Text(s.appName),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.workspace_premium),
+            tooltip: s.premiumTitle,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const PaywallScreen()),
+            ),
+          ),
+        ],
+      ),
       body: _kb == null
           ? const Center(child: CircularProgressIndicator())
           : ListView(

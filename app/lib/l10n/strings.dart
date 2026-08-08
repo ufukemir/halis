@@ -199,6 +199,103 @@ class S {
         'id': 'Teks tidak terbaca. Coba foto yang lebih jelas atau ketik teksnya.',
       });
 
+  // Kota / premium
+  String get quotaTitle => _t(const {
+        'tr': 'Aylık ücretsiz analiz hakkınız doldu', 'en': 'Monthly free analyses used up',
+        'de': 'Monatliches Gratis-Kontingent aufgebraucht', 'fr': 'Quota mensuel gratuit épuisé',
+        'ar': 'انتهت التحليلات المجانية لهذا الشهر', 'id': 'Kuota analisis gratis bulan ini habis',
+      });
+
+  String get quotaBody => _t(const {
+        'tr': 'Barkod tarama her zaman sınırsız ve ücretsizdir. Sınırsız etiket analizi için Halis Premium yakında burada olacak.',
+        'en': 'Barcode scanning is always unlimited and free. Halis Premium with unlimited label analysis is coming soon.',
+        'de': 'Barcode-Scannen bleibt immer unbegrenzt und kostenlos. Halis Premium mit unbegrenzter Etikett-Analyse kommt bald.',
+        'fr': 'Le scan de code-barres reste illimité et gratuit. Halis Premium avec analyse illimitée arrive bientôt.',
+        'ar': 'مسح الباركود مجاني وغير محدود دائمًا. Halis Premium بتحليل غير محدود قريبًا.',
+        'id': 'Pemindaian barcode selalu gratis tanpa batas. Halis Premium dengan analisis tak terbatas segera hadir.',
+      });
+
+  String get ok => _t(const {
+        'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
+      });
+
+  String get quotaBodyUpgrade => _t(const {
+        'tr': 'Barkod tarama her zaman sınırsız ve ücretsizdir. Halis Premium ile etiket analizi de sınırsız olur.',
+        'en': 'Barcode scanning is always unlimited and free. With Halis Premium, label analysis becomes unlimited too.',
+        'de': 'Barcode-Scannen bleibt immer unbegrenzt und kostenlos. Mit Halis Premium wird auch die Etikett-Analyse unbegrenzt.',
+        'fr': 'Le scan de code-barres reste illimité et gratuit. Avec Halis Premium, l\'analyse d\'étiquettes devient illimitée.',
+        'ar': 'مسح الباركود مجاني وغير محدود دائمًا. مع Halis Premium يصبح تحليل الملصقات غير محدود أيضًا.',
+        'id': 'Pemindaian barcode selalu gratis tanpa batas. Dengan Halis Premium, analisis label juga tanpa batas.',
+      });
+
+  String get goPremium => _t(const {
+        'tr': 'Premium\'a Geç', 'en': 'Go Premium', 'de': 'Premium holen',
+        'fr': 'Passer à Premium', 'ar': 'الترقية إلى Premium', 'id': 'Ke Premium',
+      });
+
+  String get aiNormalized => _t(const {
+        'tr': 'Metin yapay zekâ ile düzeltildi — analizden önce kontrol edebilirsiniz.',
+        'en': 'Text was cleaned up by AI — you can review it before analyzing.',
+        'de': 'Der Text wurde per KI bereinigt — Sie können ihn vor der Analyse prüfen.',
+        'fr': 'Le texte a été corrigé par IA — vous pouvez le vérifier avant l\'analyse.',
+        'ar': 'تم تنقيح النص بالذكاء الاصطناعي — يمكنك مراجعته قبل التحليل.',
+        'id': 'Teks dirapikan oleh AI — Anda dapat memeriksanya sebelum analisis.',
+      });
+
+  // Paywall
+  String get premiumTitle => 'Halis Premium';
+
+  String get premiumBenefits => _t(const {
+        'tr': '• Sınırsız etiket (AI) analizi\n• Tüm hassasiyet profilleri\n• Reklam yok — hiçbir zaman olmadı, olmayacak\n• Gelirin tamamı bağımsızlığımızı korur: marka parası ve reklam almayız',
+        'en': '• Unlimited label (AI) analyses\n• All sensitivity profiles\n• No ads — never had them, never will\n• Revenue keeps us independent: no brand money, no advertising',
+        'de': '• Unbegrenzte Etikett-(KI-)Analysen\n• Alle Empfindlichkeitsprofile\n• Keine Werbung — nie gehabt, nie geplant\n• Der Erlös sichert unsere Unabhängigkeit: kein Markengeld, keine Werbung',
+        'fr': '• Analyses d\'étiquettes (IA) illimitées\n• Tous les profils de sensibilité\n• Pas de pub — jamais eu, jamais prévu\n• Les revenus garantissent notre indépendance : pas d\'argent de marques, pas de publicité',
+        'ar': '• تحليلات ملصقات (AI) غير محدودة\n• جميع ملفات الحساسية\n• لا إعلانات — أبدًا\n• الإيرادات تحفظ استقلالنا: لا أموال علامات تجارية ولا إعلانات',
+        'id': '• Analisis label (AI) tanpa batas\n• Semua profil sensitivitas\n• Tanpa iklan — tidak pernah dan tidak akan\n• Pendapatan menjaga independensi kami: tanpa uang merek, tanpa iklan',
+      });
+
+  String subscribeFor(String price) => _t(const {
+        'tr': 'Abone Ol — {price}/yıl', 'en': 'Subscribe — {price}/year',
+        'de': 'Abonnieren — {price}/Jahr', 'fr': 'S\'abonner — {price}/an',
+        'ar': 'اشترك — {price}/سنة', 'id': 'Berlangganan — {price}/tahun',
+      }).replaceFirst('{price}', price);
+
+  String get restorePurchases => _t(const {
+        'tr': 'Satın alımları geri yükle', 'en': 'Restore purchases',
+        'de': 'Käufe wiederherstellen', 'fr': 'Restaurer les achats',
+        'ar': 'استعادة المشتريات', 'id': 'Pulihkan pembelian',
+      });
+
+  String get premiumActive => _t(const {
+        'tr': 'Premium etkin — teşekkürler!', 'en': 'Premium is active — thank you!',
+        'de': 'Premium ist aktiv — danke!', 'fr': 'Premium actif — merci !',
+        'ar': 'Premium مفعّل — شكرًا لك!', 'id': 'Premium aktif — terima kasih!',
+      });
+
+  String get purchaseFailed => _t(const {
+        'tr': 'Satın alma tamamlanamadı. Ücret alınmadıysa tekrar deneyebilirsiniz.',
+        'en': 'Purchase could not be completed. If you were not charged, you can try again.',
+        'de': 'Der Kauf konnte nicht abgeschlossen werden. Falls nichts abgebucht wurde, versuchen Sie es erneut.',
+        'fr': 'L\'achat n\'a pas pu être finalisé. Si vous n\'avez pas été débité, réessayez.',
+        'ar': 'تعذّر إتمام الشراء. إن لم يتم خصم مبلغ يمكنك المحاولة مجددًا.',
+        'id': 'Pembelian tidak dapat diselesaikan. Jika tidak terpotong biaya, coba lagi.',
+      });
+
+  String get storeUnavailable => _t(const {
+        'tr': 'Mağaza bağlantısı bu sürümde etkin değil.',
+        'en': 'Store connection is not enabled in this build.',
+        'de': 'Die Store-Verbindung ist in dieser Version nicht aktiviert.',
+        'fr': 'La connexion à la boutique n\'est pas activée dans cette version.',
+        'ar': 'اتصال المتجر غير مفعّل في هذا الإصدار.',
+        'id': 'Koneksi toko tidak diaktifkan dalam versi ini.',
+      });
+
+  String remainingAnalyses(int n) => _t(const {
+        'tr': 'Bu ay kalan ücretsiz analiz: {n}', 'en': 'Free analyses left this month: {n}',
+        'de': 'Verbleibende Gratis-Analysen diesen Monat: {n}', 'fr': 'Analyses gratuites restantes ce mois-ci : {n}',
+        'ar': 'التحليلات المجانية المتبقية هذا الشهر: {n}', 'id': 'Sisa analisis gratis bulan ini: {n}',
+      }).replaceFirst('{n}', '$n');
+
   // Onboarding
   String get onboardingTitle => _t(const {
         'tr': 'Halis\'e hoş geldiniz', 'en': 'Welcome to Halis', 'de': 'Willkommen bei Halis',

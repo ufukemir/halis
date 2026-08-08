@@ -40,18 +40,24 @@ ANTHROPIC_API_KEY=sk-... uvicorn app.main:app --reload
 1. **Yeşil yalnız kural motorundan çıkar.** LLM sadece OCR metnini normalize eder; hüküm daima cihazdaki deterministik motorda verilir. Şüphede daima turuncu.
 2. **Reklam yok, marka parası yok.** Gelir sadece abonelik (Yuka bağımsızlık modeli).
 3. **ODbL ayrımı.** Open Food Facts verisi canlı API'dan sorgulanır, kendi hüküm veritabanımızla kalıcı olarak birleştirilmez (share-alike tetiklenmesin). Uygulamada OFF'a atıf gösterilir.
-4. **Dini hüküm değil, bilgilendirme.** Her sonuç kartında disclaimer + gerekçe + kaynak. `data/` dosyaları DRAFT'tır; yayın öncesi dini danışman onayı zorunludur.
+4. **Dini hüküm değil, bilgilendirme.** Her sonuç kartında disclaimer + gerekçe + kaynak. `data/` dosyaları elle derlenmiştir; bağımsız dini danışman incelemesi yayın önkoşulu değildir (Ufuk, 2026-08-07), istenirse sonradan güven/pazarlama unsuru olarak yaptırılabilir.
 
-## Durum (2026-07-31)
+## Durum (2026-08-07)
 
 - [x] Pazar + rakip + teknik araştırma (docs/)
-- [x] E-kod tablosu v0 (57 madde) + içerik sözlüğü v0
 - [x] Flutter iskeleti: barkod tarama (mobile_scanner) + OFF sorgusu + kural motoru + sonuç ekranı
-- [x] Kural motoru birim testleri (14/14 ✅), OFF API canlı doğrulama (Nutella barkodu)
 - [x] FastAPI backend iskeleti (Claude Haiku 4.5, structured outputs)
-- [ ] halis.app alan adı (Ufuk alacak) + Türk Patent/EUIPO taraması
-- [ ] Etiket fotoğrafı akışı (ML Kit OCR → backend → kural motoru)
-- [ ] E-kod tablosunu 200 maddeye genişletme + dini danışman incelemesi
+- [x] Etiket fotoğrafı akışı: ML Kit OCR → (varsa) backend normalizasyonu → kural motoru.
+      Backend adresi `--dart-define=HALIS_API_URL=...` ile verilir; tanımsızsa akış tamamen
+      yerel çalışır, backend hatası akışı asla bloke etmez.
+- [x] E-kod tablosu v1: **304 madde** (0.2.0), 3 hassasiyet profili (elle derlendi; danışman incelemesi opsiyonel)
+- [x] i18n (TR/EN/DE/FR/AR/ID) + onboarding/disclaimer ekranı + tarama geçmişi
+- [x] RevenueCat abonelik + aylık kota: barkod sınırsız ücretsiz; etiket analizi ücretsizde
+      ayda 10 (cihazda sayılır), premium sınırsız. Anahtarlar `--dart-define=REVENUECAT_API_KEY=...`
+      ile; anahtar yoksa mağaza kapalı, uygulama ücretsiz katman kurallarıyla çalışır.
+      Paywall ekranı fiyatı mağaza teklifinden okur. (Android minSdk 24'e sabitlendi.)
+- [x] Birim testleri: kural motoru + kota + normalizasyon (29/29 ✅), `flutter analyze` temiz
+- [ ] halis.app alan adı (Ufuk alıyor) + Türk Patent/EUIPO taraması
+- [ ] Backend kota doğrulaması (RevenueCat webhook + cihaz kimliği) — şimdilik kota istemci tarafında
+- [ ] RevenueCat panelinde ürün/teklif tanımı + mağaza hesapları (Ufuk)
 - [ ] Fransızca sözlük (OFF'ta Avrupa ürünleri ağırlıkla FR etiketli)
-- [ ] RevenueCat abonelik + kota
-- [ ] i18n (SALSABİL altyapısından port) + onboarding + disclaimer ekranı

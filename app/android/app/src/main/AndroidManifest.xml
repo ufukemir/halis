@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- OFF API + backend erişimi; debug'da otomatik, release için şart. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Halis"
         android:name="${applicationName}"

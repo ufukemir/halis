@@ -27,7 +27,8 @@ android {
 
     defaultConfig {
         applicationId = "com.halis.app"
-        minSdk = flutter.minSdkVersion
+        // purchases_flutter (RevenueCat) minSdk 24 ister.
+        minSdk = maxOf(24, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -51,6 +52,10 @@ android {
             } else {
                 signingConfigs.getByName("debug")
             }
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
