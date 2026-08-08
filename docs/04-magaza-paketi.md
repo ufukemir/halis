@@ -111,7 +111,7 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 - [ ] halis.app alan adı + privacy sayfası — **Ufuk**
 - [ ] Bundle ID kararı (`com.halis.app` önerilir; iOS projesinde güncelle)
 - [ ] Ekran görüntüleri (plan yukarıda; simülatörden alınabilir)
-- [ ] OFF User-Agent "dev build" ibaresini güncelle (`app/lib/services/off_config.dart` — tek satır)
+- [x] OFF User-Agent yayın değerinde: `Halis/1.0.0 (halal food scanner; https://halis.app; destek@halis.app)` (`app/lib/services/off_config.dart`)
 - [ ] RevenueCat panel: ürün/teklif + webhook URL'si (`/v1/revenuecat-webhook`) + `HALIS_WEBHOOK_TOKEN`
 - [ ] Backend deploy kararı: v1'de backend'li mi backend'siz mi? (backend/DEPLOY.md)
 - Not: `data/` dosyalarının dini danışman incelemesi yayın önkoşulu DEĞİLDİR
