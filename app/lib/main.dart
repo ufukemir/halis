@@ -5,6 +5,7 @@ import 'l10n/strings.dart';
 import 'models/models.dart';
 import 'screens/diet_screen.dart';
 import 'screens/encyclopedia_screen.dart';
+import 'screens/favorites_screen.dart';
 import 'screens/label_screen.dart';
 import 'screens/market_mode_screen.dart';
 import 'screens/onboarding_screen.dart';
@@ -141,6 +142,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(s.appName),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.bookmark_outline),
+            tooltip: s.myProducts,
+            onPressed: () {
+              if (_kb == null) return;
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => FavoritesScreen(profile: _profile, kb: _kb!),
+              ));
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.tune),
             tooltip: s.dietTitle,

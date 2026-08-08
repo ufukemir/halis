@@ -4,6 +4,7 @@ import '../l10n/strings.dart';
 import '../models/models.dart';
 import '../services/alternatives_service.dart';
 import '../services/diet_service.dart';
+import '../services/favorites_service.dart';
 import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
 import '../services/off_api.dart';
@@ -32,6 +33,26 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
   late final Future<(OffProduct?, AnalysisResult?)> _future = _load();
+  ProductFlag? _flag;
+
+  @override
+  void initState() {
+    super.initState();
+    FavoritesService().flagOf(widget.barcode).then((f) {
+      if (mounted) setState(() => _flag = f);
+    });
+  }
+
+  Future<void> _toggleFlag(OffProduct product, AnalysisResult result, ProductFlag flag) async {
+    final next = await FavoritesService().toggle(FlaggedProduct(
+      barcode: product.barcode,
+      title: [if (product.brands != null) product.brands!, product.name ?? product.barcode].join(' '),
+      verdict: result.verdict,
+      flag: flag,
+      date: DateTime.now(),
+    ));
+    if (mounted) setState(() => _flag = next);
+  }
 
   Future<(OffProduct?, AnalysisResult?)> _load() async {
     final product = await OffApi().fetchProduct(widget.barcode);
@@ -105,6 +126,29 @@ class _ResultScreenState extends State<ResultScreen> {
                   if (product.brands != null) product.brands!,
                   product.barcode,
                 ].join(' · ')),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        _flag == ProductFlag.fav ? Icons.bookmark : Icons.bookmark_outline,
+                        color: _flag == ProductFlag.fav
+                            ? Theme.of(context).colorScheme.primary
+                            : null,
+                      ),
+                      tooltip: s.favorites,
+                      onPressed: () => _toggleFlag(product, result!, ProductFlag.fav),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.block,
+                        color: _flag == ProductFlag.avoid ? const Color(0xFFB3261E) : null,
+                      ),
+                      tooltip: s.avoided,
+                      onPressed: () => _toggleFlag(product, result!, ProductFlag.avoid),
+                    ),
+                  ],
+                ),
               ),
               VerdictView(
                 result: result!,

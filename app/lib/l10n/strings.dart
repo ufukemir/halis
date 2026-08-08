@@ -219,6 +219,21 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get myProducts => _t(const {
+        'tr': 'Ürünlerim', 'en': 'My Products', 'de': 'Meine Produkte',
+        'fr': 'Mes produits', 'ar': 'منتجاتي', 'id': 'Produk Saya',
+      });
+
+  String get favorites => _t(const {
+        'tr': 'Favoriler', 'en': 'Favorites', 'de': 'Favoriten',
+        'fr': 'Favoris', 'ar': 'المفضلة', 'id': 'Favorit',
+      });
+
+  String get avoided => _t(const {
+        'tr': 'Kaçındıklarım', 'en': 'Avoided', 'de': 'Gemieden',
+        'fr': 'À éviter', 'ar': 'أتجنبها', 'id': 'Dihindari',
+      });
+
   String get dietTitle => _t(const {
         'tr': 'Diyet ve Alerjen Uyarıları', 'en': 'Diet & Allergen Alerts',
         'de': 'Diät- & Allergen-Hinweise', 'fr': 'Alertes régime et allergènes',
