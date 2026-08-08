@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'l10n/strings.dart';
 import 'models/models.dart';
+import 'screens/diet_screen.dart';
 import 'screens/encyclopedia_screen.dart';
 import 'screens/label_screen.dart';
 import 'screens/market_mode_screen.dart';
@@ -140,6 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(s.appName),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.tune),
+            tooltip: s.dietTitle,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const DietScreen()),
+            ),
+          ),
           IconButton(
             icon: const Icon(Icons.menu_book_outlined),
             tooltip: s.encyclopediaTitle,

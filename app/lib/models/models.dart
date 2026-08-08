@@ -159,6 +159,12 @@ class OffProduct {
   /// önerisi aynı kategoride arama yapar. Liste genelden özele sıralıdır.
   final List<String> categoryTags;
 
+  /// OFF alerjen etiketleri (ör. "en:gluten") — diyet katmanı için.
+  final List<String> allergenTags;
+
+  /// OFF vejetaryen analizi (`yes`/`no`/`maybe`/null).
+  final String? vegetarianStatus;
+
   const OffProduct({
     required this.barcode,
     this.name,
@@ -168,6 +174,8 @@ class OffProduct {
     this.veganStatus,
     this.imageUrl,
     this.categoryTags = const [],
+    this.allergenTags = const [],
+    this.vegetarianStatus,
   });
 }
 

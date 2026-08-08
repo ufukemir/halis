@@ -13,7 +13,7 @@ import 'off_config.dart';
 class OffApi {
   static const _host = 'world.openfoodfacts.org';
   static const _fields =
-      'product_name,brands,ingredients_text,ingredients_text_tr,ingredients_text_en,ingredients_text_de,additives_tags,ingredients_analysis_tags,image_front_small_url,categories_tags';
+      'product_name,brands,ingredients_text,ingredients_text_tr,ingredients_text_en,ingredients_text_de,additives_tags,ingredients_analysis_tags,image_front_small_url,categories_tags,allergens_tags';
 
   final http.Client _client;
 
@@ -108,7 +108,17 @@ class OffApi {
       veganStatus: vegan,
       imageUrl: p['image_front_small_url'] as String?,
       categoryTags: List<String>.from(p['categories_tags'] as List? ?? []),
+      allergenTags: List<String>.from(p['allergens_tags'] as List? ?? []),
+      vegetarianStatus: _vegetarianFrom(p),
     );
+  }
+
+  static String? _vegetarianFrom(Map<String, dynamic> p) {
+    final tags = List<String>.from(p['ingredients_analysis_tags'] as List? ?? []);
+    if (tags.contains('en:vegetarian')) return 'yes';
+    if (tags.contains('en:non-vegetarian')) return 'no';
+    if (tags.contains('en:maybe-vegetarian')) return 'maybe';
+    return null;
   }
 }
 

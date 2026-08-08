@@ -219,6 +219,43 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get dietTitle => _t(const {
+        'tr': 'Diyet ve Alerjen Uyarıları', 'en': 'Diet & Allergen Alerts',
+        'de': 'Diät- & Allergen-Hinweise', 'fr': 'Alertes régime et allergènes',
+        'ar': 'تنبيهات الحمية ومسببات الحساسية', 'id': 'Peringatan Diet & Alergen',
+      });
+
+  String get dietHint => _t(const {
+        'tr': 'Seçtiğiniz hassasiyetler ürün kartında ayrı uyarı olarak görünür; helal hükmünü etkilemez.',
+        'en': 'Selected sensitivities appear as separate alerts on the product card; they never affect the halal verdict.',
+        'de': 'Ausgewählte Empfindlichkeiten erscheinen als separate Hinweise; sie beeinflussen das Halal-Ergebnis nicht.',
+        'fr': 'Les sensibilités choisies apparaissent comme alertes séparées ; elles n\'affectent jamais le verdict halal.',
+        'ar': 'تظهر الحساسيات المختارة كتنبيهات منفصلة على بطاقة المنتج؛ ولا تؤثر على الحكم أبدًا.',
+        'id': 'Sensitivitas terpilih muncul sebagai peringatan terpisah; tidak memengaruhi hasil halal.',
+      });
+
+  String allergenName(String key) => _t(switch (key) {
+        'gluten' => const {'tr': 'Gluten', 'en': 'Gluten', 'de': 'Gluten', 'fr': 'Gluten', 'ar': 'الغلوتين', 'id': 'Gluten'},
+        'milk' => const {'tr': 'Süt/Laktoz', 'en': 'Milk/Lactose', 'de': 'Milch/Laktose', 'fr': 'Lait/Lactose', 'ar': 'الحليب/اللاكتوز', 'id': 'Susu/Laktosa'},
+        'eggs' => const {'tr': 'Yumurta', 'en': 'Eggs', 'de': 'Eier', 'fr': 'Œufs', 'ar': 'البيض', 'id': 'Telur'},
+        'nuts' => const {'tr': 'Sert kabuklu (fındık vb.)', 'en': 'Tree nuts', 'de': 'Schalenfrüchte', 'fr': 'Fruits à coque', 'ar': 'المكسرات', 'id': 'Kacang pohon'},
+        'peanuts' => const {'tr': 'Yer fıstığı', 'en': 'Peanuts', 'de': 'Erdnüsse', 'fr': 'Arachides', 'ar': 'الفول السوداني', 'id': 'Kacang tanah'},
+        'soy' => const {'tr': 'Soya', 'en': 'Soy', 'de': 'Soja', 'fr': 'Soja', 'ar': 'الصويا', 'id': 'Kedelai'},
+        'sesame' => const {'tr': 'Susam', 'en': 'Sesame', 'de': 'Sesam', 'fr': 'Sésame', 'ar': 'السمسم', 'id': 'Wijen'},
+        'fish' => const {'tr': 'Balık', 'en': 'Fish', 'de': 'Fisch', 'fr': 'Poisson', 'ar': 'السمك', 'id': 'Ikan'},
+        'vegan' => const {'tr': 'Vegan değil/belirsiz', 'en': 'Not/maybe not vegan', 'de': 'Nicht/evtl. nicht vegan', 'fr': 'Non/peut-être non végane', 'ar': 'غير نباتي صرف/غير مؤكد', 'id': 'Bukan/mungkin bukan vegan'},
+        'vegetarian' => const {'tr': 'Vejetaryen değil/belirsiz', 'en': 'Not/maybe not vegetarian', 'de': 'Nicht/evtl. nicht vegetarisch', 'fr': 'Non/peut-être non végétarien', 'ar': 'غير نباتي/غير مؤكد', 'id': 'Bukan/mungkin bukan vegetarian'},
+        _ => const {'tr': '?', 'en': '?'},
+      });
+
+  /// Hassasiyet seçim ekranındaki onay kutusu etiketi (vegan/vejetaryen
+  /// için tercihin adı, uyarı metni değil).
+  String dietPrefName(String key) => _t(switch (key) {
+        'vegan' => const {'tr': 'Vegan', 'en': 'Vegan', 'de': 'Vegan', 'fr': 'Végane', 'ar': 'نباتي صرف', 'id': 'Vegan'},
+        'vegetarian' => const {'tr': 'Vejetaryen', 'en': 'Vegetarian', 'de': 'Vegetarisch', 'fr': 'Végétarien', 'ar': 'نباتي', 'id': 'Vegetarian'},
+        _ => const {'tr': '?', 'en': '?'},
+      });
+
   String statsLine(int total, int flagged) => _t({
         'tr': 'Bu ay $total tarama · $flagged uyarı',
         'en': 'This month: $total scans · $flagged warnings',

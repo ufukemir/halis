@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/strings.dart';
 import '../models/models.dart';
 import '../services/alternatives_service.dart';
+import '../services/diet_service.dart';
 import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
 import '../services/off_api.dart';
@@ -114,6 +115,8 @@ class _ResultScreenState extends State<ResultScreen> {
                 ].join(' '),
                 dataVersion: widget.kb.version,
               ),
+              // Diyet/alerjen uyarıları — helal hükmünden ayrı, bilgilendirme.
+              _DietWarnings(product: product),
               // Temiz alternatif önerisi: yalnız sorunlu üründe ve kategori
               // verisi varsa gösterilir (premium'un ana kozu).
               if (result.verdict != Verdict.halal &&
@@ -131,6 +134,42 @@ class _ResultScreenState extends State<ResultScreen> {
           );
         },
       ),
+    );
+  }
+}
+
+/// Kullanıcının seçtiği hassasiyetlere göre alerjen/diyet uyarı çipleri.
+/// Hüküm kartından ayrı durur; helal rengini asla etkilemez.
+class _DietWarnings extends StatelessWidget {
+  final OffProduct product;
+
+  const _DietWarnings({required this.product});
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return FutureBuilder(
+      future: DietService().warningsForProduct(product),
+      builder: (context, snapshot) {
+        final warnings = snapshot.data ?? const <String>[];
+        if (warnings.isEmpty) return const SizedBox.shrink();
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Wrap(
+            spacing: 6,
+            runSpacing: 4,
+            children: [
+              for (final w in warnings)
+                Chip(
+                  visualDensity: VisualDensity.compact,
+                  avatar: const Icon(Icons.warning_amber, size: 16, color: Color(0xFFB86E00)),
+                  label: Text(s.allergenName(w), style: const TextStyle(fontSize: 12)),
+                  side: const BorderSide(color: Color(0xFFB86E00)),
+                ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
