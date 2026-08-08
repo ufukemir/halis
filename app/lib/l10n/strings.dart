@@ -219,6 +219,70 @@ class S {
         'tr': 'Tamam', 'en': 'OK', 'de': 'OK', 'fr': 'OK', 'ar': 'حسنًا', 'id': 'OK',
       });
 
+  String get searchByName => _t(const {
+        'tr': 'İsimle Ara', 'en': 'Search by Name', 'de': 'Nach Name suchen',
+        'fr': 'Rechercher par nom', 'ar': 'البحث بالاسم', 'id': 'Cari dengan Nama',
+      });
+
+  String get searchHint => _t(const {
+        'tr': 'Ürün veya marka adı…', 'en': 'Product or brand name…',
+        'de': 'Produkt- oder Markenname…', 'fr': 'Nom du produit ou de la marque…',
+        'ar': 'اسم المنتج أو العلامة…', 'id': 'Nama produk atau merek…',
+      });
+
+  String get noResults => _t(const {
+        'tr': 'Sonuç bulunamadı.', 'en': 'No results found.',
+        'de': 'Keine Ergebnisse gefunden.', 'fr': 'Aucun résultat trouvé.',
+        'ar': 'لم يتم العثور على نتائج.', 'id': 'Tidak ada hasil.',
+      });
+
+  String get alternativesTitle => _t(const {
+        'tr': 'Temiz alternatifler', 'en': 'Clean alternatives',
+        'de': 'Saubere Alternativen', 'fr': 'Alternatives sans problème',
+        'ar': 'بدائل نظيفة', 'id': 'Alternatif bersih',
+      });
+
+  String get alternativesTeaser => _t(const {
+        'tr': 'Premium ile bu ürünün aynı kategoriden, kural motorumuzda temiz çıkan alternatiflerini görün.',
+        'en': 'With Premium, see alternatives from the same category that pass our rule engine clean.',
+        'de': 'Mit Premium sehen Sie Alternativen aus derselben Kategorie, die unsere Prüfung sauber bestehen.',
+        'fr': 'Avec Premium, découvrez des alternatives de la même catégorie jugées sans problème par notre moteur.',
+        'ar': 'مع Premium، شاهد بدائل من الفئة نفسها اجتازت محرك القواعد لدينا.',
+        'id': 'Dengan Premium, lihat alternatif dari kategori yang sama yang lolos mesin aturan kami.',
+      });
+
+  String get alternativesEmpty => _t(const {
+        'tr': 'Bu kategoride içerik verisi temiz çıkan alternatif bulunamadı.',
+        'en': 'No alternative with clean ingredient data found in this category.',
+        'de': 'Keine Alternative mit sauberen Zutatendaten in dieser Kategorie gefunden.',
+        'fr': 'Aucune alternative aux ingrédients sans problème trouvée dans cette catégorie.',
+        'ar': 'لم يُعثر على بديل ببيانات مكونات نظيفة في هذه الفئة.',
+        'id': 'Tidak ditemukan alternatif dengan data bahan bersih di kategori ini.',
+      });
+
+  String get marketMode => _t(const {
+        'tr': 'Süpermarket Modu', 'en': 'Supermarket Mode', 'de': 'Supermarkt-Modus',
+        'fr': 'Mode supermarché', 'ar': 'وضع السوبرماركت', 'id': 'Mode Supermarket',
+      });
+
+  String marketSummary(int total, int clean, int flagged) => _t({
+        'tr': '$total ürün · $clean temiz · $flagged işaretli',
+        'en': '$total products · $clean clean · $flagged flagged',
+        'de': '$total Produkte · $clean sauber · $flagged markiert',
+        'fr': '$total produits · $clean sans problème · $flagged signalés',
+        'ar': '$total منتجات · $clean نظيفة · $flagged مُعلَّمة',
+        'id': '$total produk · $clean bersih · $flagged ditandai',
+      });
+
+  String get marketHint => _t(const {
+        'tr': 'Ürünleri art arda taratın; her sonuç listeye eklenir.',
+        'en': 'Scan products one after another; each result is added to the list.',
+        'de': 'Scannen Sie Produkte nacheinander; jedes Ergebnis wird zur Liste hinzugefügt.',
+        'fr': 'Scannez les produits à la suite ; chaque résultat s\'ajoute à la liste.',
+        'ar': 'امسح المنتجات تباعًا؛ تُضاف كل نتيجة إلى القائمة.',
+        'id': 'Pindai produk satu per satu; setiap hasil ditambahkan ke daftar.',
+      });
+
   String get share => _t(const {
         'tr': 'Paylaş', 'en': 'Share', 'de': 'Teilen', 'fr': 'Partager',
         'ar': 'مشاركة', 'id': 'Bagikan',

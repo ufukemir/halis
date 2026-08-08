@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../l10n/strings.dart';
 import '../models/models.dart';
+import '../services/alternatives_service.dart';
 import '../services/history_service.dart';
 import '../services/knowledge_base.dart';
 import '../services/off_api.dart';
+import '../services/premium_service.dart';
 import '../services/rule_engine.dart';
 import '../widgets/verdict_view.dart';
 import 'label_screen.dart';
+import 'paywall_screen.dart';
 
 /// Barkod → OFF sorgusu → kural motoru → renkli sonuç kartı.
 class ResultScreen extends StatefulWidget {
@@ -109,6 +112,12 @@ class _ResultScreenState extends State<ResultScreen> {
                 ].join(' '),
                 dataVersion: widget.kb.version,
               ),
+              // Temiz alternatif önerisi: yalnız sorunlu üründe ve kategori
+              // verisi varsa gösterilir (premium'un ana kozu).
+              if (result.verdict != Verdict.halal &&
+                  result.verdict != Verdict.unknown &&
+                  product.categoryTags.isNotEmpty)
+                _AlternativesSection(product: product, profile: widget.profile, kb: widget.kb),
               if (product.ingredientsText != null)
                 ExpansionTile(
                   title: Text(s.ingredientsLabel),
@@ -120,6 +129,91 @@ class _ResultScreenState extends State<ResultScreen> {
           );
         },
       ),
+    );
+  }
+}
+
+/// Temiz alternatifler bölümü: premium'da kural motorundan yeşil çıkan
+/// aynı-kategori ürünleri listeler; ücretsizde paywall'a götüren tanıtım kartı.
+class _AlternativesSection extends StatefulWidget {
+  final OffProduct product;
+  final Profile profile;
+  final KnowledgeBase kb;
+
+  const _AlternativesSection({required this.product, required this.profile, required this.kb});
+
+  @override
+  State<_AlternativesSection> createState() => _AlternativesSectionState();
+}
+
+class _AlternativesSectionState extends State<_AlternativesSection> {
+  late final Future<List<OffProduct>?> _future = _load();
+
+  /// null → premium değil (tanıtım göster); liste → premium sonuçları.
+  Future<List<OffProduct>?> _load() async {
+    if (!await PremiumService.isPremium()) return null;
+    return AlternativesService(api: OffApi(), kb: widget.kb)
+        .findClean(widget.product, widget.profile);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return FutureBuilder(
+      future: _future,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const Padding(
+            padding: EdgeInsets.all(16),
+            child: Center(child: CircularProgressIndicator()),
+          );
+        }
+        final alts = snapshot.data;
+        if (alts == null) {
+          // Ücretsiz katman: tanıtım kartı → paywall.
+          return Card(
+            child: ListTile(
+              leading: const Icon(Icons.workspace_premium),
+              title: Text(s.alternativesTitle),
+              subtitle: Text(s.alternativesTeaser),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const PaywallScreen()),
+              ),
+            ),
+          );
+        }
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+              child: Text(s.alternativesTitle, style: Theme.of(context).textTheme.titleMedium),
+            ),
+            if (alts.isEmpty)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                child: Text(s.alternativesEmpty, style: Theme.of(context).textTheme.bodySmall),
+              ),
+            for (final alt in alts)
+              Card(
+                child: ListTile(
+                  leading: alt.imageUrl != null
+                      ? Image.network(alt.imageUrl!, width: 40,
+                          errorBuilder: (_, _, _) => const Icon(Icons.fastfood))
+                      : const Icon(Icons.fastfood),
+                  title: Text(alt.name ?? alt.barcode, maxLines: 1, overflow: TextOverflow.ellipsis),
+                  subtitle: alt.brands != null ? Text(alt.brands!, maxLines: 1) : null,
+                  trailing: Icon(Icons.check_circle, color: verdictStyle(Verdict.halal).$1),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => ResultScreen(
+                        barcode: alt.barcode, profile: widget.profile, kb: widget.kb),
+                  )),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

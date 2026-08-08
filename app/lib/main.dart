@@ -4,10 +4,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/strings.dart';
 import 'models/models.dart';
 import 'screens/label_screen.dart';
+import 'screens/market_mode_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'screens/paywall_screen.dart';
 import 'screens/result_screen.dart';
 import 'screens/scan_screen.dart';
+import 'screens/search_screen.dart';
 import 'services/history_service.dart';
 import 'services/knowledge_base.dart';
 import 'services/premium_service.dart';
@@ -174,6 +176,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Text(s.analyzeLabel, style: const TextStyle(fontSize: 16)),
                   ),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: () {
+                          if (_kb == null) return;
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => SearchScreen(profile: _profile, kb: _kb!),
+                          ));
+                        },
+                        icon: const Icon(Icons.search),
+                        label: Text(s.searchByName),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: () async {
+                          if (_kb == null) return;
+                          await Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => MarketModeScreen(profile: _profile, kb: _kb!),
+                          ));
+                          await _reloadHistory();
+                        },
+                        icon: const Icon(Icons.shopping_basket_outlined),
+                        label: Text(s.marketMode),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 24),
                 Text(s.sensitivityProfile, style: Theme.of(context).textTheme.titleMedium),

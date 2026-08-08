@@ -155,6 +155,10 @@ class OffProduct {
   final String? veganStatus; // yes / no / maybe / null
   final String? imageUrl;
 
+  /// OFF kategori etiketleri (ör. "en:chocolate-spreads") — alternatif ürün
+  /// önerisi aynı kategoride arama yapar. Liste genelden özele sıralıdır.
+  final List<String> categoryTags;
+
   const OffProduct({
     required this.barcode,
     this.name,
@@ -163,5 +167,16 @@ class OffProduct {
     this.additiveTags = const [],
     this.veganStatus,
     this.imageUrl,
+    this.categoryTags = const [],
   });
+}
+
+/// İsimle arama sonucu satırı (içerik verisi olmadan hafif liste öğesi).
+class OffSearchHit {
+  final String barcode;
+  final String? name;
+  final String? brands;
+  final String? imageUrl;
+
+  const OffSearchHit({required this.barcode, this.name, this.brands, this.imageUrl});
 }
