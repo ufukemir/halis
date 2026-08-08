@@ -147,12 +147,12 @@ class S {
       });
 
   String get disclaimer => _t(const {
-        'tr': 'Bu sonuç dini hüküm değil, içerik verisine dayalı bilgilendirmedir. Veriler güncel olmayabilir; şüphede üreticiye veya sertifika kuruluşuna danışın. Ürün verisi: Open Food Facts (ODbL).',
-        'en': 'This result is informational, based on ingredient data — not a religious ruling. Data may be outdated; when in doubt, consult the producer or a certification body. Product data: Open Food Facts (ODbL).',
-        'de': 'Dieses Ergebnis ist eine Information auf Basis von Zutatendaten — kein religiöses Urteil. Daten können veraltet sein; im Zweifel Hersteller oder Zertifizierungsstelle fragen. Produktdaten: Open Food Facts (ODbL).',
-        'fr': 'Ce résultat est informatif, basé sur les données d\'ingrédients — pas un avis religieux. Les données peuvent être obsolètes ; en cas de doute, consultez le producteur ou un organisme de certification. Données produit : Open Food Facts (ODbL).',
-        'ar': 'هذه النتيجة معلوماتية تستند إلى بيانات المكونات — وليست حكمًا شرعيًا. قد تكون البيانات غير محدثة؛ عند الشك استشر المنتِج أو جهة اعتماد حلال. بيانات المنتج: Open Food Facts (ODbL).',
-        'id': 'Hasil ini bersifat informatif berdasarkan data komposisi — bukan fatwa. Data mungkin tidak mutakhir; jika ragu, hubungi produsen atau lembaga sertifikasi halal. Data produk: Open Food Facts (ODbL).',
+        'tr': 'İçerik verisine dayalı bilgilendirmedir; dini hüküm değildir. Ürün verisi: Open Food Facts.',
+        'en': 'Informational, based on ingredient data; not a religious ruling. Product data: Open Food Facts.',
+        'de': 'Information auf Basis von Zutatendaten; kein religiöses Urteil. Produktdaten: Open Food Facts.',
+        'fr': 'Information basée sur les données d\'ingrédients ; pas un avis religieux. Données : Open Food Facts.',
+        'ar': 'معلومات تستند إلى بيانات المكونات؛ وليست حكمًا شرعيًا. بيانات المنتج: Open Food Facts.',
+        'id': 'Informasi berdasarkan data komposisi; bukan fatwa. Data produk: Open Food Facts.',
       });
 
   // Etiket analiz ekranı
@@ -318,6 +318,15 @@ class S {
   String get dataVersionLabel => _t(const {
         'tr': 'Veri', 'en': 'Data', 'de': 'Daten', 'fr': 'Données',
         'ar': 'البيانات', 'id': 'Data',
+      });
+
+  String ecodeDbBadge(int n) => _t({
+        'tr': '$n katkı maddesi (E-kod) veritabanı',
+        'en': '$n-additive (E-number) database',
+        'de': 'Datenbank mit $n Zusatzstoffen (E-Nummern)',
+        'fr': 'Base de $n additifs (E-numéros)',
+        'ar': 'قاعدة بيانات تضم $n من الإضافات (أرقام E)',
+        'id': 'Basis data $n bahan tambahan (E-number)',
       });
 
   String get cancel => _t(const {

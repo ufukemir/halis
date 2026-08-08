@@ -259,9 +259,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 if (_kb != null) ...[
                   const SizedBox(height: 8),
-                  // Şeffaflık: hangi veri sürümüyle hüküm verildiği görünür olsun.
+                  // Güven mesajı: sürüm numarası değil, veritabanının gücü
+                  // vurgulanır (Ufuk, 2026-08-08: "v0.x" şüphe uyandırıyor).
                   Text(
-                    '${s.dataVersionLabel}: v${_kb!.version} · ${_kb!.ecodes.length} E-kod',
+                    s.ecodeDbBadge(_kb!.ecodes.length),
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.outline,
                         ),
