@@ -9,16 +9,23 @@ Görev bölüşümü (docs/03-mvp-plani.md):
     çıktısı tek başına asla "yeşil" yakamaz (docs/03, risk #1).
 """
 
+import hmac
 import os
 from typing import List, Optional
 
 import anthropic
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException, Request
 from pydantic import BaseModel, Field
+
+from . import quota
 
 # Maliyet planı (docs/02): Haiku 4.5 varsayılan; A/B için env ile değiştirilebilir.
 MODEL = os.environ.get("HALIS_MODEL", "claude-haiku-4-5")
 FREE_MONTHLY_QUOTA = int(os.environ.get("HALIS_FREE_QUOTA", "10"))
+
+# RevenueCat panelinde webhook Authorization başlığı olarak girilen değer.
+# Boşsa webhook ucu kapalıdır (401) — yanlışlıkla korumasız yayına çıkılmasın.
+WEBHOOK_TOKEN = os.environ.get("HALIS_WEBHOOK_TOKEN", "")
 
 app = FastAPI(title="Halis API", version="0.1.0")
 client = anthropic.Anthropic()  # ANTHROPIC_API_KEY ortamdan
@@ -58,9 +65,18 @@ def health() -> dict:
 
 
 @app.post("/v1/normalize-label", response_model=NormalizedLabel)
-def normalize_label(req: NormalizeRequest) -> NormalizedLabel:
-    # TODO: abonelik/kota doğrulama (RevenueCat webhook + cihaz kimliği) buraya
-    # gelecek; MVP iskeletinde açık uç bırakıldı.
+def normalize_label(
+    req: NormalizeRequest,
+    x_device_id: str = Header(..., min_length=8, max_length=128),
+) -> NormalizedLabel:
+    # Cihaz kimliği = uygulamadaki RevenueCat appUserID (mağazasız istemcide
+    # yerel UUID). Kota aşımında 402 döneriz; uygulama yerel analize düşer,
+    # akış bloke olmaz — burada yalnız LLM maliyeti korunur.
+    if not quota.try_consume(x_device_id, FREE_MONTHLY_QUOTA):
+        raise HTTPException(
+            status_code=402,
+            detail="Aylık ücretsiz analiz kotası doldu. Premium'da sınırsızdır.",
+        )
     try:
         response = client.messages.parse(
             model=MODEL,
@@ -93,3 +109,33 @@ def normalize_label(req: NormalizeRequest) -> NormalizedLabel:
     if response.parsed_output is None:
         raise HTTPException(status_code=502, detail="Analiz sonucu çözümlenemedi.")
     return response.parsed_output
+
+
+@app.post("/v1/revenuecat-webhook")
+async def revenuecat_webhook(
+    request: Request, authorization: str = Header("")
+) -> dict:
+    """RevenueCat webhook'u: satın alma/yenileme/süre bitimi olaylarını işler.
+
+    Panelde webhook URL'si + Authorization değeri (HALIS_WEBHOOK_TOKEN)
+    tanımlanır. Token yapılandırılmamışsa uç kapalıdır.
+    """
+    if not WEBHOOK_TOKEN or not hmac.compare_digest(authorization, WEBHOOK_TOKEN):
+        raise HTTPException(status_code=401, detail="Yetkisiz.")
+    body = await request.json()
+    event = body.get("event") or {}
+    applied = quota.apply_webhook_event(event)
+    return {"applied": applied}
+
+
+@app.get("/v1/quota")
+def quota_status(x_device_id: str = Header(..., min_length=8, max_length=128)) -> dict:
+    """Cihazın sunucu tarafındaki kota görünümü (uygulama içi gösterim için)."""
+    premium = quota.is_premium(x_device_id)
+    used = 0 if premium else quota.used_this_month(x_device_id)
+    return {
+        "premium": premium,
+        "free_quota": FREE_MONTHLY_QUOTA,
+        "used": used,
+        "remaining": None if premium else max(0, FREE_MONTHLY_QUOTA - used),
+    }

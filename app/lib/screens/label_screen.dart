@@ -71,7 +71,11 @@ class _LabelScreenState extends State<LabelScreen> {
         // Hata/zaman aşımında sessizce ham metinle devam edilir; hüküm her
         // durumda yerel kural motorundadır.
         if (NormalizeApi.isConfigured && await PremiumService.canAnalyzeLabel()) {
-          final norm = await NormalizeApi().normalize(text, lang: lang);
+          final norm = await NormalizeApi().normalize(
+            text,
+            lang: lang,
+            deviceId: await PremiumService.deviceId(),
+          );
           if (norm != null && norm.combinedText.isNotEmpty) {
             display = norm.combinedText;
             aiUsed = true;

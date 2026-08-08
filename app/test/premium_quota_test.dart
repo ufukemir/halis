@@ -36,6 +36,14 @@ void main() {
       expect(await PremiumService.isPremium(), isFalse);
       expect(PremiumService.storeConfigured, isFalse);
     });
+
+    test('cihaz kimliği üretilir ve kararlıdır (mağazasız mod → local- öneki)', () async {
+      final first = await PremiumService.deviceId();
+      final second = await PremiumService.deviceId();
+      expect(first, startsWith('local-'));
+      expect(first.length, greaterThanOrEqualTo(8));
+      expect(second, first);
+    });
   });
 
   group('NormalizedLabel', () {

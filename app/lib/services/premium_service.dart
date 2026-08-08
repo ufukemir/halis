@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -66,6 +68,31 @@ class PremiumService {
   }
 
   static bool get storeConfigured => _configured;
+
+  static const _deviceIdKey = 'halis_device_id';
+
+  /// Sunucu tarafı kota kimliği (backend `X-Device-Id` başlığı).
+  ///
+  /// Mağaza etkinse RevenueCat `appUserID` kullanılır — webhook'tan gelen
+  /// premium kaydıyla aynı kimlik. Mağazasız modda cihazda üretilip saklanan
+  /// yerel kimlik döner; yerel kimlikler sunucuda asla premium sayılmaz.
+  static Future<String> deviceId() async {
+    if (_configured) {
+      try {
+        return await Purchases.appUserID;
+      } catch (_) {
+        // Mağaza hatası kota kimliğini engellemesin — yerel kimliğe düş.
+      }
+    }
+    final prefs = await SharedPreferences.getInstance();
+    var id = prefs.getString(_deviceIdKey);
+    if (id == null) {
+      final rnd = Random.secure();
+      id = 'local-${List.generate(24, (_) => rnd.nextInt(36).toRadixString(36)).join()}';
+      await prefs.setString(_deviceIdKey, id);
+    }
+    return id;
+  }
 
   /// Aktif teklifteki yıllık paket (fiyat gösterimi + satın alma).
   static Future<Package?> currentPackage() async {

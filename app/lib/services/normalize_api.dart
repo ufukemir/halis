@@ -49,16 +49,21 @@ class NormalizeApi {
 
   NormalizeApi({http.Client? client}) : _client = client ?? http.Client();
 
-  /// Ham OCR metnini normalize eder. Hata/zaman aşımı durumunda null döner —
-  /// çağıran taraf ham metinle yerel analize düşer (backend hiçbir zaman
-  /// akışı bloke etmez).
-  Future<NormalizedLabel?> normalize(String text, {String? lang}) async {
+  /// Ham OCR metnini normalize eder. Hata/zaman aşımı/kota aşımı (402)
+  /// durumunda null döner — çağıran taraf ham metinle yerel analize düşer
+  /// (backend hiçbir zaman akışı bloke etmez).
+  ///
+  /// [deviceId] sunucu tarafı kota kimliğidir (PremiumService.deviceId).
+  Future<NormalizedLabel?> normalize(String text, {String? lang, String? deviceId}) async {
     if (!isConfigured) return null;
     try {
       final resp = await _client
           .post(
             Uri.parse('$baseUrl/v1/normalize-label'),
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Device-Id': ?deviceId,
+            },
             body: jsonEncode({'text': text, 'lang': ?lang}),
           )
           .timeout(const Duration(seconds: 20));
