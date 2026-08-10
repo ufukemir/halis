@@ -58,14 +58,15 @@ class RuleEngine {
           findings.add(Finding(
               label: match, verdict: Verdict.mushbooh, reasonTr: entry.reasonTr, reasonEn: entry.reasonEn));
         case 'mushbooh_mild':
-          // Hafif şüpheliler (peynir altı suyu, laktoz vb.) yalnız temkinli
-          // profilde hükmü etkiler; diğer profillerde bilgi notu olarak kalır.
+          // Hafif şüpheliler (peynir altı suyu, laktoz vb.) yalnız ihtiyat
+          // çizgisindeki profillerde (Şafiî/Hanbelî/Caferî/Sadece Müslümanım)
+          // hükmü etkiler; diğerlerinde bilgi notu olarak kalır.
           findings.add(Finding(
             label: match,
-            verdict: profile == Profile.temkinli ? Verdict.mushbooh : Verdict.halal,
+            verdict: profile.ihtiyatli ? Verdict.mushbooh : Verdict.halal,
             reasonTr: entry.reasonTr,
             reasonEn: entry.reasonEn,
-            isNote: profile != Profile.temkinli,
+            isNote: !profile.ihtiyatli,
           ));
         case 'halal_note':
           findings.add(Finding(

@@ -13,7 +13,10 @@ String _ecodes(String version, int count) => jsonEncode({
             'name_tr': 'x',
             'name_en': 'x',
             'source': 'plant',
-            'verdict': {'temkinli': 'halal', 'genislik': 'halal', 'diyanet': 'halal'},
+            'verdict': {
+              'hanefi': 'halal', 'safii': 'halal', 'maliki': 'halal',
+              'hanbeli': 'halal', 'caferi': 'halal', 'diyanet': 'halal',
+            },
             'reason_tr': 'r',
             'reason_en': 'r',
           }

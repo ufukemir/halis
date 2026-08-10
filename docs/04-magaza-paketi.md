@@ -22,17 +22,18 @@
 ### Türkçe — uzun açıklama
 > **Markette kararsız kalma. Barkodu tarat, saniyeler içinde bil.**
 >
-> Halis, ürünlerin içindekiler listesini helal hassasiyetiyle analiz eden reklamsız bir bilgilendirme aracıdır.
+> Halis, ürünlerin içindekiler listesini helal hassasiyetiyle analiz eden bir bilgilendirme aracıdır.
 >
 > ✓ **Barkod tarama** — milyonlarca ürünün içerik verisine anında erişim
 > ✓ **Etiket fotoğrafı analizi** — ürün veritabanında yoksa etiketi çek, cihaz üzerinde okunsun
 > ✓ **Gerekçeli sonuç** — sadece renk değil: hangi madde, neden şüpheli, hangi kaynağa göre
-> ✓ **Hassasiyet profili** — Temkinli, Genişlik veya Diyanet yaklaşımına göre değerlendirme
+> ✓ **Mezhebine göre değerlendirme** — Hanefî, Şafiî, Mâlikî, Hanbelî, Caferî, Diyanet veya "Sadece Müslümanım" (en güvenli ortak payda) seçimi
 > ✓ **304 katkı maddesi (E-kodu) veritabanı** — mezhep farkları ve gerekçelerle; katkıyı kodla değil adıyla yazan etiketleri de tanır
+> ✓ **Alerjen ve diyet uyarıları** — zorunlu 14 alerjenin tamamı + vegan/vejetaryen/palm yağı; "iz miktarda içerebilir" beyanları dahil, helal hükmünden ayrı gösterilir
 > ✓ **6 dil, 6 etiket dili** — Türkçe, İngilizce, Almanca, Fransızca, Arapça, Endonezyaca etiketleri tanır
-> ✓ **Reklamsız** — asla reklam göstermeyiz, asla marka parası almayız
+> ✓ **Banner/marka reklamı yok** — ücretsiz kullanımda yalnızca sizin başlattığınız kısa ödüllü videolar (1 reklam = 1 tarama); Premium tamamen reklamsız. Marka parası asla almayız — hükümler satılık değildir
 >
-> **Dürüstlük ilkemiz:** Emin olamadığımızda "şüpheli" deriz; asla tahminle "helal" demeyiz. Sonuçlarımız dini hüküm değil, içerik verilerine dayalı bilgilendirmedir.
+> **Dürüstlük ilkemiz:** Emin olamadığımızda "net değil" deriz; asla tahminle "helal" demeyiz. Sonuçlarımız dini hüküm değil, içerik verilerine dayalı bilgilendirmedir.
 >
 > Ürün verisi: Open Food Facts (ODbL).
 
@@ -42,17 +43,18 @@
 ### English — description
 > **Stop guessing at the supermarket. Scan the barcode, know in seconds.**
 >
-> Halis is an ad-free informational tool that analyzes product ingredients with halal sensitivity.
+> Halis is an informational tool that analyzes product ingredients with halal sensitivity.
 >
 > ✓ **Barcode scanning** — instant access to ingredient data for millions of products
 > ✓ **Label photo analysis** — product not in the database? Snap the label; it's read on your device
 > ✓ **Explained results** — not just a color: which ingredient, why doubtful, per which source
-> ✓ **Sensitivity profiles** — Cautious, Lenient, or Diyanet methodology
+> ✓ **Assessment by your school of fiqh** — Hanafi, Shafi'i, Maliki, Hanbali, Ja'fari, Diyanet, or "Just Muslim" (the safest common ground)
 > ✓ **304 additive (E-number) database** — with school-of-thought differences and reasoning; recognizes additives written by name, not just by code
+> ✓ **Allergen & diet alerts** — all 14 mandatory allergens plus vegan/vegetarian/palm oil; includes "may contain traces" declarations, shown separately from the halal verdict
 > ✓ **6 languages** — recognizes labels in Turkish, English, German, French, Arabic, Indonesian
-> ✓ **Ad-free** — we never show ads and never take money from brands
+> ✓ **No banner or brand ads** — the free tier only shows short rewarded videos you start yourself (1 ad = 1 scan); Premium is fully ad-free. We never take brand money — verdicts are not for sale
 >
-> **Our honesty principle:** when we're not sure, we say "doubtful" — we never guess "halal". Results are informational, based on ingredient data, not religious rulings.
+> **Our honesty principle:** when we're not sure, we say "unclear" — we never guess "halal". Results are informational, based on ingredient data, not religious rulings.
 >
 > Product data: Open Food Facts (ODbL).
 
@@ -88,7 +90,10 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
   - OFF katkı akışı (yalnız kullanıcı isterse): ürün bulunamadığında etiket
     fotoğrafı, ODbL uyarılı açık onay diyaloğundan sonra Open Food Facts'e
     herkese açık yüklenir. Onaysız yükleme yoktur.
-- Üçüncü taraf reklam/izleme SDK'sı YOK. Abonelik için RevenueCat SDK'sı
+- Reklam: Google AdMob (yalnızca ödüllü video, kişiselleştirilmemiş istek — npa).
+  DİKKAT: AdMob eklendiğinden beyanlara "Advertising data / Device ID" eklenmeli;
+  AB/İngiltere için UMP (User Messaging Platform) onay akışı YAYIN ÖNCESİ eklenecek.
+  Abonelik için RevenueCat SDK'sı
   (satın alma doğrulaması; anonim uygulama kullanıcı kimliği).
 - Gerekli beyanlar (backend + RevenueCat aktifken "Data Not Collected" ARTIK
   DOĞRU DEĞİL — yanlış beyan ret/kaldırma sebebi):
@@ -102,7 +107,7 @@ Her görüntünün üstüne tek cümlelik pazarlama bandı (6 dilde).
 - Gizlilik politikası sayfası: halis.app/privacy (alan adı alınınca; taslak aşağıda).
 
 ### Gizlilik politikası taslağı (halis.app/privacy)
-> Halis'te hesap açılmaz, kimliğinizle ilişkilendirilebilir kişisel veri toplanmaz. Tarama geçmişiniz yalnızca cihazınızda saklanır ve bize gönderilmez. Barkod taramalarında yalnızca barkod numarası Open Food Facts servisine iletilir. Etiket fotoğrafları cihazınızda işlenir ve sunucularımıza yüklenmez; yapay zekâ ile metin düzeltme açıksa yalnızca etiketin METNİ, aylık kota takibi için rastgele üretilmiş anonim bir cihaz kimliğiyle birlikte sunucumuza iletilir. Bulunamayan bir ürünün etiket fotoğrafını, dilerseniz ve ancak açık onayınızla, açık gıda veritabanı Open Food Facts'e (ODbL lisansı, herkese açık) katkı olarak gönderebilirsiniz. Abonelik satın alımları RevenueCat altyapısıyla, anonim bir kimlik üzerinden doğrulanır. Reklam ve izleme SDK'sı kullanmayız, verilerinizi kimseyle paylaşmayız ve satmayız. Sorular: destek@halis.app
+> Halis'te hesap açılmaz, kimliğinizle ilişkilendirilebilir kişisel veri toplanmaz. Tarama geçmişiniz yalnızca cihazınızda saklanır ve bize gönderilmez. Barkod taramalarında yalnızca barkod numarası Open Food Facts servisine iletilir. Etiket fotoğrafları cihazınızda işlenir ve sunucularımıza yüklenmez; yapay zekâ ile metin düzeltme açıksa yalnızca etiketin METNİ, aylık kota takibi için rastgele üretilmiş anonim bir cihaz kimliğiyle birlikte sunucumuza iletilir. Bulunamayan bir ürünün etiket fotoğrafını, dilerseniz ve ancak açık onayınızla, açık gıda veritabanı Open Food Facts'e (ODbL lisansı, herkese açık) katkı olarak gönderebilirsiniz. Abonelik satın alımları RevenueCat altyapısıyla, anonim bir kimlik üzerinden doğrulanır. Ücretsiz kullanımda yalnızca sizin başlattığınız ödüllü reklam videoları gösterilir (Google AdMob, kişiselleştirilmemiş); Premium'da reklam yoktur. Verilerinizi satmayız. Sorular: destek@halis.app
 
 ## Huawei AppGallery (3. mağaza)
 

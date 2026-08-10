@@ -4,21 +4,53 @@
 /// `unknown` yalnız veri yetersizliğinde döner ve asla yeşil gösterilmez.
 enum Verdict { halal, mushbooh, haram, unknown }
 
-/// Kullanıcının seçtiği hassasiyet profili.
-enum Profile { temkinli, genislik, diyanet }
+/// Kullanıcının seçtiği değerlendirme ölçüsü.
+///
+/// `musluman` ("Sadece Müslümanım") veride ayrı sütun değildir: beş mezhep
+/// sütununun en ihtiyatlısı alınır — biri haram diyorsa haram gösterilir.
+/// Mezhep bilmeyen/söylemek istemeyen herkesin güvenli varsayılanıdır.
+enum Profile { musluman, hanefi, safii, maliki, hanbeli, caferi, diyanet }
+
+/// Veride sütunu olan profiller (musluman bunlardan hesaplanır; diyanet
+/// mezhep değil fetva mercii olduğundan ortak paydaya katılmaz).
+const List<Profile> _madhhabs = [
+  Profile.hanefi, Profile.safii, Profile.maliki, Profile.hanbeli, Profile.caferi,
+];
 
 extension ProfileKey on Profile {
   String get key => switch (this) {
-        Profile.temkinli => 'temkinli',
-        Profile.genislik => 'genislik',
+        Profile.musluman => 'musluman',
+        Profile.hanefi => 'hanefi',
+        Profile.safii => 'safii',
+        Profile.maliki => 'maliki',
+        Profile.hanbeli => 'hanbeli',
+        Profile.caferi => 'caferi',
         Profile.diyanet => 'diyanet',
       };
 
   String get labelTr => switch (this) {
-        Profile.temkinli => 'Temkinli',
-        Profile.genislik => 'Genişlik',
+        Profile.musluman => 'Sadece Müslümanım',
+        Profile.hanefi => 'Hanefî',
+        Profile.safii => 'Şafiî',
+        Profile.maliki => 'Mâlikî',
+        Profile.hanbeli => 'Hanbelî',
+        Profile.caferi => 'Caferî',
         Profile.diyanet => 'Diyanet',
       };
+
+  /// İhtiyat çizgisi: hafif şüpheliler (peynir altı suyu, laktoz vb.) bu
+  /// profillerde hükmü etkiler, diğerlerinde bilgi notu olarak kalır.
+  bool get ihtiyatli => switch (this) {
+        Profile.musluman || Profile.safii || Profile.hanbeli || Profile.caferi => true,
+        Profile.hanefi || Profile.maliki || Profile.diyanet => false,
+      };
+
+  static Profile? fromKey(String? key) {
+    for (final p in Profile.values) {
+      if (p.key == key) return p;
+    }
+    return null;
+  }
 }
 
 Verdict verdictFromString(String s) => switch (s) {
@@ -69,8 +101,25 @@ class EcodeEntry {
         aliasExceptions: List<String>.from(j['alias_exceptions'] as List? ?? []),
       );
 
-  Verdict verdictFor(Profile p) =>
-      verdictFromString(verdictByProfile[p.key] ?? 'mushbooh');
+  Verdict verdictFor(Profile p) {
+    if (p == Profile.musluman) {
+      // Ortak payda: mezhep sütunlarının en ihtiyatlısı.
+      var worst = Verdict.halal;
+      for (final m in _madhhabs) {
+        final v = verdictFromString(verdictByProfile[m.key] ?? 'mushbooh');
+        if (_severity(v) > _severity(worst)) worst = v;
+      }
+      return worst;
+    }
+    return verdictFromString(verdictByProfile[p.key] ?? 'mushbooh');
+  }
+
+  static int _severity(Verdict v) => switch (v) {
+        Verdict.haram => 3,
+        Verdict.mushbooh => 2,
+        Verdict.unknown => 1,
+        Verdict.halal => 0,
+      };
 }
 
 /// İçindekiler sözlüğündeki tek kayıt (kelime bazlı eşleşme).
@@ -165,6 +214,13 @@ class OffProduct {
   /// OFF vejetaryen analizi (`yes`/`no`/`maybe`/null).
   final String? vegetarianStatus;
 
+  /// OFF "içerebilir" (traces_tags) beyanları — alerjik kullanıcı için
+  /// iz miktarda bulaşma uyarısı üretir.
+  final List<String> tracesTags;
+
+  /// OFF palm yağı analizi (`yes`/`no`/`maybe`/null).
+  final String? palmOilStatus;
+
   const OffProduct({
     required this.barcode,
     this.name,
@@ -176,6 +232,8 @@ class OffProduct {
     this.categoryTags = const [],
     this.allergenTags = const [],
     this.vegetarianStatus,
+    this.tracesTags = const [],
+    this.palmOilStatus,
   });
 }
 
