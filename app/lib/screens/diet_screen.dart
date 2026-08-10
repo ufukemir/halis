@@ -44,13 +44,23 @@ class _DietScreenState extends State<DietScreen> {
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                   child: Text(s.dietHint, style: Theme.of(context).textTheme.bodySmall),
                 ),
-                for (final key in DietService.allergenTagByKey.keys)
+                _sectionTitle(context, s.allergensSectionCommon),
+                for (final key in DietService.euAllergenKeys)
                   CheckboxListTile(
                     value: _selected!.contains(key),
                     title: Text(s.allergenName(key)),
                     onChanged: (v) => _toggle(key, v ?? false),
                   ),
                 const Divider(),
+                _sectionTitle(context, s.allergensSectionOther),
+                for (final key in DietService.regionalAllergenKeys)
+                  CheckboxListTile(
+                    value: _selected!.contains(key),
+                    title: Text(s.allergenName(key)),
+                    onChanged: (v) => _toggle(key, v ?? false),
+                  ),
+                const Divider(),
+                _sectionTitle(context, s.dietPrefsSection),
                 for (final key in DietService.dietKeys)
                   CheckboxListTile(
                     value: _selected!.contains(key),
@@ -61,4 +71,14 @@ class _DietScreenState extends State<DietScreen> {
             ),
     );
   }
+
+  Widget _sectionTitle(BuildContext context, String text) => Padding(
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+        child: Text(
+          text,
+          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+        ),
+      );
 }

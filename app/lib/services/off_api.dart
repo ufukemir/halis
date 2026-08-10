@@ -138,6 +138,8 @@ class OffApi {
       categoryTags: List<String>.from(p['categories_tags'] as List? ?? []),
       allergenTags: List<String>.from(p['allergens_tags'] as List? ?? []),
       vegetarianStatus: _vegetarianFrom(p),
+      tracesTags: List<String>.from(p['traces_tags'] as List? ?? []),
+      palmOilStatus: _palmOilFrom(p),
     );
   }
 
@@ -146,6 +148,14 @@ class OffApi {
     if (tags.contains('en:vegetarian')) return 'yes';
     if (tags.contains('en:non-vegetarian')) return 'no';
     if (tags.contains('en:maybe-vegetarian')) return 'maybe';
+    return null;
+  }
+
+  static String? _palmOilFrom(Map<String, dynamic> p) {
+    final tags = List<String>.from(p['ingredients_analysis_tags'] as List? ?? []);
+    if (tags.contains('en:palm-oil')) return 'yes';
+    if (tags.contains('en:palm-oil-free')) return 'no';
+    if (tags.contains('en:may-contain-palm-oil')) return 'maybe';
     return null;
   }
 }

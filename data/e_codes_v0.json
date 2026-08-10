@@ -1,10 +1,13 @@
 {
-  "version": "0.3.0",
-  "updated": "2026-08-08",
+  "version": "0.4.0",
+  "updated": "2026-08-09",
   "status": "Elle derlenmiş veri; bağımsız dini danışman incelemesinden geçmedi. Uygulama her sonuçta 'dini hüküm değildir' uyarısı gösterir.",
   "profiles": {
-    "temkinli": "İhtiyat esaslı (Şafiî/Hanbelî çizgisine yakın): şüphede kaçınma, istihale dar yorumlanır.",
-    "genislik": "Genişlik esaslı (Hanefî/Malikî çizgisine yakın): tam kimyasal dönüşüm (istihale) temizleyici kabul edilir.",
+    "hanefi": "Hanefî fıkhı: tam kimyasal dönüşüm (istihale) maddeyi temizleyici kabul edilir.",
+    "safii": "Şafiî fıkhı: şüphede kaçınma esastır, istihale dar yorumlanır.",
+    "maliki": "Mâlikî fıkhı: istihale geniş yorumlanır; hüküm Hanefî çizgisine yakındır.",
+    "hanbeli": "Hanbelî fıkhı: ihtiyat esastır; hüküm Şafiî çizgisine yakındır.",
+    "caferi": "Caferî fıkhı: ihtiyat esas alınır; böcek kaynaklılar ve kaynağı belirsiz hayvansal maddelerden kaçınılır.",
     "diyanet": "T.C. Diyanet İşleri Başkanlığı Din İşleri Yüksek Kurulu fetvalarına dayalı: hüküm E koduna değil maddenin kaynağına göre verilir."
   },
   "statuses": [
@@ -19,8 +22,11 @@
       "name_en": "Curcumin",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Zerdeçal kökünden elde edilen bitkisel boya.",
@@ -32,8 +38,11 @@
       "name_en": "Riboflavin (B2)",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Genellikle maya fermantasyonuyla üretilir; bitkisel/mikrobiyal kaynak yaygındır.",
@@ -45,8 +54,11 @@
       "name_en": "Riboflavin-5'-phosphate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Fermantasyonla üretilir; besiyeri genellikle bitkisel şekerlerdir.",
@@ -58,8 +70,11 @@
       "name_en": "Tartrazine",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -71,8 +86,11 @@
       "name_en": "Quinoline Yellow",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -84,8 +102,11 @@
       "name_en": "Sunset Yellow FCF",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -97,8 +118,11 @@
       "name_en": "Carmine (Cochineal)",
       "source": "insect",
       "verdict": {
-        "temkinli": "haram",
-        "genislik": "haram",
+        "hanefi": "haram",
+        "safii": "haram",
+        "maliki": "haram",
+        "hanbeli": "haram",
+        "caferi": "haram",
         "diyanet": "haram"
       },
       "reason_tr": "Koşnil böceğinden elde edilen kırmızı boya. Diyanet ve çoğunluk haram sayar; bazı Malikî âlimler caiz görür (azınlık görüşü).",
@@ -110,8 +134,11 @@
       "name_en": "Azorubine (Carmoisine)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik azo boya; adı benzese de böcek kaynaklı karmin (E120) ile karıştırılmamalıdır.",
@@ -123,8 +150,11 @@
       "name_en": "Amaranth",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -136,8 +166,11 @@
       "name_en": "Ponceau 4R",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -149,8 +182,11 @@
       "name_en": "Erythrosine",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -162,8 +198,11 @@
       "name_en": "Allura Red AC",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -175,8 +214,11 @@
       "name_en": "Patent Blue V",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -188,8 +230,11 @@
       "name_en": "Indigotine",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -201,8 +246,11 @@
       "name_en": "Brilliant Blue FCF",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -214,8 +262,11 @@
       "name_en": "Chlorophyll",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitki yapraklarından elde edilen yeşil pigment.",
@@ -227,8 +278,11 @@
       "name_en": "Copper complexes of chlorophylls",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -240,8 +294,11 @@
       "name_en": "Green S",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -253,8 +310,11 @@
       "name_en": "Plain caramel",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Şekerin ısıtılmasıyla üretilir.",
@@ -266,8 +326,11 @@
       "name_en": "Caustic sulphite caramel",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Şekerin ısıl işlemiyle üretilir.",
@@ -279,8 +342,11 @@
       "name_en": "Ammonia caramel",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Şekerin ısıl işlemiyle üretilir.",
@@ -292,8 +358,11 @@
       "name_en": "Sulphite ammonia caramel",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Şekerin ısıl işlemiyle üretilir.",
@@ -305,8 +374,11 @@
       "name_en": "Brilliant Black BN",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -318,8 +390,11 @@
       "name_en": "Vegetable carbon",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Bitkisel kaynaklıysa helal; nadiren hayvan kemiği kömüründen üretilebilir — kaynak doğrulanmalı.",
@@ -339,8 +414,11 @@
       "name_en": "Brown HT",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -352,8 +430,11 @@
       "name_en": "Carotenes",
       "source": "plant",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkiseldir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -376,8 +457,11 @@
       "name_en": "Annatto",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Annatto ağacı tohumundan bitkisel boya.",
@@ -389,8 +473,11 @@
       "name_en": "Paprika extract (Capsanthin)",
       "source": "plant",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -412,8 +499,11 @@
       "name_en": "Lycopene",
       "source": "plant",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -431,8 +521,11 @@
       "name_en": "Beta-apo-8'-carotenal",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -449,8 +542,11 @@
       "name_en": "Lutein",
       "source": "plant",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -466,8 +562,11 @@
       "name_en": "Canthaxanthin",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Pigment bitkisel/sentetiktir; ancak taşıyıcı olarak nadiren jelatin kullanılabilir — temkinli profil kaynak sorgular.",
@@ -484,8 +583,11 @@
       "name_en": "Beetroot red",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Kırmızı pancardan elde edilir.",
@@ -497,8 +599,11 @@
       "name_en": "Anthocyanins",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Üzüm kabuğu ve meyvelerden bitkisel pigment.",
@@ -510,8 +615,11 @@
       "name_en": "Calcium carbonate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı.",
@@ -523,8 +631,11 @@
       "name_en": "Titanium dioxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı; dini açıdan sakınca yok. AB'de 2022'den beri gıdada yasaklıdır (sağlık gerekçesi).",
@@ -536,8 +647,11 @@
       "name_en": "Iron oxides and hydroxides",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -549,8 +663,11 @@
       "name_en": "Aluminium",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -562,8 +679,11 @@
       "name_en": "Silver",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -575,8 +695,11 @@
       "name_en": "Gold",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -588,8 +711,11 @@
       "name_en": "Litholrubine BK",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik boya; hayvansal bileşen içermez. Sağlıkla ilgili tartışmalar dini hükümden ayrıdır.",
@@ -601,8 +727,11 @@
       "name_en": "Sorbic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik koruyucu.",
@@ -614,8 +743,11 @@
       "name_en": "Sodium sorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -627,8 +759,11 @@
       "name_en": "Potassium sorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik koruyucu.",
@@ -640,8 +775,11 @@
       "name_en": "Calcium sorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -653,8 +791,11 @@
       "name_en": "Benzoic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -666,8 +807,11 @@
       "name_en": "Sodium benzoate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik koruyucu.",
@@ -679,8 +823,11 @@
       "name_en": "Potassium benzoate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -692,8 +839,11 @@
       "name_en": "Calcium benzoate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -705,8 +855,11 @@
       "name_en": "Ethylparaben",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -718,8 +871,11 @@
       "name_en": "Sodium ethylparaben",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -731,8 +887,11 @@
       "name_en": "Methylparaben",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -744,8 +903,11 @@
       "name_en": "Sodium methylparaben",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -757,8 +919,11 @@
       "name_en": "Sulphur dioxide",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik koruyucu (sağlık hassasiyeti ayrı konudur).",
@@ -770,8 +935,11 @@
       "name_en": "Sodium sulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -783,8 +951,11 @@
       "name_en": "Sodium bisulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -796,8 +967,11 @@
       "name_en": "Sodium metabisulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -809,8 +983,11 @@
       "name_en": "Potassium metabisulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -822,8 +999,11 @@
       "name_en": "Calcium sulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -835,8 +1015,11 @@
       "name_en": "Calcium bisulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -848,8 +1031,11 @@
       "name_en": "Potassium bisulphite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral kaynaklı sülfit; sağlıkla ilgili (astım) uyarılar dini hükümden ayrıdır.",
@@ -861,8 +1047,11 @@
       "name_en": "Orthophenyl phenol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -874,8 +1063,11 @@
       "name_en": "Sodium orthophenyl phenol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -887,8 +1079,11 @@
       "name_en": "Nisin",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla üretilen doğal koruyucu; besiyeri süt veya şeker bazlı olabilir.",
@@ -900,8 +1095,11 @@
       "name_en": "Natamycin",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Fermantasyonla üretilir; besiyeri genellikle bitkisel şekerlerdir.",
@@ -913,8 +1111,11 @@
       "name_en": "Hexamethylene tetramine",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -926,8 +1127,11 @@
       "name_en": "Dimethyl dicarbonate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -939,8 +1143,11 @@
       "name_en": "Potassium nitrite",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -952,8 +1159,11 @@
       "name_en": "Sodium nitrite",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik koruyucu; şarküteride kullanımı üründeki ete bağlı olarak değerlendirilmelidir.",
@@ -965,8 +1175,11 @@
       "name_en": "Sodium nitrate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -978,8 +1191,11 @@
       "name_en": "Potassium nitrate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -991,8 +1207,11 @@
       "name_en": "Acetic acid",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sirke asidi; sirkeleşme İslam hukukunda temizleyici dönüşüm kabul edilir.",
@@ -1004,8 +1223,11 @@
       "name_en": "Potassium acetate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Asetik asit tuzu; sirke veya sentetik kaynaklıdır.",
@@ -1017,8 +1239,11 @@
       "name_en": "Sodium acetates",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Asetik asit tuzu; sirke veya sentetik kaynaklıdır.",
@@ -1030,8 +1255,11 @@
       "name_en": "Calcium acetate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Asetik asit tuzu; sirke veya sentetik kaynaklıdır.",
@@ -1043,8 +1271,11 @@
       "name_en": "Lactic acid",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Fermantasyonla üretilir; besiyeri genellikle bitkisel şekerlerdir.",
@@ -1056,8 +1287,11 @@
       "name_en": "Propionic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1069,8 +1303,11 @@
       "name_en": "Sodium propionate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1082,8 +1319,11 @@
       "name_en": "Calcium propionate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1095,8 +1335,11 @@
       "name_en": "Potassium propionate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1108,8 +1351,11 @@
       "name_en": "Boric acid",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -1121,8 +1367,11 @@
       "name_en": "Borax (Sodium tetraborate)",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -1134,8 +1383,11 @@
       "name_en": "Carbon dioxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -1147,8 +1399,11 @@
       "name_en": "Malic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1160,8 +1415,11 @@
       "name_en": "Fumaric acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1173,8 +1431,11 @@
       "name_en": "Ascorbic acid (Vitamin C)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik/fermantasyon kaynaklı.",
@@ -1186,8 +1447,11 @@
       "name_en": "Sodium ascorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1199,8 +1463,11 @@
       "name_en": "Calcium ascorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1212,8 +1479,11 @@
       "name_en": "Ascorbyl palmitate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Palmitik asit bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -1231,8 +1501,11 @@
       "name_en": "Tocopherols (Vitamin E)",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Genellikle soya ve bitkisel yağlardan.",
@@ -1244,8 +1517,11 @@
       "name_en": "Alpha-tocopherol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1257,8 +1533,11 @@
       "name_en": "Gamma-tocopherol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1270,8 +1549,11 @@
       "name_en": "Delta-tocopherol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1283,8 +1565,11 @@
       "name_en": "Propyl gallate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1296,8 +1581,11 @@
       "name_en": "Octyl gallate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1309,8 +1597,11 @@
       "name_en": "Dodecyl gallate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1322,8 +1613,11 @@
       "name_en": "Erythorbic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1335,8 +1629,11 @@
       "name_en": "Sodium erythorbate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1348,8 +1645,11 @@
       "name_en": "TBHQ (tert-Butylhydroquinone)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1361,8 +1661,11 @@
       "name_en": "BHA (Butylated hydroxyanisole)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1374,8 +1677,11 @@
       "name_en": "BHT (Butylated hydroxytoluene)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1387,8 +1693,11 @@
       "name_en": "Lecithin",
       "source": "variable",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Neredeyse daima soya/ayçiçeği kaynaklı; yumurta lesitini de helaldir. Hayvansal kaynak istisnaidir.",
@@ -1400,8 +1709,11 @@
       "name_en": "Sodium lactate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Laktik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1413,8 +1725,11 @@
       "name_en": "Potassium lactate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Laktik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1426,8 +1741,11 @@
       "name_en": "Calcium lactate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Laktik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1439,8 +1757,11 @@
       "name_en": "Citric acid",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Küf fermantasyonuyla üretilir.",
@@ -1452,8 +1773,11 @@
       "name_en": "Sodium citrates",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sitrik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1465,8 +1789,11 @@
       "name_en": "Potassium citrates",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sitrik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1478,8 +1805,11 @@
       "name_en": "Calcium citrates",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sitrik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1491,8 +1821,11 @@
       "name_en": "Tartaric acid",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm geçirdiği için çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1512,8 +1845,11 @@
       "name_en": "Sodium tartrates",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1531,8 +1867,11 @@
       "name_en": "Potassium tartrates (Cream of tartar)",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1553,8 +1892,11 @@
       "name_en": "Sodium potassium tartrate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1572,8 +1914,11 @@
       "name_en": "Phosphoric acid",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -1585,8 +1930,11 @@
       "name_en": "Sodium phosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -1598,8 +1946,11 @@
       "name_en": "Potassium phosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -1611,8 +1962,11 @@
       "name_en": "Calcium phosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Kaya fosfatından üretilir; kemik kaynaklı fosfat ayrıca E542 olarak değerlendirilir.",
@@ -1624,8 +1978,11 @@
       "name_en": "Sodium malates",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1637,8 +1994,11 @@
       "name_en": "Potassium malate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1650,8 +2010,11 @@
       "name_en": "Calcium malates",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1663,8 +2026,11 @@
       "name_en": "Metatartaric acid",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1681,8 +2047,11 @@
       "name_en": "Calcium tartrate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Tartarik asit ailesi: şarap endüstrisi yan ürünü tortudan elde edilebilir; kimyasal dönüşüm nedeniyle çoğunluk helal sayar, temkinli profil şüpheli işaretler.",
@@ -1700,8 +2069,11 @@
       "name_en": "Adipic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1713,8 +2085,11 @@
       "name_en": "Succinic acid",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1726,8 +2101,11 @@
       "name_en": "Triammonium citrate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sitrik asit tuzu; fermantasyon kaynaklıdır.",
@@ -1739,8 +2117,11 @@
       "name_en": "Calcium disodium EDTA",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -1752,8 +2133,11 @@
       "name_en": "Alginic acid",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1765,8 +2149,11 @@
       "name_en": "Sodium alginate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1778,8 +2165,11 @@
       "name_en": "Potassium alginate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1791,8 +2181,11 @@
       "name_en": "Ammonium alginate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1804,8 +2197,11 @@
       "name_en": "Calcium alginate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1817,8 +2213,11 @@
       "name_en": "Propylene glycol alginate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1830,8 +2229,11 @@
       "name_en": "Agar",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan jelleştirici; jelatinin helal alternatifi.",
@@ -1843,8 +2245,11 @@
       "name_en": "Carrageenan",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan.",
@@ -1856,8 +2261,11 @@
       "name_en": "Processed eucheuma seaweed",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Deniz yosunundan elde edilir.",
@@ -1869,8 +2277,11 @@
       "name_en": "Locust bean gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Keçiboynuzu tohumundan.",
@@ -1882,8 +2293,11 @@
       "name_en": "Guar gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Guar fasulyesinden.",
@@ -1895,8 +2309,11 @@
       "name_en": "Tragacanth gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -1908,8 +2325,11 @@
       "name_en": "Gum arabic",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Akasya ağacı özsuyundan.",
@@ -1921,8 +2341,11 @@
       "name_en": "Xanthan gum",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla üretilir.",
@@ -1934,8 +2357,11 @@
       "name_en": "Karaya gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -1947,8 +2373,11 @@
       "name_en": "Tara gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -1960,8 +2389,11 @@
       "name_en": "Gellan gum",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Fermantasyonla üretilir; besiyeri genellikle bitkisel şekerlerdir.",
@@ -1973,8 +2405,11 @@
       "name_en": "Sorbitol",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mısır/buğday nişastasından.",
@@ -1986,8 +2421,11 @@
       "name_en": "Glycerol (Glycerin)",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Bitkisel yağdan veya sentetik ise helal; hayvansal yağdan (domuz dahil) üretilebilir — kaynak doğrulanmadan hüküm verilemez.",
@@ -2020,8 +2458,11 @@
       "name_en": "Konjac",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -2033,8 +2474,11 @@
       "name_en": "Soybean hemicellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -2046,8 +2490,11 @@
       "name_en": "Gelatine",
       "source": "animal",
       "verdict": {
-        "temkinli": "haram",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "haram",
+        "maliki": "mushbooh",
+        "hanbeli": "haram",
+        "caferi": "haram",
         "diyanet": "haram"
       },
       "reason_tr": "Domuz veya dini usule uygun kesilmemiş hayvan kaynaklıysa haram (Diyanet). Helal kesim sığır/balık jelatini helaldir. Genişlik profili istihale tartışması nedeniyle şüpheli sayar. Helal sertifikalıysa yeşil kabul edilebilir.",
@@ -2059,8 +2506,11 @@
       "name_en": "Polyoxyethylene stearate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit hayvansal yağdan gelebilir.",
@@ -2076,8 +2526,11 @@
       "name_en": "Polysorbate 20",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2094,8 +2547,11 @@
       "name_en": "Polysorbate 80",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asitleri bitkisel veya hayvansal kaynaklı olabilir.",
@@ -2113,8 +2569,11 @@
       "name_en": "Polysorbate 40",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2131,8 +2590,11 @@
       "name_en": "Polysorbate 60",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2150,8 +2612,11 @@
       "name_en": "Polysorbate 65",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2168,8 +2633,11 @@
       "name_en": "Pectin",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Elma posası ve narenciye kabuğundan; jelatinin helal alternatifi.",
@@ -2181,8 +2649,11 @@
       "name_en": "Gelatin",
       "source": "animal",
       "verdict": {
-        "temkinli": "haram",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "haram",
+        "maliki": "mushbooh",
+        "hanbeli": "haram",
+        "caferi": "haram",
         "diyanet": "haram"
       },
       "reason_tr": "Domuz veya dini usule uygun kesilmemiş hayvan kaynaklıysa haram (Diyanet). Helal kesim sığır/balık jelatini helaldir. Hanefî/Malikî istihale görüşüne göre tam dönüşüm tartışması vardır — genişlik profili şüpheli, diğerleri haram sayar. Helal sertifikalıysa yeşil kabul edilebilir.",
@@ -2194,8 +2665,11 @@
       "name_en": "Ammonium phosphatides",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Genellikle kolza yağından.",
@@ -2207,8 +2681,11 @@
       "name_en": "Sucrose acetate isobutyrate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -2220,8 +2697,11 @@
       "name_en": "Glycerol esters of wood rosin",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Reçine bitkiseldir ama gliserol bileşeni hayvansal olabilir.",
@@ -2237,8 +2717,11 @@
       "name_en": "Diphosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2250,8 +2733,11 @@
       "name_en": "Triphosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2263,8 +2749,11 @@
       "name_en": "Polyphosphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2276,8 +2765,11 @@
       "name_en": "Beta-cyclodextrin",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -2289,8 +2781,11 @@
       "name_en": "Cellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2302,8 +2797,11 @@
       "name_en": "Methyl cellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2315,8 +2813,11 @@
       "name_en": "Hydroxypropyl cellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2328,8 +2829,11 @@
       "name_en": "Hydroxypropyl methyl cellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2341,8 +2845,11 @@
       "name_en": "Ethyl methyl cellulose",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2354,8 +2861,11 @@
       "name_en": "Carboxymethyl cellulose (CMC)",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2367,8 +2877,11 @@
       "name_en": "Cross-linked cellulose gum",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel selülozdan üretilir.",
@@ -2380,8 +2893,11 @@
       "name_en": "Salts of fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi kaynağı bitkisel veya hayvansal olabilir.",
@@ -2398,8 +2914,11 @@
       "name_en": "Magnesium salts of fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2415,8 +2934,11 @@
       "name_en": "Mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "En yaygın şüpheli katkı: palm yağından üretilirse helal, hayvansal (domuz dahil) yağdan üretilebilir. Üretici beyanı veya helal sertifika olmadan hüküm verilemez.",
@@ -2428,8 +2950,11 @@
       "name_en": "Acetic acid esters of mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit bileşeni bitkisel veya hayvansal (domuz dahil) yağdan üretilebilir — kaynak doğrulanmalı.",
@@ -2441,8 +2966,11 @@
       "name_en": "Lactic acid esters of mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit bileşeni bitkisel veya hayvansal (domuz dahil) yağdan üretilebilir — kaynak doğrulanmalı.",
@@ -2454,8 +2982,11 @@
       "name_en": "Citric acid esters of mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit bileşeni bitkisel veya hayvansal (domuz dahil) yağdan üretilebilir — kaynak doğrulanmalı.",
@@ -2467,8 +2998,11 @@
       "name_en": "Tartaric acid esters of mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit bileşeni bitkisel veya hayvansal (domuz dahil) yağdan üretilebilir — kaynak doğrulanmalı.",
@@ -2480,8 +3014,11 @@
       "name_en": "DATEM",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit türevi; kaynak sorunu E471 ile aynıdır. Endüstriyel ekmeklerde çok yaygındır.",
@@ -2496,8 +3033,11 @@
       "name_en": "Mixed esters of mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Mono-digliserit bileşeni bitkisel veya hayvansal (domuz dahil) yağdan üretilebilir — kaynak doğrulanmalı.",
@@ -2509,8 +3049,11 @@
       "name_en": "Sucrose esters of fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2530,8 +3073,11 @@
       "name_en": "Sucroglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2548,8 +3094,11 @@
       "name_en": "Polyglycerol esters of fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2566,8 +3115,11 @@
       "name_en": "Polyglycerol polyricinoleate (PGPR)",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Günümüzde ağırlıkla hint yağı ve bitkisel gliserolden; gliserol bileşeni hayvansal olabileceği için temkinli profil şüpheli sayar. Çikolatalarda yaygın.",
@@ -2585,8 +3137,11 @@
       "name_en": "Propylene glycol esters of fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2602,8 +3157,11 @@
       "name_en": "Thermally oxidised soya bean oil with mono- and diglycerides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2615,8 +3173,11 @@
       "name_en": "Sodium stearoyl lactylate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı bitkisel veya hayvansal olabilir.",
@@ -2635,8 +3196,11 @@
       "name_en": "Calcium stearoyl-2-lactylate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit bileşeni hayvansal yağdan gelebilir — kaynak doğrulanmalı.",
@@ -2653,8 +3217,11 @@
       "name_en": "Stearyl tartrate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit bileşeni hayvansal yağdan gelebilir — kaynak doğrulanmalı.",
@@ -2670,8 +3237,11 @@
       "name_en": "Sorbitan monostearate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı doğrulanmalı.",
@@ -2688,8 +3258,11 @@
       "name_en": "Sorbitan tristearate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2706,8 +3279,11 @@
       "name_en": "Sorbitan monolaurate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2723,8 +3299,11 @@
       "name_en": "Sorbitan monooleate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2740,8 +3319,11 @@
       "name_en": "Sorbitan monopalmitate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Yağ asidi bileşeni bitkisel veya hayvansal kaynaklı olabilir — kaynak doğrulanmalı.",
@@ -2757,8 +3339,11 @@
       "name_en": "Sodium carbonates (Baking soda)",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2770,8 +3355,11 @@
       "name_en": "Potassium carbonates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2783,8 +3371,11 @@
       "name_en": "Ammonium carbonates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2796,8 +3387,11 @@
       "name_en": "Magnesium carbonates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2809,8 +3403,11 @@
       "name_en": "Hydrochloric acid",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2822,8 +3419,11 @@
       "name_en": "Potassium chloride",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2835,8 +3435,11 @@
       "name_en": "Calcium chloride",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2848,8 +3451,11 @@
       "name_en": "Magnesium chloride",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2861,8 +3467,11 @@
       "name_en": "Sulphuric acid",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2874,8 +3483,11 @@
       "name_en": "Sodium sulphates",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2887,8 +3499,11 @@
       "name_en": "Calcium sulphate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2900,8 +3515,11 @@
       "name_en": "Ammonium sulphate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2913,8 +3531,11 @@
       "name_en": "Sodium hydroxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2926,8 +3547,11 @@
       "name_en": "Potassium hydroxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2939,8 +3563,11 @@
       "name_en": "Calcium hydroxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2952,8 +3579,11 @@
       "name_en": "Ammonium hydroxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2965,8 +3595,11 @@
       "name_en": "Magnesium hydroxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2978,8 +3611,11 @@
       "name_en": "Calcium oxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -2991,8 +3627,11 @@
       "name_en": "Magnesium oxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3004,8 +3643,11 @@
       "name_en": "Sodium ferrocyanide",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3017,8 +3659,11 @@
       "name_en": "Potassium ferrocyanide",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3030,8 +3675,11 @@
       "name_en": "Calcium ferrocyanide",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3043,8 +3691,11 @@
       "name_en": "Sodium aluminium phosphate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3056,8 +3707,11 @@
       "name_en": "Bone phosphate",
       "source": "animal",
       "verdict": {
-        "temkinli": "haram",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "haram",
+        "maliki": "mushbooh",
+        "hanbeli": "haram",
+        "caferi": "haram",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Hayvan kemiklerinden elde edilir; hayvanın türü ve kesim şekli bilinmeden hüküm verilemez. Domuz kemiği kullanılmışsa haramdır.",
@@ -3076,8 +3730,11 @@
       "name_en": "Silicon dioxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3089,8 +3746,11 @@
       "name_en": "Calcium silicate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3102,8 +3762,11 @@
       "name_en": "Magnesium silicate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3115,8 +3778,11 @@
       "name_en": "Talc",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3128,8 +3794,11 @@
       "name_en": "Sodium aluminium silicate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3141,8 +3810,11 @@
       "name_en": "Potassium aluminium silicate",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3154,8 +3826,11 @@
       "name_en": "Stearic acid / fatty acids",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Bitkisel veya hayvansal kaynaklı olabilir.",
@@ -3167,8 +3842,11 @@
       "name_en": "Magnesium stearate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Stearik asit kaynağı doğrulanmalı; ilaç ve takviyelerde yaygın.",
@@ -3188,8 +3866,11 @@
       "name_en": "Gluconic acid",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3201,8 +3882,11 @@
       "name_en": "Glucono-delta-lactone",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3214,8 +3898,11 @@
       "name_en": "Sodium gluconate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3227,8 +3914,11 @@
       "name_en": "Potassium gluconate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3240,8 +3930,11 @@
       "name_en": "Calcium gluconate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3253,8 +3946,11 @@
       "name_en": "Ferrous gluconate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Glukoz fermantasyonundan elde edilir.",
@@ -3266,8 +3962,11 @@
       "name_en": "Ferrous lactate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Laktik asit tuzu; fermantasyon kaynaklıdır.",
@@ -3279,8 +3978,11 @@
       "name_en": "4-Hexylresorcinol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3292,8 +3994,11 @@
       "name_en": "Glutamic acid",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3305,8 +4010,11 @@
       "name_en": "Monosodium glutamate (MSG)",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3318,8 +4026,11 @@
       "name_en": "Monopotassium glutamate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3331,8 +4042,11 @@
       "name_en": "Calcium diglutamate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3344,8 +4058,11 @@
       "name_en": "Monoammonium glutamate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3357,8 +4074,11 @@
       "name_en": "Magnesium diglutamate",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bakteriyel fermantasyonla (melas/nişasta) üretilir; sağlık tartışması dini hükümden ayrıdır.",
@@ -3370,8 +4090,11 @@
       "name_en": "Guanylic acid",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3388,8 +4111,11 @@
       "name_en": "Disodium guanylate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3408,8 +4134,11 @@
       "name_en": "Dipotassium guanylate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3425,8 +4154,11 @@
       "name_en": "Calcium guanylate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3442,8 +4174,11 @@
       "name_en": "Inosinic acid",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
@@ -3460,8 +4195,11 @@
       "name_en": "Disodium inosinate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Et/balık veya tapyoka nişastası fermantasyonundan üretilebilir; domuz kaynaklı üretim raporlanmıştır — kaynak doğrulanmadan hüküm verilemez. Cips ve hazır çorbalarda yaygın.",
@@ -3480,8 +4218,11 @@
       "name_en": "Dipotassium inosinate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
@@ -3497,8 +4238,11 @@
       "name_en": "Calcium inosinate",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle et veya balık kaynaklıdır; mikrobiyal üretim de mümkündür — kaynak doğrulanmalı.",
@@ -3514,8 +4258,11 @@
       "name_en": "Calcium 5'-ribonucleotides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3531,8 +4278,11 @@
       "name_en": "Disodium 5'-ribonucleotides",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Genellikle maya ekstresinden; balık veya et kaynaklı da üretilebilir — kaynak doğrulanmalı.",
@@ -3551,8 +4301,11 @@
       "name_en": "Glycine",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Sentetik veya jelatin hidrolizinden elde edilebilir.",
@@ -3569,8 +4322,11 @@
       "name_en": "Zinc acetate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3582,8 +4338,11 @@
       "name_en": "Dimethylpolysiloxane",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3595,8 +4354,11 @@
       "name_en": "Beeswax",
       "source": "insect",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Arı ürünü; bal gibi helal kabul edilir.",
@@ -3608,8 +4370,11 @@
       "name_en": "Candelilla wax",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -3621,8 +4386,11 @@
       "name_en": "Carnauba wax",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Karnauba palmiyesi yapraklarından.",
@@ -3634,8 +4402,11 @@
       "name_en": "Shellac",
       "source": "insect",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Lak böceğinin salgısından; balmumuna kıyasla âlimler arasında görüş ayrılığı vardır. Şekerleme parlatıcılarında yaygın.",
@@ -3656,8 +4427,11 @@
       "name_en": "Microcrystalline wax",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3669,8 +4443,11 @@
       "name_en": "Montanic acid esters",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Mineral/inorganik kaynaklı.",
@@ -3682,8 +4459,11 @@
       "name_en": "Oxidised polyethylene wax",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3695,8 +4475,11 @@
       "name_en": "L-cysteine",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "İnsan saçından elde edilmişse tüm görüşlerde haramdır; kuş tüyü veya sentetik/fermantasyon kaynaklıysa helal görüşü ağırlıktadır. Kaynak doğrulanmalı. Unlu mamullerde yaygın.",
@@ -3708,8 +4491,11 @@
       "name_en": "Carbamide (Urea)",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -3721,8 +4507,11 @@
       "name_en": "Argon",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3734,8 +4523,11 @@
       "name_en": "Helium",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3747,8 +4539,11 @@
       "name_en": "Nitrogen",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3760,8 +4555,11 @@
       "name_en": "Nitrous oxide",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3773,8 +4571,11 @@
       "name_en": "Oxygen",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3786,8 +4587,11 @@
       "name_en": "Hydrogen",
       "source": "mineral",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "İnert/atmosferik gaz; dini açıdan sakınca yok.",
@@ -3799,8 +4603,11 @@
       "name_en": "Acesulfame K",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3812,8 +4619,11 @@
       "name_en": "Aspartame",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; fenilketonüri hastaları için sağlık uyarısı dini hükümden ayrıdır.",
@@ -3825,8 +4635,11 @@
       "name_en": "Cyclamate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3838,8 +4651,11 @@
       "name_en": "Isomalt",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3851,8 +4667,11 @@
       "name_en": "Saccharin",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3864,8 +4683,11 @@
       "name_en": "Sucralose",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3877,8 +4699,11 @@
       "name_en": "Thaumatin",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3890,8 +4715,11 @@
       "name_en": "Neohesperidine DC",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3903,8 +4731,11 @@
       "name_en": "Steviol glycosides (Stevia)",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3916,8 +4747,11 @@
       "name_en": "Neotame",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3929,8 +4763,11 @@
       "name_en": "Salt of aspartame-acesulfame",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik tatlandırıcı; hayvansal bileşen içermez.",
@@ -3942,8 +4779,11 @@
       "name_en": "Maltitol",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3955,8 +4795,11 @@
       "name_en": "Lactitol",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "halal"
       },
       "reason_tr": "Laktozdan üretilir; peynir altı suyu kaynaklıysa kullanılan mayanın (rennet) menşei temkinli profilde sorgulanır.",
@@ -3972,8 +4815,11 @@
       "name_en": "Xylitol",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı tatlandırıcı.",
@@ -3985,8 +4831,11 @@
       "name_en": "Erythritol",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Fermantasyonla üretilir; besiyeri genellikle bitkisel şekerlerdir.",
@@ -3998,8 +4847,11 @@
       "name_en": "Quillaia extract",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Bitkisel kaynaklı.",
@@ -4011,8 +4863,11 @@
       "name_en": "Amylase",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "mushbooh",
+        "maliki": "halal",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Enzim; günümüzde çoğunlukla mikrobiyal fermantasyonla üretilir, hayvansal kaynaklı da olabilir — kaynak doğrulanmalı.",
@@ -4029,8 +4884,11 @@
       "name_en": "Invertase",
       "source": "microbial",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Maya kaynaklı enzimdir.",
@@ -4042,8 +4900,11 @@
       "name_en": "Lysozyme",
       "source": "animal",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Yumurta akından elde edilir.",
@@ -4055,8 +4916,11 @@
       "name_en": "Polydextrose",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -4068,8 +4932,11 @@
       "name_en": "Polyvinylpyrrolidone",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -4081,8 +4948,11 @@
       "name_en": "Polyvinylpolypyrrolidone",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",
@@ -4094,8 +4964,11 @@
       "name_en": "Dextrin",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4107,8 +4980,11 @@
       "name_en": "Oxidised starch",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4120,8 +4996,11 @@
       "name_en": "Monostarch phosphate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4133,8 +5012,11 @@
       "name_en": "Distarch phosphate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4146,8 +5028,11 @@
       "name_en": "Acetylated distarch phosphate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4159,8 +5044,11 @@
       "name_en": "Acetylated starch",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4172,8 +5060,11 @@
       "name_en": "Acetylated distarch adipate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4185,8 +5076,11 @@
       "name_en": "Hydroxypropyl starch",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4198,8 +5092,11 @@
       "name_en": "Hydroxypropyl distarch phosphate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4211,8 +5108,11 @@
       "name_en": "Starch sodium octenyl succinate",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4224,8 +5124,11 @@
       "name_en": "Acetylated oxidised starch",
       "source": "plant",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Nişastadan üretilir (modifiye nişasta ailesi).",
@@ -4237,8 +5140,11 @@
       "name_en": "Triethyl citrate",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sitrik asit tuzu; fermantasyon kaynaklıdır.",
@@ -4250,8 +5156,11 @@
       "name_en": "Ethanol",
       "source": "variable",
       "verdict": {
-        "temkinli": "haram",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "haram",
+        "maliki": "mushbooh",
+        "hanbeli": "haram",
+        "caferi": "haram",
         "diyanet": "mushbooh"
       },
       "reason_tr": "İçki kaynaklı (hamr) ise haram. Sentetik/endüstriyel etanolün taşıyıcı-çözücü olarak eser miktarda kullanımı hakkında görüş ayrılığı vardır; Hanefî gelenekte sentetik etanol hamr sayılmaz.",
@@ -4263,8 +5172,11 @@
       "name_en": "Triacetin (Glyceryl triacetate)",
       "source": "variable",
       "verdict": {
-        "temkinli": "mushbooh",
-        "genislik": "mushbooh",
+        "hanefi": "mushbooh",
+        "safii": "mushbooh",
+        "maliki": "mushbooh",
+        "hanbeli": "mushbooh",
+        "caferi": "mushbooh",
         "diyanet": "mushbooh"
       },
       "reason_tr": "Gliserol bileşeni hayvansal yağdan (domuz dahil) üretilebilir — kaynak doğrulanmalı.",
@@ -4281,8 +5193,11 @@
       "name_en": "Propylene glycol",
       "source": "synthetic",
       "verdict": {
-        "temkinli": "halal",
-        "genislik": "halal",
+        "hanefi": "halal",
+        "safii": "halal",
+        "maliki": "halal",
+        "hanbeli": "halal",
+        "caferi": "halal",
         "diyanet": "halal"
       },
       "reason_tr": "Sentetik üretim; hayvansal bileşen içermez.",

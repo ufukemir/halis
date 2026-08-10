@@ -87,11 +87,18 @@ void main() {
       expect(r.findings.any((f) => f.label.contains('E322')), isFalse);
     });
 
-    test('E904 şellak: temkinli şüpheli, genişlik helal', () {
-      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: 'şeker, parlatıcı (e904)');
-      final genislik = engine.analyze(profile: Profile.genislik, ingredientsText: 'şeker, parlatıcı (e904)');
-      expect(temkinli.verdict, Verdict.mushbooh);
-      expect(genislik.verdict, Verdict.halal);
+    test('E904 şellak: Şafiî şüpheli, Hanefî helal', () {
+      final safii = engine.analyze(profile: Profile.safii, ingredientsText: 'şeker, parlatıcı (e904)');
+      final hanefi = engine.analyze(profile: Profile.hanefi, ingredientsText: 'şeker, parlatıcı (e904)');
+      expect(safii.verdict, Verdict.mushbooh);
+      expect(hanefi.verdict, Verdict.halal);
+    });
+
+    test('Sadece Müslümanım = mezheplerin en ihtiyatlısı (E904 şüpheli kalır)', () {
+      // Hanefî helal dese de Şafiî/Hanbelî/Caferî şüpheli dediği için
+      // ortak payda şüphelidir; yeşil yanmaz.
+      final r = engine.analyze(profile: Profile.musluman, ingredientsText: 'şeker, parlatıcı (e904)');
+      expect(r.verdict, Verdict.mushbooh);
     });
 
     test('bilinmeyen E-kodu → temkinen şüpheli', () {
@@ -123,12 +130,12 @@ void main() {
       expect(r.verdict, isNot(Verdict.haram));
     });
 
-    test('Nutella etiketi (lactoserum): temkinli şüpheli, diyanet notlu temiz', () {
+    test('Nutella etiketi (lactoserum): Şafiî şüpheli, diyanet notlu temiz', () {
       const nutella =
           'Sucre, huile de palme, NOISETTES 13%, cacao maigre, LAIT écrémé en poudre, LACTOSERUM en poudre, émulsifiants: lécithines [SOJA], vanilline.';
-      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: nutella.toLowerCase());
+      final safii = engine.analyze(profile: Profile.safii, ingredientsText: nutella.toLowerCase());
       final diyanet = engine.analyze(profile: Profile.diyanet, ingredientsText: nutella.toLowerCase());
-      expect(temkinli.verdict, Verdict.mushbooh);
+      expect(safii.verdict, Verdict.mushbooh);
       expect(diyanet.verdict, Verdict.halal);
       expect(diyanet.findings.any((f) => f.isNote), isTrue);
     });
@@ -208,11 +215,11 @@ void main() {
       expect(r.verdict, Verdict.mushbooh);
     });
 
-    test('gomme-laque: temkinli şüpheli, genişlik helal (E904 ile aynı)', () {
-      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
-      final genislik = engine.analyze(profile: Profile.genislik, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
-      expect(temkinli.verdict, Verdict.mushbooh);
-      expect(genislik.verdict, Verdict.halal);
+    test('gomme-laque: Şafiî şüpheli, Hanefî helal (E904 ile aynı)', () {
+      final safii = engine.analyze(profile: Profile.safii, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
+      final hanefi = engine.analyze(profile: Profile.hanefi, ingredientsText: 'sucre, agent d\'enrobage: gomme-laque');
+      expect(safii.verdict, Verdict.mushbooh);
+      expect(hanefi.verdict, Verdict.halal);
     });
 
     test('disodium inosinate + guanylate (EN etiket) → şüpheli', () {
@@ -233,10 +240,10 @@ void main() {
       expect(r.findings.where((f) => f.label.contains('E433')).length, 1);
     });
 
-    test('karoten yalnız temkinli profilde şüpheli (alias üzerinden)', () {
-      final temkinli = engine.analyze(profile: Profile.temkinli, ingredientsText: 'su, beta-carotene, aroma');
+    test('karoten yalnız ihtiyat çizgisinde şüpheli (alias üzerinden)', () {
+      final safii = engine.analyze(profile: Profile.safii, ingredientsText: 'su, beta-carotene, aroma');
       final diyanet = engine.analyze(profile: Profile.diyanet, ingredientsText: 'su, beta-carotene, aroma');
-      expect(temkinli.verdict, Verdict.mushbooh);
+      expect(safii.verdict, Verdict.mushbooh);
       expect(diyanet.verdict, Verdict.halal);
     });
   });

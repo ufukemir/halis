@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:quick_actions/quick_actions.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'l10n/strings.dart';
 import 'models/models.dart';
@@ -15,6 +16,9 @@ import 'screens/paywall_screen.dart';
 import 'screens/result_screen.dart';
 import 'screens/scan_screen.dart';
 import 'screens/search_screen.dart';
+import 'screens/settings_screen.dart';
+import 'services/ad_service.dart';
+import 'services/app_settings.dart';
 import 'services/data_update_service.dart';
 import 'services/history_service.dart';
 import 'services/knowledge_base.dart';
@@ -24,7 +28,10 @@ import 'widgets/verdict_view.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PremiumService.init(); // Anahtar tanımlı değilse sessizce çevrimdışı kalır.
+  await AppSettings.instance.load(); // Dil + yazı boyutu tercihi.
   runApp(const HalisApp());
+  // Reklam SDK'sı açılışı bloklamasın; hazır olunca ilk reklamı ısıtır.
+  AdService.init();
 }
 
 class HalisApp extends StatelessWidget {
@@ -32,34 +39,47 @@ class HalisApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Halis',
-      debugShowCheckedModeBanner: false,
-      // Çok dilli destek: TR/EN/DE/FR/AR/ID — Arapça'da RTL otomatiktir.
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en'), Locale('tr'), Locale('de'),
-        Locale('fr'), Locale('ar'), Locale('id'),
-      ],
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1B7A43)),
-        useMaterial3: true,
-      ),
-      // Karanlık mod: sistem tercihine uyar. Hüküm renkleri (yeşil/turuncu/
-      // kırmızı kartlar) marka sabitidir ve beyaz metinle iki temada da okunur.
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1B7A43),
-          brightness: Brightness.dark,
+    // Ayarlar (dil/yazı boyutu) değişince tüm uygulama anında yeniden çizilir.
+    return ListenableBuilder(
+      listenable: AppSettings.instance,
+      builder: (context, _) => MaterialApp(
+        title: 'Halis',
+        debugShowCheckedModeBanner: false,
+        // Çok dilli destek: 6 çekirdek + 11 overlay dili — RTL (ar/ur) otomatik.
+        // null → sistem dili; ayarlardan elle seçilebilir.
+        locale: AppSettings.instance.locale,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [for (final code in S.supported) Locale(code)],
+        // Yazı boyutu tercihi: tüm metinler doğrusal ölçeklenir.
+        builder: (context, child) {
+          final mq = MediaQuery.of(context);
+          return MediaQuery(
+            data: mq.copyWith(
+              textScaler: TextScaler.linear(AppSettings.instance.textScale),
+            ),
+            child: child!,
+          );
+        },
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1B7A43)),
+          useMaterial3: true,
         ),
-        useMaterial3: true,
+        // Karanlık mod: sistem tercihine uyar. Hüküm renkleri (yeşil/turuncu/
+        // kırmızı kartlar) marka sabitidir ve beyaz metinle iki temada da okunur.
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF1B7A43),
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+        ),
+        themeMode: ThemeMode.system,
+        home: const _Gate(),
       ),
-      themeMode: ThemeMode.system,
-      home: const _Gate(),
     );
   }
 }
@@ -99,7 +119,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Profile _profile = Profile.diyanet;
+  static const _profilePrefKey = 'profile';
+
+  Profile _profile = Profile.musluman;
   KnowledgeBase? _kb;
   List<HistoryEntry> _history = const [];
   final _manualController = TextEditingController();
@@ -115,8 +137,26 @@ class _HomeScreenState extends State<HomeScreen> {
       final updated = await DataUpdateService.checkForUpdate(kb);
       if (updated != null && mounted) setState(() => _kb = updated);
     });
+    _loadProfile();
     _reloadHistory();
     _setupQuickActions();
+  }
+
+  Future<void> _loadProfile() async {
+    final prefs = await SharedPreferences.getInstance();
+    final saved = ProfileKey.fromKey(prefs.getString(_profilePrefKey));
+    if (saved != null && mounted) setState(() => _profile = saved);
+  }
+
+  Future<void> _selectProfile(Profile p) async {
+    setState(() => _profile = p);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_profilePrefKey, p.key);
+    // Geçmişteki hükümler yeni ölçünün gözünden tazelenir.
+    if (_kb != null) {
+      final updated = await HistoryService().reanalyze(_kb!, _profile);
+      if (mounted) setState(() => _history = updated);
+    }
   }
 
   /// Uygulama simgesine uzun basış kısayolları (iOS Quick Actions /
@@ -137,10 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           case 'label':
             await _openLabelFlow();
           case 'market':
-            await Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => MarketModeScreen(profile: _profile, kb: _kb!),
-            ));
-            await _reloadHistory();
+            await _openMarketMode();
         }
       }
 
@@ -168,7 +205,49 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  /// Ücretsiz katmanda tarama kapısı: kredi varsa düşer; yoksa "1 reklam =
+  /// 1 tarama" diyaloğu açılır. Premium hiç uğramaz. Reklam gösterilemezse
+  /// akış KİLİTLENMEZ (AdService fail-open).
+  Future<bool> _ensureScanAllowed() async {
+    if (await PremiumService.isPremium()) return true;
+    if (await ScanCreditService().consume()) return true;
+    if (!mounted) return false;
+    final s = S.of(context);
+    final choice = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(s.watchAdTitle),
+        content: Text(s.watchAdBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(s.cancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop('premium'),
+            child: Text(s.goPremium),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop('ad'),
+            child: Text(s.watchAdButton),
+          ),
+        ],
+      ),
+    );
+    if (choice == 'premium') {
+      if (!mounted) return false;
+      await Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+      );
+      return PremiumService.isPremium();
+    }
+    if (choice != 'ad') return false;
+    return AdService.showRewardedAd();
+  }
+
   Future<void> _openScanner() async {
+    if (!await _ensureScanAllowed()) return;
+    if (!mounted) return;
     final barcode = await Navigator.of(context).push<String>(
       MaterialPageRoute(builder: (_) => const ScanScreen()),
     );
@@ -190,6 +269,24 @@ class _HomeScreenState extends State<HomeScreen> {
     await Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => LabelScreen(profile: _profile, kb: _kb!)),
     );
+    await _reloadHistory();
+  }
+
+  /// Süpermarket modu premium: tek oturumda çok sayıda tarama/istek üretir.
+  /// Abone değilse paywall açılır; oradan abone olunursa mod hemen açılır.
+  Future<void> _openMarketMode() async {
+    if (_kb == null) return;
+    if (!await PremiumService.isPremium()) {
+      if (!mounted) return;
+      await Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+      );
+      if (!await PremiumService.isPremium()) return;
+    }
+    if (!mounted) return;
+    await Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => MarketModeScreen(profile: _profile, kb: _kb!),
+    ));
     await _reloadHistory();
   }
 
@@ -246,11 +343,23 @@ class _HomeScreenState extends State<HomeScreen> {
               MaterialPageRoute(builder: (_) => const PaywallScreen()),
             ),
           ),
+          IconButton(
+            icon: const Icon(Icons.settings_outlined),
+            tooltip: s.settingsTitle,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const SettingsScreen()),
+            ),
+          ),
         ],
       ),
+      // Tablet/yatay ekranlarda içerik tam genişliğe yayılmasın; telefonda
+      // etkisizdir (640dp'den dar).
       body: _kb == null
           ? const Center(child: CircularProgressIndicator())
-          : ListView(
+          : Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 640),
+                child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
                 const SizedBox(height: 8),
@@ -306,13 +415,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 8),
                     Expanded(
                       child: OutlinedButton.icon(
-                        onPressed: () async {
-                          if (_kb == null) return;
-                          await Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => MarketModeScreen(profile: _profile, kb: _kb!),
-                          ));
-                          await _reloadHistory();
-                        },
+                        onPressed: _openMarketMode,
                         icon: const Icon(Icons.shopping_basket_outlined),
                         label: Text(s.marketMode),
                       ),
@@ -333,20 +436,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 24),
                 Text(s.sensitivityProfile, style: Theme.of(context).textTheme.titleMedium),
                 const SizedBox(height: 8),
-                SegmentedButton<Profile>(
-                  segments: [
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 0,
+                  children: [
                     for (final p in Profile.values)
-                      ButtonSegment(value: p, label: Text(s.profileName(p))),
+                      ChoiceChip(
+                        label: Text(s.profileName(p)),
+                        selected: _profile == p,
+                        onSelected: (sel) {
+                          if (sel) _selectProfile(p);
+                        },
+                      ),
                   ],
-                  selected: {_profile},
-                  onSelectionChanged: (sel) async {
-                    setState(() => _profile = sel.first);
-                    // Geçmişteki hükümler yeni profilin gözünden tazelenir.
-                    if (_kb != null) {
-                      final updated = await HistoryService().reanalyze(_kb!, _profile);
-                      if (mounted) setState(() => _history = updated);
-                    }
-                  },
+                ),
+                const SizedBox(height: 8),
+                // "Neye göre?" sorusunun cevabı: seçili ölçünün dayanağı.
+                Text(
+                  s.profileDescription(_profile),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
                 ),
                 const SizedBox(height: 24),
                 // Geliştirme/simülatör için elle barkod girişi.
@@ -358,9 +468,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                       icon: const Icon(Icons.search),
-                      onPressed: () {
+                      onPressed: () async {
                         final code = _manualController.text.trim();
-                        if (code.isNotEmpty) _showResult(code);
+                        if (code.isEmpty) return;
+                        // Elle giriş de bir taramadır — aynı kapıdan geçer.
+                        if (await _ensureScanAllowed()) await _showResult(code);
                       },
                     ),
                   ),
@@ -423,6 +535,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ],
+                ),
+              ),
             ),
     );
   }
